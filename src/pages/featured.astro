@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Featured Builds" description="Community LS swapped Genesis Coupes — submit your build.">
+  <h1>Featured Builds</h1>
+  <p>
+    This is the place for completed (or well-documented in-progress) LS Gen Coupe builds.
+    The goal is to show real cars, real parts lists, and real lessons learned — not just glossy photos.
+  </p>
+
+  <h2>Submit Your Build — $10</h2>
+  <p>
+    For a one-time $10 contribution you can have your own dedicated build page that includes:
+  </p>
+  <ul>
+    <li>Photos of the car (engine bay, exterior, interior, etc.)</li>
+    <li>Engine + transmission combo and power goals</li>
+    <li>Key parts list (mounts, harness, ECU, exhaust, etc.)</li>
+    <li>What went right and what you’d do differently</li>
+    <li>A permanent link you can share</li>
+  </ul>
+  <p>
+    The money simply helps cover domain and any small running costs so the free guides stay free.
+    No ads, no subscription pressure.
+  </p>
+
+  <!-- 
+    STRIPE SETUP:
+    1. Create a free Stripe account at https://stripe.com
+    2. Go to Products → Add product → name it "Featured Build" → price $10 one-time
+    3. Create a Payment Link for that product
+    4. Replace the href below with your real Payment Link URL
+       (looks like: https://buy.stripe.com/xxxx)
+  -->
+  <a
+    href="https://buy.stripe.com/test_REPLACE_WITH_YOUR_FEATURED_BUILD_LINK"
+    class="stripe-btn"
+    target="_blank"
+    rel="noopener"
+  >
+    Pay $10 — Feature My Build
+  </a>
+  <p class="stripe-note">
+    After payment, email your photos + write-up and we’ll get the page live.
+    (Replace the button link with your real Stripe Payment Link when ready.)
+  </p>
+
+  <h2>Current Featured Builds</h2>
+  <p style="color: var(--text-muted);">None yet — be the first.</p>
+</BaseLayout>

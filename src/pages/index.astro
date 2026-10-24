@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Home" description="Complete LS swap guides for the Hyundai Genesis Coupe community.">
+  <Hero
+    title="LS Swap Genesis Coupe Guides"
+    subtitle="Real build notes from years of community work — wiring, mounts, cooling, Holley, and everything in between."
+  />
+
+  <h2>Start Here</h2>
+  <p>
+    This site gathers practical LS-swap information for the Hyundai Genesis Coupe (BK1 and BK2).
+    Content is drawn from long-running community notes and public discussion on Reddit and Facebook.
+    Not every tip applies to every year or engine — verify against your car and service manuals.
+  </p>
+  <p>
+    <strong>Before you begin:</strong> join the Facebook groups <em>Swapped GCs</em> and <em>Genesis Coupe LS Swaps</em>.
+    Prefer Corvette accessory spacing on BK1 for radiator clearance; BK2 has about 1.5&quot; more room.
+    Plan a serious radiator/fan setup and an oil cooler early.
+  </p>
+
+  <div class="card-grid">
+    <a href="/guides/engine-selection" class="card">
+      <h3>Engine Selection</h3>
+      <p>5.3, LS1, LS3-style, costs, and what to buy with the long-block.</p>
+    </a>
+    <a href="/guides/motor-mounts" class="card">
+      <h3>Motor Mounts</h3>
+      <p>Kits vs universal brackets and how position affects the rest of the car.</p>
+    </a>
+    <a href="/guides/wiring" class="card">
+      <h3>Wiring</h3>
+      <p>Fuse box, starter, fuel pump, reverse lights, Holley power.</p>
+    </a>
+    <a href="/guides/ecu" class="card">
+      <h3>ECUs &amp; Tuning</h3>
+      <p>Terminator X, dash, speedo, and fan control.</p>
+    </a>
+    <a href="/guides/cooling" class="card">
+      <h3>Cooling</h3>
+      <p>Radiator, fans, IAT placement, heater hoses, oil cooler.</p>
+    </a>
+    <a href="/guides/power-steering" class="card">
+      <h3>Power Steering</h3>
+      <p>Hydraulic reducers, adapters, and electric pump options.</p>
+    </a>
+  </div>
+
+  <h2>Featured Builds</h2>
+  <p>
+    Want to showcase your completed (or well-documented) LS Gen Coupe?
+    See the <a href="/featured">Featured Builds</a> page — a small fee helps keep the free guides online.
+  </p>
+</BaseLayout>

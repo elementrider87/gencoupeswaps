@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Power Steering" description="Hydraulic and electric power steering options for LS Genesis Coupe swaps.">
+  <h1>Power Steering</h1>
+  <p>
+    The stock Genesis rack expects roughly 850 psi. A typical GM LS pump puts out around 1,200 psi, so a pressure reducer (or careful shimming) is important if you stay hydraulic.
+  </p>
+
+  <h2>Fluid</h2>
+  <p>Use <strong>Pentosin CHF 202</strong> synthetic hydraulic fluid (or equivalent approved for the rack).</p>
+
+  <h2>Hydraulic Setup (Sikky or DIY lines)</h2>
+  <p>
+    If you are not buying the full Sikky PS line kit, you still need a proper adapter on the high-pressure line that ends near the front subframe.
+    Cheaper adapters have leaked in the community — use a quality AN-to-metric fitting.
+  </p>
+  <ul>
+    <li>
+      <strong>Russell AN-to-metric adapter</strong> (example): -6 AN to 16 mm × 1.5 O-ring
+      (<a href="https://www.summitracing.com/parts/rus-648060" target="_blank" rel="noopener">Summit rus-648060</a>)
+    </li>
+    <li>
+      Pressure reducer kit example:
+      <a href="https://www.summitracing.com/parts/krs-krc10122000" target="_blank" rel="noopener">KRC-style reducer</a>
+      — start with 2–3 of the supplied shims. Some cars run fine with fewer; test carefully.
+    </li>
+  </ul>
+  <p>You can also adapt directly to the rack with the correct metric fitting if you are building custom lines.</p>
+
+  <h2>Electric Power Steering Option</h2>
+  <p>
+    Several builders have used Jeep/Durango-style electric pumps with a CAN bus controller and 6AN adapter block.
+    Reform Motorsports sells related hardware (CAN controller, adapters, empty connectors).
+  </p>
+  <ul>
+    <li>Community write-up / video: search Facebook "Genesis Coupe LS Swaps" for Alex Toothman's posts</li>
+    <li>Reservoir example for Jeep/Durango pumps: common Amazon remote reservoir kits</li>
+  </ul>
+  <p>
+    Electric setups free up space and remove the belt-driven pump load, but require correct CAN / controller configuration and reliable 12V power.
+  </p>
+
+  <h2>Tips</h2>
+  <ul>
+    <li>Bleed the system thoroughly after any line work — air causes noise and poor assist.</li>
+    <li>Confirm rack pressure after the reducer; over-pressure shortens seal life.</li>
+    <li>Route lines clear of headers and the accessory drive.</li>
+  </ul>
+</BaseLayout>

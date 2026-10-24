@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Accessories" description="A/C, gas pedals, clutch master, and accessory drive notes for LS Gen Coupe swaps.">
+  <h1>Accessories</h1>
+  <p>
+    Accessory drive spacing, A/C retention, pedal choice, and clutch hydraulics all affect how "daily-able" the finished car feels.
+  </p>
+
+  <h2>A/C System</h2>
+  <p>
+    Wire colors for A/C request vary by year. Verify with power on and the A/C button pressed (12V and/or continuity at the cabin plug).
+  </p>
+
+  <img src="/images/ac-cabin-plug.jpg" alt="A/C control module plug in cabin with AC pins marked" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Plug to the A/C controls in the cabin — marked pins are the A/C request/control wires to verify with power on.
+  </p>
+
+  <img src="/images/ac-wires-on.jpg" alt="Yellow and blue A/C wires at passenger side connectors" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Yellow and blue wires at the passenger-side connectors — these are the A/C-on signals on many years (confirm on your car).
+  </p>
+
+  <ul>
+    <li><strong>2010 2.0T example:</strong> Yellow (Pin 21 A/C select high) and Blue (Pin 22 A/C output high) on the A/C control module; same colors on the smaller passenger fuse-box plug.</li>
+    <li><strong>2013 3.8:</strong> Same colors (yellow and blue) on the larger plug leading to the passenger-side fuse box.</li>
+  </ul>
+
+  <img src="/images/ac-2013-38-larger-plug.jpg" alt="2013 3.8 larger plug to passenger fuse box with yellow and blue A/C wires marked" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    2013 3.8 — larger plug to the passenger-side fuse box. Yellow and blue are the A/C wires (same colors as the 2.0T example).
+  </p>
+  <p>
+    To keep stock A/C function: retain the fuse-box harness and ECU (you can still trim unused engine-control wires). Many hide the fuse box under a relocated battery.
+    See also: <a href="https://www.gencoupe.com/threads/diy-battery-side-relay-box-relocation.60540/" target="_blank" rel="noopener">DIY battery / relay box relocation</a>.
+  </p>
+  <p>
+    Holley Terminator X path often uses the Current Performance Holley A/C add-on module harness, a Vintage Air 11079-VUS binary switch, and the matching pigtail.
+    Low-mount F-body Holley A/C bracket setups are common; stock A/C hoses usually need to be shortened/re-ended at a hose shop (roughly $350 in one documented build).
+  </p>
+
+  <h3>Compressor mount &amp; hose routing</h3>
+  <img src="/images/ac-engine-bay-overview.jpg" alt="LS swapped red Genesis Coupe engine bay showing A/C compressor and hose routing" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Overall bay view — low-mount A/C compressor on the passenger side with custom hose routing clear of the accessory drive and radiator.
+  </p>
+
+  <img src="/images/ac-compressor-closeup.jpg" alt="Close-up of A/C compressor fittings and hard lines" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Compressor fittings and hard-line adapters. Stock Genesis hoses are typically cut and re-crimped to fit the LS bracket layout.
+  </p>
+
+  <img src="/images/ac-compressor-clutch-hoses.jpg" alt="A/C compressor clutch and PolarSeal hose routing" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Clutch face and hose path along the frame rail — keep lines secured and away from belts, headers, and sharp edges.
+  </p>
+
+  <h2>Gas Pedals</h2>
+  <h3>Cable throttle</h3>
+  <p>
+    Cable pedal installs are straightforward. Some builders start with a Nissan 240SX-style pedal, then fab a custom box for better placement with race shoes.
+  </p>
+
+  <img src="/images/custom-pedal-box.jpg" alt="Custom three-pedal setup with yellow painted firewall and cable throttle" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Community example — custom pedal box after the stock 240-style placement felt wrong with race shoes (Dominic Corelli).
+  </p>
+
+  <img src="/images/cable-pedal-firewall.jpg" alt="Cable throttle pedal mount at firewall with return spring" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Cable pedal mount at the firewall with return spring — keep the cable path smooth and free of sharp bends.
+  </p>
+
+  <img src="/images/cable-throttle-bracket.jpg" alt="Throttle cable bracket on transmission tunnel / firewall side" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Cable bracket on the tunnel / firewall side with adjuster — common way to land the cable cleanly at the throttle body.
+  </p>
+
+  <h3>Drive-by-wire (DBW)</h3>
+  <ul>
+    <li>Jason Riddle builds a popular pedal assembly for these cars.</li>
+    <li>
+      <strong>GM Genuine Parts 10379038</strong> accelerator pedal with position sensor is a common donor for Holley Terminator setups —
+      <a href="https://a.co/d/8oOQHmO" target="_blank" rel="noopener">Amazon listing</a>.
+    </li>
+    <li>
+      Keeping the OEM Genesis pedal on Holley Terminator is possible using the pin map below (compiled from Liam Heuvel’s notes).
+      <strong>Not 100% confirmed for every year/setup</strong> — verify with a multimeter and Holley software before finalizing.
+    </li>
+  </ul>
+
+  <h4>OEM Genesis pedal → Holley (community map)</h4>
+  <img src="/images/bk1-pedal-pinout.jpg" alt="BK1 accelerator pedal position sensor pinout" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">BK1 pedal pinout (factory).</p>
+
+  <img src="/images/bk2-pedal-pinout.jpg" alt="BK2 accelerator pedal position sensor pinout" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">BK2 pedal pinout (factory) — wire colors differ from BK1.</p>
+
+  <img src="/images/oem-pedal-holley-handwritten.jpg" alt="Handwritten Genesis to Holley pedal pin mapping BK1 and BK2" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Handwritten cross-reference: BK1/BK2 pin numbers and colors to Holley pedal connector A–F.
+  </p>
+
+  <img src="/images/holley-dbw-harness-diagram.jpg" alt="Holley DBW harness diagram for pedal and throttle body" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Holley DBW harness overview — pedal and throttle-body connectors (reference for which Holley pins to hit).
+  </p>
+
+  <img src="/images/gm-10379038-pedal.jpg" alt="GM Genuine Parts 10379038 accelerator pedal with position sensor" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    GM 10379038 DBW pedal — widely used with Holley Terminator X when not using a custom assembly.
+  </p>
+
+  <img src="/images/jason-riddle-dbw-closeup.jpg" alt="Jason Riddle DBW pedal assembly close-up with sensor connector" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Jason Riddle DBW pedal assembly — sensor body and mounting next to the clutch master area.
+  </p>
+
+  <img src="/images/jason-riddle-dbw-installed.jpg" alt="Jason Riddle DBW pedal installed in Genesis Coupe footwell" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Installed view — clutch, brake, and DBW gas pedal in the footwell.
+  </p>
+
+  <img src="/images/dustin-shoulta-dbw-pedal.jpg" alt="Dustin Shoulta DBW gas pedal install with floor brace" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Dustin Shoulta’s DBW gas pedal — braced to the floor for a solid mount next to the brake pedal.
+  </p>
+
+  <h2>Clutch Master Cylinder</h2>
+  <p>
+    Wilwood master cylinder with an ISR adapter is a common combination.
+  </p>
+  <ul>
+    <li>Add a thin rubber washer behind the clutch pedal pin and file the cylinder mounting face so it sits flat.</li>
+    <li>Trim the Wilwood dust boot so it fits behind the adapter — this helps cylinder life.</li>
+  </ul>
+
+  <img src="/images/clutch-master-cylinder-pin.jpg" alt="Clutch pedal pin and master cylinder pushrod connection with plastic bushing" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Pedal pin and pushrod connection — thin washer / bushing behind the pin helps alignment and reduces wear.
+  </p>
+
+  <h2>ABS Delete / Brake Plumbing</h2>
+  <p>
+    Many LS swaps delete the factory ABS/ESC hydraulic unit and hardline straight from the master cylinder, with a proportioning valve and residual-pressure valves as needed.
+    New front caliper lines are common; rear lines can often stay factory if the junctions are re-tied cleanly.
+  </p>
+
+  <img src="/images/abs-delete-mc-overview.jpg" alt="Master cylinder with proportioning valve and residual valves installed" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Master cylinder area after ABS delete — proportioning valve, residual valves, and hardlines.
+  </p>
+
+  <img src="/images/abs-delete-proportioning.jpg" alt="Close-up of proportioning valve and residual pressure valve stack" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Proportioning valve and residual-pressure valve plumbing at the master.
+  </p>
+
+  <img src="/images/abs-delete-mc-side.jpg" alt="Side view of master cylinder and valve block on firewall" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Side view of the valve block and lines on the firewall.
+  </p>
+
+  <img src="/images/abs-delete-wilwood-prop.jpg" alt="Wilwood proportioning valve with AN fittings" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Wilwood-style adjustable proportioning valve with AN fittings.
+  </p>
+
+  <img src="/images/abs-delete-assembly-bench.jpg" alt="Master cylinder and proportioning assembly on the bench" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Bench-built master + proportioning / residual assembly before install.
+  </p>
+
+  <img src="/images/abs-delete-assembly-hand.jpg" alt="Holding the proportioning valve assembly with residual valves" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Same assembly in hand — residual valves and hardline loops.
+  </p>
+
+  <img src="/images/abs-delete-hardline-install.jpg" alt="Hardlined master to front lines tied into factory rears" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Hardlined straight off the master, new front caliper lines, tied into factory rear lines (community example).
+  </p>
+
+  <img src="/images/abs-delete-hardline-comment.jpg" alt="Community comment on hardlining off the master" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Community note: hardline off the master, new fronts, factory rears.
+  </p>
+
+  <img src="/images/abs-esc-hydraulic-diagram.jpg" alt="Factory ESC hydraulic system diagram" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Factory ESC hydraulic diagram — useful reference for which circuits you’re bypassing when the module is removed.
+  </p>
+
+  <img src="/images/abs-module-ports.jpg" alt="ABS module hydraulic ports with plugs" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    ABS/ESC module hydraulic face — ports are plugged or abandoned once the unit is deleted.
+  </p>
+
+  <img src="/images/abs-module-installed.jpg" alt="ABS module location in engine bay before delete" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Module location in the bay before removal.
+  </p>
+
+  <h3>Brembo caliper rebuild kits (community part numbers)</h3>
+  <ul>
+    <li><strong>Rears:</strong> 143.63034 K6334 (same kit often listed for Camaro/SS rear calipers)</li>
+    <li><strong>Fronts:</strong> 143.34032 K3432S</li>
+  </ul>
+  <img src="/images/brembo-rebuild-kit-parts.jpg" alt="Community post with Brembo front and rear rebuild kit part numbers" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Part numbers confirmed in the community — rears match common Camaro listings.
+  </p>
+
+  <h2>Accessory Drive Spacing</h2>
+  <p>
+    BK1 cars benefit from Corvette-spacing fronts for radiator clearance. F-body (middle) spacing is usable but tighter.
+    BK2 has about 1.5&quot; more room up front.
+  </p>
+</BaseLayout>

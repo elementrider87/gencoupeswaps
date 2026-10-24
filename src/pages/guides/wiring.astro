@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Wiring" description="Wiring harness, fuse box, reverse lights, push-to-start, and ECU power for LS Genesis Coupe swaps.">
+  <h1>Wiring</h1>
+  <p>
+    Wiring is the most year-specific part of an LS Gen Coupe swap. Colors and pinouts change between BK1/BK2 and 2.0T/3.8 models.
+    Always verify with a multimeter and your factory service manuals before cutting or splicing.
+  </p>
+  <p>
+    <strong>Shop manuals &amp; wiring diagrams:</strong>
+    <a href="https://drive.google.com/drive/folders/1p-_n4A5JZTp92iz3rK1sQcm1jPLSvz5W?usp=sharing" target="_blank" rel="noopener">Google Drive folder (all years)</a>
+  </p>
+
+  <h2>Passenger-Side Fuse Box</h2>
+  <p>
+    If you want to keep factory A/C function, keep the passenger-side fuse box and the stock ECU (or at least the harness sections that feed A/C).
+    Otherwise you can simplify and remove more of the factory engine harness.
+  </p>
+
+  <img src="/images/passenger-fuse-box-labeled.jpg" alt="Passenger side fuse box wires labeled: 12V, FP, A/C, CAN, Starter" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Key wires pulled from the passenger-side area. Labels match the functions below.
+  </p>
+
+  <p>Key wires commonly used from this box:</p>
+  <ul>
+    <li><strong>Large pink</strong> — Starter signal. Wire directly to the small stud on the starter.</li>
+    <li><strong>FP (fuel pump)</strong> — OEM fuel-pump power (often red/white). Use as a trigger for a dedicated fuel-pump relay (or to the Holley green FP wire if you already have a relay). Also available near the driver's kick panel if you prefer to keep it out of the bay.</li>
+    <li><strong>A/C</strong> — Factory A/C request/control wires (colors vary by year; verify with power on and A/C button pressed).</li>
+    <li><strong>12V</strong> — Switched 12V sources left open for relays or future accessories.</li>
+    <li><strong>Twisted red/blue (CAN)</strong> — CAN bus pair. Usually not needed for a stand-alone Holley setup.</li>
+  </ul>
+
+  <img src="/images/passenger-fuse-box-pink-starter.jpg" alt="Large pink starter wire held out from passenger side harness" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Large pink starter wire isolated from the harness — this goes to the small stud on the starter.
+  </p>
+
+  <p>
+    You can either open the entire harness and pull unused wires, or simply cap extras and wrap them back up.
+    Both approaches look clean if done carefully.
+  </p>
+
+  <h2>Push-to-Start / Starter</h2>
+  <p>
+    The pink starter wire provides 12V when you press the clutch and the start button. Connect it to the small stud on the starter.
+  </p>
+
+  <img src="/images/push-to-start-wiring.jpg" alt="Pink starter signal wire routed near battery and chassis stud in engine bay" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Pink starter signal routed in the bay near the battery — clean path from the passenger harness toward the starter or intermediate stud.
+  </p>
+
+  <p>
+    On some setups the pink wire alone is not enough — you may need to ground the starter relay first, then use the pink wire to the starter.
+    Push-button cars lose the factory "cut starter once RPM is seen" logic. Community solutions include an Arduino reading tach and controlling a relay, or careful Holley configuration.
+  </p>
+
+  <h2>Holley 12V Power While Cranking</h2>
+  <p>
+    Terminator X needs a solid 12V source that stays live while cranking.
+    On the driver's-side fuse box, 2nd row, third down (labeled ECU power) is a common tap point for the Holley ECU power wire.
+  </p>
+
+  <img src="/images/ecu-power-fuse-tap.jpg" alt="Driver side fuse box with red wire tapped at ECU power location" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Driver's-side interior fuse box — common ECU / constant 12V tap for Holley power so the ECU stays alive while cranking.
+  </p>
+
+  <h2>Fuel Pump Relay</h2>
+  <p>
+    Upgraded pumps should run through a dedicated relay. One common scheme (OEM harness + relay kit):
+  </p>
+  <ul>
+    <li>OEM Red/White → relay pin 86 (trigger)</li>
+    <li>OEM Black → relay pin 85</li>
+    <li>Fuel-pump black → chassis ground (seat-belt bolt works well)</li>
+    <li>Fuel-pump red → relay pin 87 (switched power out)</li>
+    <li>Battery power → relay pin 30</li>
+  </ul>
+  <p>Green and blue wires on the fuel-level sender side can be left alone.</p>
+
+  <h2>Evap Solenoid</h2>
+  <p>
+    Most builders remove the evap solenoid and leave the line next to the fuel feed open to atmosphere, or disconnect it back at the charcoal canister.
+    The tank must be able to vent so it does not build pressure.
+  </p>
+
+  <h2>Reverse Lights</h2>
+  <h3>T56 / Magnum with reverse sensor</h3>
+  <p>
+    Use a reverse sensor on the transmission (e.g. Sikky short sensor, or the stock GM-style switch with a pigtail).
+    A common inexpensive pigtail is the Muzzys T56 reverse-sensor harness (Amazon / similar listings, ~$10).
+  </p>
+
+  <img src="/images/t56-reverse-sensor-trans.jpg" alt="Transmission with reverse sensor wiring and pigtail kit" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Transmission with reverse-sensor lead and a basic pigtail kit ready to wire into the car.
+  </p>
+
+  <img src="/images/muzzys-t56-reverse-pigtail.jpg" alt="Muzzys T56 reverse sensor pigtail for LS1/LT1" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Muzzys-style T56 reverse-sensor pigtail — green/black leads for power and switch side.
+  </p>
+
+  <img src="/images/reverse-sensor-harness.jpg" alt="Braided reverse sensor extension harness with connectors" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Example braided extension harness to reach from the transmission up to the cabin or fuse-box area.
+  </p>
+
+  <h3>Power source at the fuse box</h3>
+  <p>
+    Many builders tap a fused always-on or accessory circuit at the driver's-side interior fuse box.
+    One documented tap is rear-view pin/slot <strong>#12</strong> on the in-cab fuse box (wire may be grey or red/black depending on year) — verify with a meter.
+  </p>
+
+  <img src="/images/reverse-fuse-box-pin12.jpg" alt="Diagram of driver side fuse box rear view showing pin 12 tap for reverse lights" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Rear view of the in-cab fuse box (driver side) — pin/slot #12 called out as a common reverse-light power tap (grey or red/black).
+  </p>
+
+  <img src="/images/reverse-fuse-box-diagram.jpg" alt="Driver side fuse box cover diagram with fuse labels" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Fuse-box cover diagram — useful for finding a spare or known circuit (seat heater, etc.) if you prefer a different tap.
+  </p>
+
+  <img src="/images/reverse-light-harness-location.jpg" alt="Cabin harness location with arrow pointing to reverse-related wiring" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Cabin harness area near the fuse box / kick panel where reverse-related wires are often accessed.
+  </p>
+
+  <h3>Tail-light side (manual)</h3>
+  <p>
+    At the tail-light connector, community confirmation: <strong>gray = reverse</strong>, <strong>blue = 12V</strong>.
+    Feed power through the reverse switch on the transmission so the gray wire only sees 12V when the car is in reverse.
+  </p>
+
+  <img src="/images/reverse-tail-light-gray-wire.jpg" alt="Community note: gray wire at tail light is reverse, blue is 12V" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Community note — gray wire at the tail light is reverse; provide it with power through the reverse switch and the light comes on.
+  </p>
+
+  <h2>Automatic Torque-Converter Unlock (Terminator X)</h2>
+  <p>
+    The Holley needs a brake-switch signal so the torque converter can unlock when you press the pedal.
+    For BK2 (and similar years): run the grey wire from the Terminator X transmission harness to the <strong>red/black</strong> wire at the stop-lamp / brake-pedal switch.
+  </p>
+
+  <img src="/images/brake-switch-connector.jpg" alt="Stop lamp switch connector with yellow, red, red/black, and white wires" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Brake-pedal switch connector — yellow, red, red/black, and white wires. Red/black is the common tap for TCC unlock.
+  </p>
+
+  <img src="/images/stop-lamp-switch-diagram.jpg" alt="Factory stop lamp switch pinout diagram: YEL, RED, RED/BLK, WHT" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Factory stop-lamp switch diagram — Pin 1 RED/BLK, Pin 2 RED, Pin 3 WHT, Pin 4 YEL. Confirm colors on your year before splicing.
+  </p>
+
+  <h2>Community Notes</h2>
+  <ul>
+    <li>Wire colors vary by year and engine (2.0T vs 3.8). Do not assume a 2010 2.0T diagram matches a 2014 3.8.</li>
+    <li>Facebook groups "Swapped GCs" and "Genesis Coupe LS Swaps" have the densest real-world wiring photos.</li>
+    <li>Budget builds often keep speedo and fuel gauge working first; tach and temp via CAN later.</li>
+  </ul>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Gen Coupe Swaps",
+  description = "Complete guides for LS swapping a Hyundai Genesis Coupe – engine selection, mounts, wiring, ECU, and more."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Gen Coupe Swaps</title>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <Header />
+      <div class="body-row">
+        <Sidebar />
+        <main class="main-content">
+          <slot />
+        </main>
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>

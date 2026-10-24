@@ -1,0 +1,131 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <a href="/" class="logo">Gen<span>Coupe</span>Swaps</a>
+
+  <!-- Search -->
+  <div class="search-wrap" id="search-wrap">
+    <input
+      type="search"
+      id="site-search"
+      class="search-input"
+      placeholder="Search guides… (e.g. power steering)"
+      autocomplete="off"
+      aria-label="Search guides"
+    />
+    <ul class="search-results" id="search-results" hidden></ul>
+  </div>
+
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+
+  <nav class="top-nav" id="top-nav">
+    <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
+    <a href="/featured" class={currentPath.startsWith('/featured') ? 'active' : ''}>Featured Builds</a>
+    <a href="/resources" class={currentPath.startsWith('/resources') ? 'active' : ''}>Resources</a>
+    <a href="/about" class={currentPath.startsWith('/about') ? 'active' : ''}>About</a>
+    <a href="/contact" class={currentPath.startsWith('/contact') ? 'active' : ''}>Contact</a>
+    <a href="/donate" class="donate-btn">Donate</a>
+  </nav>
+</header>
+
+<script>
+  // ---- Mobile menu ----
+  const toggle = document.getElementById('menu-toggle');
+  const topNav = document.getElementById('top-nav');
+  const sidebar = document.getElementById('sidebar');
+
+  toggle?.addEventListener('click', () => {
+    topNav?.classList.toggle('open');
+    sidebar?.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.top-nav a, .sidebar a').forEach(link => {
+    link.addEventListener('click', () => {
+      topNav?.classList.remove('open');
+      sidebar?.classList.remove('open');
+    });
+  });
+
+  // ---- Site search (client-side, no backend) ----
+  const pages = [
+    { label: 'Home', href: '/', keywords: 'home start main' },
+    { label: 'Featured Builds', href: '/featured', keywords: 'featured builds showcase submit' },
+    { label: 'Resources', href: '/resources', keywords: 'resources links parts kits forums' },
+    { label: 'About', href: '/about', keywords: 'about story why' },
+    { label: 'Contact', href: '/contact', keywords: 'contact email contribute submit' },
+    { label: 'Donate', href: '/donate', keywords: 'donate support tip' },
+    { label: 'Engine Selection', href: '/guides/engine-selection', keywords: 'engine selection ls ls1 ls2 ls3 ls7 lq4 lq9 5.3 6.0 6.2 donor' },
+    { label: 'Motor Mounts', href: '/guides/motor-mounts', keywords: 'motor mounts engine mounts kit loj sikky poly' },
+    { label: 'Swap Kits', href: '/guides/swap-kits', keywords: 'swap kits sikky loj isr mounts oil pan headers' },
+    { label: 'Alternator', href: '/guides/alternator', keywords: 'alternator charging bracket high output' },
+    { label: 'Power Steering', href: '/guides/power-steering', keywords: 'power steering pump rack lines reservoir' },
+    { label: 'Wiring', href: '/guides/wiring', keywords: 'wiring harness pcm can bus stand alone' },
+    { label: 'ECUs & Tuning', href: '/guides/ecu', keywords: 'ecu pcm tuning hp tuners efilive holley terminator' },
+    { label: 'Cooling System', href: '/guides/cooling', keywords: 'cooling radiator fans water pump thermostat' },
+    { label: 'Exhaust', href: '/guides/exhaust', keywords: 'exhaust headers cats muffler' },
+    { label: 'Transmission', href: '/guides/transmission', keywords: 'transmission t56 4l80 6l80 manual automatic adapter' },
+    { label: 'Driveshaft', href: '/guides/driveshaft', keywords: 'driveshaft driveshaft length yoke' },
+    { label: 'Fuel System', href: '/guides/fuel-system', keywords: 'fuel pump regulator lines return' },
+    { label: 'Intake & Air', href: '/guides/intake', keywords: 'intake manifold throttle body air filter maf' },
+    { label: 'Accessories', href: '/guides/accessories', keywords: 'accessories ac a/c brackets belt drive' },
+    { label: 'Troubleshooting', href: '/guides/troubleshooting', keywords: 'troubleshooting no start overheating gauges problems' },
+  ];
+
+  const input = document.getElementById('site-search') as HTMLInputElement | null;
+  const resultsEl = document.getElementById('search-results');
+
+  function renderResults(matches: typeof pages) {
+    if (!resultsEl) return;
+    if (matches.length === 0) {
+      resultsEl.innerHTML = '<li class="search-empty">No matches</li>';
+      resultsEl.hidden = false;
+      return;
+    }
+    resultsEl.innerHTML = matches
+      .map(m => `<li><a href="${m.href}">${m.label}</a></li>`)
+      .join('');
+    resultsEl.hidden = false;
+  }
+
+  function doSearch(q: string) {
+    const term = q.trim().toLowerCase();
+    if (!term) {
+      if (resultsEl) resultsEl.hidden = true;
+      return;
+    }
+    const matches = pages.filter(p =>
+      p.label.toLowerCase().includes(term) ||
+      p.keywords.toLowerCase().includes(term)
+    );
+    renderResults(matches.slice(0, 8));
+  }
+
+  input?.addEventListener('input', () => doSearch(input.value));
+  input?.addEventListener('focus', () => {
+    if (input.value.trim()) doSearch(input.value);
+  });
+
+  // Close results when clicking outside
+  document.addEventListener('click', (e) => {
+    const wrap = document.getElementById('search-wrap');
+    if (wrap && !wrap.contains(e.target as Node) && resultsEl) {
+      resultsEl.hidden = true;
+    }
+  });
+
+  // Navigate on Enter if there’s exactly one match or highlight first
+  input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const first = resultsEl?.querySelector('a') as HTMLAnchorElement | null;
+      if (first) {
+        window.location.href = first.href;
+      }
+    }
+    if (e.key === 'Escape') {
+      if (resultsEl) resultsEl.hidden = true;
+      input.blur();
+    }
+  });
+</script>

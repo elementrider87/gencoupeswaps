@@ -1,0 +1,31 @@
+---
+const currentPath = Astro.url.pathname;
+
+const guides = [
+  { href: '/guides/engine-selection', label: 'Engine Selection' },
+  { href: '/guides/motor-mounts', label: 'Motor Mounts' },
+  { href: '/guides/swap-kits', label: 'Swap Kits' },
+  { href: '/guides/alternator', label: 'Alternator' },
+  { href: '/guides/power-steering', label: 'Power Steering' },
+  { href: '/guides/wiring', label: 'Wiring' },
+  { href: '/guides/ecu', label: 'ECUs & Tuning' },
+  { href: '/guides/cooling', label: 'Cooling System' },
+  { href: '/guides/exhaust', label: 'Exhaust' },
+  { href: '/guides/transmission', label: 'Transmission' },
+  { href: '/guides/driveshaft', label: 'Driveshaft' },
+  { href: '/guides/differential', label: 'Differential' },
+  { href: '/guides/fuel-system', label: 'Fuel System' },
+  { href: '/guides/intake', label: 'Intake & Air' },
+  { href: '/guides/accessories', label: 'Accessories' },
+  { href: '/guides/troubleshooting', label: 'Troubleshooting' },
+];
+---
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">Build Guides</div>
+  {guides.map(g => (
+    <a href={g.href} class={currentPath === g.href ? 'active' : ''}>
+      {g.label}
+    </a>
+  ))}
+</aside>

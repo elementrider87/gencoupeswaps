@@ -1,0 +1,23 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+const {
+  title = "LS Swap Genesis Coupe Guides",
+  subtitle = "Everything collected over years of helping people put a V8 in their BK. Real info, no fluff.",
+  imageSrc = "/images/hero-placeholder.jpg",
+  imageAlt = "LS swapped Hyundai Genesis Coupe"
+} = Astro.props;
+---
+
+<section class="hero">
+  <img src={imageSrc} alt={imageAlt} onerror="this.style.display='none'" />
+  <div class="hero-overlay">
+    <h1>{title}</h1>
+    <p>{subtitle}</p>
+  </div>
+</section>
