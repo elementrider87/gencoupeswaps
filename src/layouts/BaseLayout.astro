@@ -17,6 +17,36 @@ const {
   description = "Complete guides for LS swapping a Hyundai Genesis Coupe – engine selection, mounts, wiring, ECU, and more.",
   featured = false
 } = Astro.props;
+
+const site = 'https://gencoupeswaps.com';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonical = site + (path === '/' ? '/' : path);
+const isGuide = path.startsWith('/guides/');
+const fullTitle = path === '/'
+  ? 'Genesis Coupe LS Swap Guides | Gen Coupe Swaps'
+  : isGuide
+    ? `${title} – Genesis Coupe LS Swap Guide | Gen Coupe Swaps`
+    : `${title} | Gen Coupe Swaps`;
+const ogImage = site + '/images/hero.jpg';
+const jsonLd = isGuide
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      headline: `${title}: Genesis Coupe LS Swap`,
+      description,
+      url: canonical,
+      image: ogImage,
+      author: { '@type': 'Person', name: 'Alexander Knight' },
+      publisher: { '@type': 'Organization', name: 'Gen Coupe Swaps', url: site },
+      about: ['Hyundai Genesis Coupe', 'LS engine swap'],
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Gen Coupe Swaps',
+      url: site,
+      description: 'Free LS swap guides for the Hyundai Genesis Coupe (BK1 and BK2).',
+    };
 ---
 
 <!doctype html>
@@ -27,7 +57,20 @@ const {
     <meta name="theme-color" content="#12141a" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | Gen Coupe Swaps</title>
+    <title>{fullTitle}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <meta property="og:type" content={isGuide ? 'article' : 'website'} />
+    <meta property="og:site_name" content="Gen Coupe Swaps" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <div class="site-wrapper">

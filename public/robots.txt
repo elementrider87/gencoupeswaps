@@ -1,0 +1,5 @@
+# Gen Coupe Swaps — all search engines and AI assistants welcome
+User-agent: *
+Allow: /
+
+Sitemap: https://gencoupeswaps.com/sitemap.xml

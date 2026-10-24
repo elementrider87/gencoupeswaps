@@ -1,0 +1,39 @@
+# Gen Coupe Swaps
+
+> Free, community-built guides for swapping a GM LS V8 into a Hyundai Genesis Coupe (BK1 2009–2012 and BK2 2013–2016). Covers parts, part numbers, wiring pinouts, Holley Terminator X setup, cooling, drivetrain, and real build photos from the Swapped GCs and Genesis Coupe LS Swaps communities.
+
+Written and maintained by Alexander Knight (@elementrider87). Wire colors and pinouts vary by year and model; readers should verify against factory service manuals.
+
+## Build guides
+
+- [Engine Selection](https://gencoupeswaps.com/guides/engine-selection): Choosing an LS engine for a Hyundai Genesis Coupe swap: engine options, accessory drive spacing, crank reluctor, and what to buy with the engine.
+- [Swap Kits](https://gencoupeswaps.com/guides/swap-kits): LS swap kits for the Hyundai Genesis Coupe: Sikky Stage 2, LOJ basic kits, ISR, what's included, prices, and lessons from real builds.
+- [Motor Mounts](https://gencoupeswaps.com/guides/motor-mounts): LS motor mount options for the Hyundai Genesis Coupe: Sikky, LOJ Conversions, and ISR Performance compared, including BK1 vs BK2 fitment.
+- [Wiring](https://gencoupeswaps.com/guides/wiring): Passenger fuse box, push-to-start, Holley cranking power, reverse lights, and brake switch wiring for LS Genesis Coupe swaps.
+- [ECUs & Tuning](https://gencoupeswaps.com/guides/ecu): Choosing a Holley Terminator X kit (24x vs 58x, X vs X Max), ECU cranking power, Holley dash mounting, and T56 VSS speedo wiring for LS Genesis Coupe swaps.
+- [Cooling System](https://gencoupeswaps.com/guides/cooling): Radiator, fan clearance, fan relays, Holley fan control, steam vent routing, IAT placement, and heater hoses for LS Genesis Coupe swaps.
+- [Fuel System](https://gencoupeswaps.com/guides/fuel-system): In-tank fuel pump upgrades (DW420, DW430C), dedicated fuel pump relay wiring, and EVAP solenoid handling for LS Genesis Coupe swaps.
+- [Alternator](https://gencoupeswaps.com/guides/alternator): LS alternator excite wire, Holley 197-400 pigtail, and Holley flex/alternator input setup for Genesis Coupe swaps.
+- [Power Steering](https://gencoupeswaps.com/guides/power-steering): Hydraulic power steering adapters, pressure reducer, and electric power steering for LS Genesis Coupe swaps.
+- [Intake & Air](https://gencoupeswaps.com/guides/intake): Intake manifold choice, hood clearance, throttle body, and IAT sensor placement for LS Genesis Coupe swaps.
+- [Exhaust & Heat Shielding](https://gencoupeswaps.com/guides/exhaust): Sikky vs ISR headers, header clearance around the fuse box, and DEI heat shielding for LS Genesis Coupe swaps.
+- [Transmission & Clutch](https://gencoupeswaps.com/guides/transmission): T56 Magnum XL specs and ratios, pilot bushing, shifter relocation, Z33 and automatic options, and the Wilwood clutch master fix for LS Genesis Coupe swaps.
+- [Driveshaft](https://gencoupeswaps.com/guides/driveshaft): Collins 3-to-4 bolt adapter, Spicer yoke, Sikky driveshaft options, and length notes for LS Genesis Coupe swaps.
+- [Differential & Axles](https://gencoupeswaps.com/guides/differential): Stock Torsen diff, Genesis sedan axle upgrade part numbers, Ford 8.8 IRS kit, and custom DSS axles for LS Genesis Coupe swaps.
+- [Brakes & ABS Delete](https://gencoupeswaps.com/guides/brakes): ABS delete fittings, brake lines, adjustable proportioning valve, line lock placement, and Brembo rebuild for LS Genesis Coupe swaps.
+- [A/C System](https://gencoupeswaps.com/guides/ac): Keeping A/C on an LS Genesis Coupe swap: A/C request wires by year, Holley A/C add-on, and compressor/hose setup.
+- [Gas Pedal](https://gencoupeswaps.com/guides/gas-pedal): Cable and drive-by-wire gas pedal options, Holley-compatible GM pedals (10379038, 19417903), and keeping the OEM pedal on LS Gen Coupe swaps.
+- [Accessories](https://gencoupeswaps.com/guides/accessories): Accessory drive spacing for BK1 and BK2, plus links to A/C, gas pedal, clutch, alternator, and power steering guides for LS Gen Coupe swaps.
+- [Troubleshooting](https://gencoupeswaps.com/guides/troubleshooting): Quick fixes for common LS Genesis Coupe swap problems: overheating, steam vent, fans, charging, push to start, EVAP, ABS odometer, and more.
+
+## Community
+
+- [HP Wars](https://gencoupeswaps.com/hp-wars): Dyno leaderboard for LS-swapped Hyundai Genesis Coupes: N/A, turbo, supercharged, and nitrous wheel horsepower.
+- [Featured Builds](https://gencoupeswaps.com/featured): Community LS swapped Genesis Coupes — submit your build.
+- [Resources](https://gencoupeswaps.com/resources): Facebook groups, YouTube channels, kits, and manuals for LS Genesis Coupe swaps.
+
+## Optional
+
+- [About](https://gencoupeswaps.com/about): Why this LS Gen Coupe swap resource exists.
+- [Contact](https://gencoupeswaps.com/contact): Contact the site administrator to contribute content.
+- [Donate](https://gencoupeswaps.com/donate): Support the free LS Gen Coupe swap guides.
