@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
@@ -37,7 +38,12 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
     <li>CAN bus controller, -6AN adapter block, and empty connectors: <a href="https://reformmotorsports.com" target="_blank" rel="noopener">Reform Motorsports</a></li>
     <li>Reservoir if you buy a Jeep/Durango pump: <a href="https://a.co/d/02RjfRzP" target="_blank" rel="noopener">Amazon</a></li>
   </ul>
-  <p><em>Wiring diagram and pump-mount photos are in the original Google Doc — send them over and they'll be added here.</em></p>
+  <div class="figs">
+    <Figure src="power-sterring-electric1.jpg" alt="2011-2018 Dodge Charger electric power steering pump controller with remote adjustment knob" caption="EHPS controller for the 2011-18 Dodge Charger pump, with remote speed adjust." />
+    <Figure src="power-sterring-electric2.jpg" alt="Power steering reservoir 603-939 for Dodge Charger, Challenger and Chrysler 300 pump" caption="Reservoir for the Charger/Durango-style pump (603-939)." />
+    <Figure src="power-sterring-electric3.jpg" alt="Reform Motorsports EHPS Micro Dodge controller wiring diagram with CAN, ground and ignition 12V" caption="Controller wiring: CAN low/high, ground, and ignition 12V to the pump." />
+    <Figure src="power-sterring-electric4.jpg" alt="Electric power steering pump mounted on a Genesis Coupe" caption="Pump mounted (from the Genesis Coupe LS Swaps group)." />
+  </div>
 
   <CommunityLinks />
 </BaseLayout>
