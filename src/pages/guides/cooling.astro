@@ -2,21 +2,48 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Cooling System" description="Radiator, fans, IAT, and heater hose notes for LS Genesis Coupe swaps.">
+<BaseLayout title="Cooling System" description="Radiator, fans, IAT placement, heater hoses, and oil cooling for LS Gen Coupe swaps.">
   <h1>Cooling System</h1>
   <p>
-    LS engines run hot in the Gen Coupe engine bay. Plan the cooling system early.
+    LS engines make a lot of heat in a tight bay. Plan radiator capacity, fan strategy, and oil cooling early — especially on BK1 cars with less front clearance.
   </p>
 
-  <h2>Key Points</h2>
+  <h2>Before You Start — Clearance</h2>
   <ul>
-    <li>Plan a thick radiator and high-CFM fans early. LS engines run hot in the Gen Coupe bay.</li>
-    <li>Oil cooler is strongly recommended, especially on higher-power or track cars.</li>
-    <li>IAT sensor placement matters for accurate fueling — keep it in clean airflow, not heat-soaked.</li>
-    <li>Holley Terminator X fan control can be set to not run on key-on (see the YouTube video linked on this page).</li>
+    <li><strong>BK1:</strong> Prefer Corvette-spacing front accessory drive for maximum room between the engine and radiator fans. F-body (middle) spacing can work but is tighter.</li>
+    <li><strong>BK2:</strong> Roughly 1.5" more front clearance than BK1 — more forgiving.</li>
   </ul>
 
-  <h2>Community &amp; Parts Links</h2>
+  <h2>Radiator</h2>
+  <p>
+    A 3.8 upgraded radiator with a proper fan shroud is strongly recommended.
+    Jason Riddle builds these for the community — reach out on Facebook if you need one.
+  </p>
+
+  <h2>Fans & Relays</h2>
+  <p>Factory radiator fan wires (at the harness):</p>
+  <ul>
+    <li><strong>Red / Orange</strong> — High side (black/red on the fan side)</li>
+    <li><strong>Green</strong> — Low side (black/white on the fan side)</li>
+    <li><strong>Black</strong> — Ground</li>
+  </ul>
+
+  <img src="/images/fan-wiring-bulkhead.jpg" alt="Orange and green factory fan wires at firewall bulkhead" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Factory fan wires at the bulkhead — orange/red (high) and green (low). Many builders pull these toward the battery for clean relay power.
+  </p>
+
+  <p>
+    Many builders cut into the harness at the firewall, pull the thick red/green wires toward the battery, and feed new solid-state or conventional relays.
+    Holley fan #1 (gray/yellow) and fan #2 (gray/red) typically go to pin 85 as triggered ground on traditional relays.
+  </p>
+
+  <img src="/images/fan-controllers-holley.jpg" alt="Holley fan 1 and fan 2 controllers mounted on body" />
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
+    Example of Holley fan controllers mounted near the battery.
+  </p>
+
+  <h2>Community & Parts Links</h2>
   <ul>
     <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
     <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
