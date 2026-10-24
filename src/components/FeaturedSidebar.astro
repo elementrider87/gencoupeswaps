@@ -1,0 +1,21 @@
+---
+const currentPath = Astro.url.pathname;
+const categories = [
+  { href: '/featured#na', label: 'N/A (Naturally Aspirated)' },
+  { href: '/featured#turbo', label: 'Turbo' },
+  { href: '/featured#supercharged', label: 'Supercharged' },
+  { href: '/featured#oem', label: 'OEM Builds' },
+];
+---
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-label">Featured Builds</div>
+  {categories.map(c => (
+    <a href={c.href}>
+      {c.label}
+    </a>
+  ))}
+  <p style="padding: 1rem 1.25rem; color: var(--text-muted); font-size: 0.85rem;">
+    Builds will appear here as they are added.
+  </p>
+</aside>
