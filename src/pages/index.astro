@@ -11,40 +11,94 @@ import Hero from '../components/Hero.astro';
 
   <h2>Start Here</h2>
   <p>
-    This site gathers practical LS-swap information for the Hyundai Genesis Coupe (BK1 and BK2).
-    Content is drawn from long-running community notes and public discussion on Reddit and Facebook.
-    Not every tip applies to every year or engine — verify against your car and service manuals.
+    Gen Coupe Swaps is a free, step-by-step resource for putting a GM LS V8 into a Hyundai Genesis Coupe, both the BK1 (2009–2012) and the BK2 (2013–2016).
+    It started as one builder's wiring notes in a Google Doc and grew into a full set of guides covering every system you'll touch:
+    engine and mounts, wiring and the Holley ECU, cooling, fuel, transmission, driveshaft, rear end, brakes, and the small stuff like A/C, gas pedals, and reverse lights.
   </p>
   <p>
-    <strong>Before you begin:</strong> join the Facebook groups <em>Swapped GCs</em> and <em>Genesis Coupe LS Swaps</em>.
-    Prefer Corvette accessory spacing on BK1 for radiator clearance; BK2 has about 1.5&quot; more room.
-    Plan a serious radiator/fan setup and an oil cooler early.
+    Everything here comes from real swaps, with photos, wire colors, pin numbers, and part numbers, plus vendor specs and sources linked on each page.
+    Wire colors and pinouts change between years and between 2.0T and 3.8 cars, so always confirm against your own car and the
+    <a href="https://drive.google.com/drive/folders/1p-_n4A5JZTp92iz3rK1sQcm1jPLSvz5W?usp=sharing" target="_blank" rel="noopener">factory shop manuals</a>.
   </p>
 
+  <h2>BK1 vs BK2: What Changes for the Swap</h2>
+  <table>
+    <thead><tr><th></th><th>BK1 (2009–2012)</th><th>BK2 (2013–2016)</th></tr></thead>
+    <tbody>
+      <tr><td>Front clearance</td><td>Tighter: use a Corvette-spacing accessory drive</td><td>About 1.5" more room between engine and fans</td></tr>
+      <tr><td>Factory engine mount</td><td>Three studs to the subframe</td><td>Single center stud (LOJ mounts are designed around this one)</td></tr>
+      <tr><td>Mount kits</td><td>LOJ mounts need the subframe drilled (tools included). Check your kit.</td><td>Bolts in</td></tr>
+      <tr><td>In-tank fuel pump</td><td>DeatschWerks DW420 (2010–12)</td><td>DeatschWerks DW430C (2013–16 3.8)</td></tr>
+      <tr><td>OEM gas pedal pinout</td><td>BK1 pinout</td><td>Different BK2 pinout</td></tr>
+    </tbody>
+  </table>
+  <p>Details are in <a href="/guides/motor-mounts">Motor Mounts</a>, <a href="/guides/engine-selection#spacing">accessory drive spacing</a>, <a href="/guides/fuel-system#pump">fuel pumps</a>, and <a href="/guides/gas-pedal#oem">gas pedal pinouts</a>.</p>
+
+  <h2>The Swap, Step by Step</h2>
+  <p>A typical order of attack. Each step links to its full guide.</p>
+  <ol class="roadmap">
+    <li><a href="/guides/engine-selection"><strong>Pick the engine</strong></a>: 5.3, 6.0, LS1, LS3 or supercharged, plus accessory spacing and 24x vs 58x crank reluctor.</li>
+    <li><a href="/guides/swap-kits"><strong>Choose a swap kit</strong></a> and <a href="/guides/motor-mounts">motor mounts</a>: Sikky, LOJ or ISR, with a Genesis-specific oil pan.</li>
+    <li><a href="/guides/transmission"><strong>Transmission &amp; clutch</strong></a>: T56 Magnum XL specs, pilot bushing, shifter, and the Wilwood clutch master fix.</li>
+    <li><a href="/guides/driveshaft"><strong>Driveshaft</strong></a> and <a href="/guides/differential">rear end</a>: the 3-to-4 bolt adapter, sedan axles, and the Ford 8.8 IRS for big power.</li>
+    <li><a href="/guides/wiring"><strong>Wiring</strong></a>: passenger fuse box, push to start, ECU cranking power, reverse lights.</li>
+    <li><a href="/guides/ecu"><strong>ECU &amp; tuning</strong></a>: choosing a Holley Terminator X kit, dash mounting, speedo.</li>
+    <li><a href="/guides/fuel-system"><strong>Fuel system</strong></a>: in-tank pump, dedicated relay, EVAP.</li>
+    <li><a href="/guides/cooling"><strong>Cooling</strong></a>: radiator, fans and relays, steam vent line, heater hoses.</li>
+    <li><a href="/guides/alternator"><strong>Alternator</strong></a>, <a href="/guides/power-steering">power steering</a>, <a href="/guides/ac">A/C</a>, and <a href="/guides/gas-pedal">gas pedal</a>.</li>
+    <li><a href="/guides/intake"><strong>Intake</strong></a> and <a href="/guides/exhaust">exhaust &amp; heat shielding</a>: hood clearance, headers, and keeping heat off the fuse box.</li>
+    <li><a href="/guides/brakes"><strong>Brakes</strong></a>: ABS delete, proportioning valve, line lock.</li>
+    <li><a href="/guides/troubleshooting"><strong>Troubleshooting</strong></a>: quick fixes for overheating, charging, fans, no-start and more.</li>
+  </ol>
+
+  <h2>What Parts Cost</h2>
+  <p>Reference prices for the swap-specific parts, as listed by vendors in October 2026. The engine, transmission, clutch, radiator, and tuning are on top of this and vary a lot by what you find.</p>
+  <table>
+    <thead><tr><th>Part</th><th>Typical price</th><th>Guide</th></tr></thead>
+    <tbody>
+      <tr><td>Engine &amp; trans mounts</td><td>$412 – $616</td><td><a href="/guides/motor-mounts">Motor Mounts</a></td></tr>
+      <tr><td>Swap kit packages</td><td>$1,400 – $3,700</td><td><a href="/guides/swap-kits">Swap Kits</a></td></tr>
+      <tr><td>Headers</td><td>$990 – $1,232</td><td><a href="/guides/exhaust">Exhaust</a></td></tr>
+      <tr><td>Holley Terminator X kit</td><td>from ~$1,450</td><td><a href="/guides/ecu">ECUs &amp; Tuning</a></td></tr>
+      <tr><td>Driveshaft</td><td>$710 – $1,350</td><td><a href="/guides/driveshaft">Driveshaft</a></td></tr>
+      <tr><td>In-tank fuel pump</td><td>~$200 – $220</td><td><a href="/guides/fuel-system">Fuel System</a></td></tr>
+      <tr><td>Power steering line kit</td><td>~$168</td><td><a href="/guides/power-steering">Power Steering</a></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Before You Begin</h2>
+  <ul>
+    <li>Join the Facebook groups <a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> and <a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a>. That's where most wiring photos and real build logs get shared.</li>
+    <li>On a BK1, use Corvette accessory spacing for radiator clearance.</li>
+    <li>Plan a serious radiator and fan setup, the steam vent line, and an oil cooler from the start. Heat is the number-one LS Gen Coupe headache.</li>
+    <li>Buy mounts, oil pan, and headers from the same kit maker so everything lines up.</li>
+  </ul>
+
+  <h2>Most-Read Guides</h2>
   <div class="card-grid">
     <a href="/guides/engine-selection" class="card">
       <h3>Engine Selection</h3>
-      <p>5.3, LS1, LS3-style, costs, and what to buy with the long-block.</p>
+      <p>5.3, 6.0, LS1, LS3, LSA, accessory spacing, and what to buy with the engine.</p>
     </a>
-    <a href="/guides/motor-mounts" class="card">
-      <h3>Motor Mounts</h3>
-      <p>Kits vs universal brackets and how position affects the rest of the car.</p>
+    <a href="/guides/swap-kits" class="card">
+      <h3>Swap Kits</h3>
+      <p>Sikky, LOJ and ISR compared: what's included and what each costs.</p>
     </a>
     <a href="/guides/wiring" class="card">
       <h3>Wiring</h3>
-      <p>Fuse box, starter, fuel pump, reverse lights, Holley power.</p>
+      <p>Fuse box, starter, push to start, reverse lights, Holley power.</p>
     </a>
     <a href="/guides/ecu" class="card">
       <h3>ECUs &amp; Tuning</h3>
-      <p>Terminator X, dash, speedo, and fan control.</p>
+      <p>Terminator X vs X Max, dash, speedo, and fan control.</p>
     </a>
     <a href="/guides/cooling" class="card">
       <h3>Cooling</h3>
-      <p>Radiator, fans, IAT placement, heater hoses, oil cooler.</p>
+      <p>Radiator, fans, steam vent, IAT placement, heater hoses.</p>
     </a>
     <a href="/guides/power-steering" class="card">
       <h3>Power Steering</h3>
-      <p>Hydraulic reducers, adapters, and electric pump options.</p>
+      <p>Line kits, adapters, pressure reducers, and electric pumps.</p>
     </a>
   </div>
 
@@ -53,9 +107,10 @@ import Hero from '../components/Hero.astro';
     How much is your swap making? The <a href="/hp-wars">HP Wars leaderboard</a> ranks LS Gen Coupes by wheel horsepower in N/A, turbo, supercharged, and nitrous classes. Send your dyno sheet to get on the board.
   </p>
 
-  <h2>Featured Builds</h2>
+  <h2>Featured Builds &amp; Contributing</h2>
   <p>
-    Want to showcase your completed (or well-documented) LS Gen Coupe?
-    See the <a href="/featured">Featured Builds</a> page — a small fee helps keep the free guides online.
+    Finished (or well-documented) build? Get it on the <a href="/featured">Featured Builds</a> page.
+    Spotted a wrong wire color or have photos that would help someone else? <a href="/contact">Get in touch</a>. The guides get better every time someone shares what worked on their car.
+    If the site saved you time, you can <a href="/donate">chip in</a> to keep it online.
   </p>
 </BaseLayout>
