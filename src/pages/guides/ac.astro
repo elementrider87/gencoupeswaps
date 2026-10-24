@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
+---
+
+<BaseLayout title="A/C System" description="Keeping A/C on an LS Genesis Coupe swap: A/C request wires by year, Holley A/C add-on, and compressor/hose setup.">
+  <h1>A/C System</h1>
+  <p>
+    Depending on the year of your car these wires might be different. Verify with the power on and the A/C button on for 12V,
+    and/or check continuity with the cabin plug.
+  </p>
+
+  <h2>A/C Request Wires by Year</h2>
+  <ul>
+    <li><strong>2010 2.0T:</strong> Yellow (pin 21, A/C select high) and Blue (pin 22, A/C output high) on the A/C control module. Below, on the passenger-side fuse box smaller plug, they're also blue and yellow.</li>
+    <li><strong>2013 3.8:</strong> On the larger plug, same colors.</li>
+  </ul>
+  <div class="figs">
+    <Figure src="ac-cabin-plug.jpg" alt="A/C control module plug in cabin with A/C pins marked" caption="Plug to the A/C controls in the cabin." />
+    <Figure src="ac-wires-on.jpg" alt="Yellow and blue A/C wires at passenger side connector" caption="A/C-on wires at the passenger-side connector." />
+    <Figure src="ac-2013-38-larger-plug.jpg" alt="2013 3.8 larger plug to passenger fuse box with A/C wires marked" caption="2013 3.8 — the larger plug leading to the passenger-side fuse box." />
+  </div>
+
+  <h2>Keeping Stock A/C Function</h2>
+  <p>
+    Keep your fuse box wire harness and ECU. You can trim out the extra engine-control wires besides the A/C, and hide the fuse box under the battery:
+    <a href="https://www.gencoupe.com/threads/diy-battery-side-relay-box-relocation.60540/" target="_blank" rel="noopener">DIY battery-side relay box relocation (GenCoupe.com)</a>.
+  </p>
+
+  <h2>Holley Terminator X A/C</h2>
+  <p>If you're running a Holley Term X setup you'll need:</p>
+  <ul>
+    <li>Current Performance Holley A/C add-on module wire harness</li>
+    <li>Vintage Air 11079-VUS replacement binary switch, plus the matching pigtail</li>
+  </ul>
+
+  <h2>Compressor Brackets &amp; Hoses</h2>
+  <p>
+    There are several ways to add A/C with brackets. This is the Holley low-mount setup for F-body on the passenger side.
+    Take your stock A/C hoses to a local hose shop to be modified — cost was around <strong>$350</strong>.
+  </p>
+  <div class="figs">
+    <Figure src="ac-engine-bay-overview.jpg" alt="LS swapped red Genesis Coupe engine bay with A/C compressor" caption="Holley low-mount F-body compressor, passenger side." />
+    <Figure src="ac-compressor-closeup.jpg" alt="Close-up of A/C compressor fittings and hard lines" caption="Compressor fittings and modified lines." />
+    <Figure src="ac-compressor-clutch-hoses.jpg" alt="A/C compressor clutch and hose routing" caption="Compressor clutch and hose routing." />
+  </div>
+
+  <CommunityLinks />
+</BaseLayout>

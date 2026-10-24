@@ -1,30 +1,39 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="Transmission" description="Manual and automatic transmission options for LS Genesis Coupe swaps.">
-  <h1>Transmission</h1>
+<BaseLayout title="Transmission" description="T56 Magnum XL notes, pilot bushing, clutch alignment tool, and Wilwood clutch master cylinder for LS Genesis Coupe swaps.">
+  <h1>Transmission &amp; Clutch</h1>
   <p>
     The Gen Coupe accepts both manual and automatic LS transmissions with the correct adapter, crossmember, and driveshaft.
+    Common choices are the T56 Magnum XL (manual) and 4L60E / 4L80E / 6L80E (automatic).
   </p>
 
-  <h2>Common Pairings</h2>
-  <ul>
-    <li><strong>T56 Magnum XL</strong> — most popular manual. Both 2.66 and 2.97 first-gear versions are used. Requires a clutch alignment tool (RAM 26-spline) and pilot bushing (McLeod MRR 8-1094-2 is commonly referenced).</li>
-    <li><strong>4L60E / 4L80E</strong> — common automatic choices. 4L80E is stronger for higher power.</li>
-    <li><strong>6L80E</strong> — later automatic option with better gearing.</li>
-  </ul>
+  <h2>T56 Magnum XL</h2>
   <p>
-    Driveshaft length and yoke type change with the transmission choice. Measure twice.
+    Requires a custom pilot bushing since it uses a Ford input shaft — <strong>unless</strong> you get the GM shaft.
+  </p>
+  <ul>
+    <li><strong>Pilot bushing:</strong> McLeod Racing 8-1094-2 — Oilite, GM except Pontiac, 1.094" OD x .672" ID</li>
+    <li><strong>Clutch alignment tool:</strong> <a href="https://www.americanmuscle.com/ram-26-spline-clutch-alignment-tool.html" target="_blank" rel="noopener">RAM 26-spline clutch alignment tool</a></li>
+  </ul>
+  <div class="figs">
+    <Figure src="mcleod-pilot-bushing-mrr-8-1094-2.jpg" alt="McLeod 8-1094-2 pilot bushing in bag" caption="McLeod 8-1094-2 pilot bushing." />
+    <Figure src="ram-clutch-alignment-tool.jpg" alt="RAM 26-spline clutch alignment tool listing" caption="RAM 26-spline alignment tool." />
+  </div>
+  <p>
+    Reverse lights and speedo for the T56 are covered under <a href="/guides/wiring#manual-reverse">Wiring</a> and <a href="/guides/ecu#speedo">ECUs &amp; Tuning</a>.
   </p>
 
-  <h2>Community &amp; Parts Links</h2>
-  <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
-  </ul>
+  <h2 id="clutch-master">Clutch Master Cylinder</h2>
+  <p>You'll need a Wilwood master cylinder with an adapter from ISR. Two small issues I found:</p>
+  <ol>
+    <li>Add a thin rubber washer behind the clutch pedal pin, and file down the cylinder mounting portion so it sits flat on the washer and pedal.</li>
+    <li>Cut the rubber dust boot that comes with the Wilwood master cylinder so it fits behind the Wilwood adapter. This helps preserve the cylinder's life.</li>
+  </ol>
+  <Figure src="clutch-master-cylinder-pin.jpg" alt="Clutch pedal pin and Wilwood master cylinder mount" caption="Clutch pedal pin and master cylinder mount." />
+
+  <CommunityLinks />
 </BaseLayout>

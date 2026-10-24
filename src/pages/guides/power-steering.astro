@@ -1,29 +1,43 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="Power Steering" description="Power steering options for LS Genesis Coupe swaps.">
+<BaseLayout title="Power Steering" description="Hydraulic power steering adapters, pressure reducer, and electric power steering for LS Genesis Coupe swaps.">
   <h1>Power Steering</h1>
-  <p>
-    You can keep the factory hydraulic rack or switch to electric.
-  </p>
+  <div class="note"><p><strong>Use Pentosin CHF 202 synthetic hydraulic fluid.</strong></p></div>
 
-  <h2>Options</h2>
-  <ul>
-    <li><strong>Hydraulic with reducer</strong> — keep the factory rack and use a pressure reducer + adapter fittings from the LS pump.</li>
-    <li><strong>Electric power steering</strong> — popular for cleaner packaging and no belt-driven pump. Several aftermarket kits exist.</li>
-  </ul>
+  <h2>Hydraulic (GM Pump)</h2>
+  <h3>High-Pressure Line Adapter</h3>
   <p>
-    LOJ and Sikky both offer power steering line adapters for the Gen Coupe rack.
+    If you're not getting the Sikky PS lines kit, you'll need an adapter for the high-pressure PS line that ends near the front subframe.
+    Don't cheap out — other adapters have been tried and leak. Or mount directly to the rack with the fitting below.
   </p>
-
-  <h2>Community &amp; Parts Links</h2>
+  <h3>Pressure Reducer</h3>
+  <p>
+    The GM pump puts out about <strong>1200 psi</strong>; the Genesis rack needs about <strong>850 psi</strong>. Use a pressure reducer kit with 2 or 3 of the supplied shims.
+    Some have gotten away without shims, so this is debatable.
+  </p>
   <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
+    <li><a href="https://www.summitracing.com/parts/krs-krc10122000" target="_blank" rel="noopener">KRC pressure reducer kit (Summit KRS-KRC10122000)</a></li>
   </ul>
+  <h3>Rack Fitting</h3>
+  <p>Or use this to adapt directly to the PS rack if you don't get the full Sikky kit:</p>
+  <ul>
+    <li>
+      <a href="https://www.summitracing.com/parts/rus-648060" target="_blank" rel="noopener">Russell 648060</a> —
+      AN to metric adapter fitting, straight, aluminum, -6 AN to 16mm x 1.5 O-ring.
+    </li>
+  </ul>
+
+  <h2>Electric Power Steering</h2>
+  <p>By Alex Toothman on the Genesis Coupe LS Swaps Facebook page.</p>
+  <ul>
+    <li>Video: <a href="https://www.facebook.com/share/v/185cA96S7q/" target="_blank" rel="noopener">Facebook</a></li>
+    <li>CAN bus controller, -6AN adapter block, and empty connectors: <a href="https://reformmotorsports.com" target="_blank" rel="noopener">Reform Motorsports</a></li>
+    <li>Reservoir if you buy a Jeep/Durango pump: <a href="https://a.co/d/02RjfRzP" target="_blank" rel="noopener">Amazon</a></li>
+  </ul>
+  <p><em>Wiring diagram and pump-mount photos are in the original Google Doc — send them over and they'll be added here.</em></p>
+
+  <CommunityLinks />
 </BaseLayout>

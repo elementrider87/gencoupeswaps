@@ -1,55 +1,110 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="Cooling System" description="Radiator, fans, IAT placement, heater hoses, and oil cooling for LS Gen Coupe swaps.">
+<BaseLayout title="Cooling System" description="Radiator, fan clearance, fan relays, Holley fan control, IAT placement, and heater hoses for LS Gen Coupe swaps.">
   <h1>Cooling System</h1>
   <p>
     LS engines make a lot of heat in a tight bay. Plan radiator capacity, fan strategy, and oil cooling early — especially on BK1 cars with less front clearance.
   </p>
 
-  <h2>Before You Start — Clearance</h2>
-  <ul>
-    <li><strong>BK1:</strong> Prefer Corvette-spacing front accessory drive for maximum room between the engine and radiator fans. F-body (middle) spacing can work but is tighter.</li>
-    <li><strong>BK2:</strong> Roughly 1.5" more front clearance than BK1 — more forgiving.</li>
-  </ul>
+  <nav class="toc">
+    <a href="#clearance">Clearance</a>
+    <a href="#radiator">Radiator</a>
+    <a href="#fans">Fans &amp; relays</a>
+    <a href="#stock-relays">Stock fan relays</a>
+    <a href="#key-on">Key-on fans</a>
+    <a href="#iat">IAT sensor</a>
+    <a href="#heater-hose">Heater hose</a>
+  </nav>
 
-  <h2>Radiator</h2>
+  <h2 id="clearance">Before You Start — Clearance</h2>
+  <ul>
+    <li><strong>BK1:</strong> get a Corvette-spacing front accessory drive. You can get away with F-body (middle) spacing, but you want as much room as possible between the engine and the radiator fans.</li>
+    <li><strong>BK2:</strong> much more front-end clearance — about 1.5" more.</li>
+  </ul>
+  <div class="figs">
+    <Figure src="fan-clearance-ls.jpg" alt="Tape measure between LS accessory drive and radiator" caption="Measuring engine-to-radiator clearance." />
+    <Figure src="fan-clearance-reference.jpg" alt="Tape measure reference across front of engine bay" caption="Clearance reference measurement." />
+  </div>
+
+  <h2 id="radiator">Radiator &amp; Oil Cooler</h2>
   <p>
-    A 3.8 upgraded radiator with a proper fan shroud is strongly recommended.
-    Jason Riddle builds these for the community — reach out on Facebook if you need one.
+    Run a 3.8 upgraded radiator with a fan shroud. Jason Riddle makes them — reach out to him for one.
+    To keep temps down you can also try a push/pull setup: most run 2 puller fans behind the radiator, and some add 1 or 2 pusher fans in front.
   </p>
-
-  <h2>Fans & Relays</h2>
-  <p>Factory radiator fan wires (at the harness):</p>
-  <ul>
-    <li><strong>Red / Orange</strong> — High side (black/red on the fan side)</li>
-    <li><strong>Green</strong> — Low side (black/white on the fan side)</li>
-    <li><strong>Black</strong> — Ground</li>
-  </ul>
-
-  <img src="/images/fan-wiring-bulkhead.jpg" alt="Orange and green factory fan wires at firewall bulkhead" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Factory fan wires at the bulkhead — orange/red (high) and green (low). Many builders pull these toward the battery for clean relay power.
-  </p>
-
+  <p>An oil cooler is advised to help control oil temps.</p>
+  <Figure src="dual-spal-fans.jpg" alt="Dual SPAL fans on aluminum shroud installed" caption="Dual SPAL fans on an aluminum shroud." />
   <p>
-    Many builders cut into the harness at the firewall, pull the thick red/green wires toward the battery, and feed new solid-state or conventional relays.
-    Holley fan #1 (gray/yellow) and fan #2 (gray/red) typically go to pin 85 as triggered ground on traditional relays.
+    Example fan/shroud: <a href="https://www.ebay.com/itm/291874634006" target="_blank" rel="noopener">12" HP SPAL fans on aluminum shroud with louvers (26" x 19.5")</a>.
   </p>
 
-  <img src="/images/fan-controllers-holley.jpg" alt="Holley fan 1 and fan 2 controllers mounted on body" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Example of Holley fan controllers mounted near the battery.
+  <h3>Radiator Hoses</h3>
+  <p><em>Future addition.</em></p>
+
+  <h2 id="fans">Radiator Fans &amp; Relays</h2>
+  <p>3 OEM radiator fan wires:</p>
+  <table>
+    <thead><tr><th>Harness wire</th><th>Function</th><th>Fan-side color</th></tr></thead>
+    <tbody>
+      <tr><td>Red</td><td>High side</td><td>Black/Red</td></tr>
+      <tr><td>Green</td><td>Low side</td><td>Black/White</td></tr>
+      <tr><td>Black</td><td>Ground</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p>
+    I cut open the middle of the wiring harness at the firewall and pulled the thick red/green wires back toward the battery, enough to reach the new fan relays.
+    The Kiazen relays don't need a 12V trigger lead since they're solid state, but with a traditional relay you'll need a fuse tap to a 12V key-on source for both relays.
+    Wire in 2 relays, one per fan. The Holley <strong>gray/yellow (fan #1)</strong> and <strong>gray/red (fan #2)</strong> trigger wires go to <strong>pin 85</strong> as triggered ground.
+  </p>
+  <div class="figs">
+    <Figure src="fan-wiring-bulkhead.jpg" alt="Red and green factory fan wires pulled from firewall bulkhead" caption="Factory fan wires pulled from the firewall harness." />
+    <Figure src="fan-controllers-holley.jpg" alt="Fan 1 and fan 2 relays mounted near battery" caption="Fan #1 / #2 relays mounted near the battery." />
+    <Figure src="holley-fan-pin-map.jpg" alt="Holley Terminator X ECU pin map with custom fan outputs" caption="Holley pin map — fan outputs." />
+    <Figure src="holley-custom-fan1-triggers.jpg" alt="Holley custom fan 1 input and sensor triggers" caption="Holley Custom Fan 1 trigger settings." />
+  </div>
+
+  <h3 id="stock-relays">Using the Stock Fan Relays</h3>
+  <p>
+    In the passenger-side fuse box, the two white wires with a black stripe are power to the driver's-side fan high/low relays — apply 12V key-on power here.
+  </p>
+  <p>
+    Each year/model ECU connector has a different pinout. The green (high) and blue (low) wires should be your fan relay ground triggers; these go to the Holley ECU fan wires.
   </p>
 
-  <h2>Community & Parts Links</h2>
-  <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
-  </ul>
+  <h3 id="key-on">Stop Fans Running at Key-On</h3>
+  <p>
+    To keep Holley from kicking the fans on until after the car has started:
+    <a href="https://www.youtube.com/watch?v=dzDAmxhpKDA&t=615s" target="_blank" rel="noopener">Terminator X Tuning — Disable Key-On Fan Operation</a>.
+  </p>
+
+  <h2 id="iat">IAT Sensor</h2>
+  <p>
+    With the radiator blowing hot air directly at the IAT sensor I was getting wildly incorrect air temp readings. I originally put mine in the 90° coupler at the throttle body
+    since that's where the Holley harness reached and there's no spot for it in the FAST 102mm intake manifold.
+  </p>
+  <p>
+    I've now moved the IAT to the back of the FAST 102, tapped for <strong>3/8" NPT</strong>. This requires grinding down the tab that's in the way.
+  </p>
+  <Figure src="iat-sensor-location.jpg" alt="IAT sensor tapped into back of FAST 102 intake manifold" caption="IAT relocated to the back of the FAST 102." />
+
+  <h2 id="heater-hose">Heater Hose</h2>
+  <p>
+    The heater core inlet is on the driver's side and the outlet is on the passenger side. 3/4" hose fits great on both.
+    The hose below was cut on the short end to fit behind the heads — use adapters and extend it to the pump.
+    The driver's-side port goes to the smaller rear port on the pump; the passenger-side port is the return to the front port on the pump.
+  </p>
+  <div class="figs">
+    <Figure src="heater-core-ports-labeled.jpg" alt="Heater core inlet and outlet ports labeled at firewall" caption="Heater core inlet/outlet labeled." />
+    <Figure src="heater-hose-firewall-closeup.jpg" alt="Heater hoses connected at firewall" caption="Hoses at the firewall." />
+    <Figure src="heater-hose-routing-engine.jpg" alt="Heater hose routing along LS engine" caption="Routing behind the heads to the pump." />
+    <Figure src="heater-hose-90deg-product.jpg" alt="90 degree 3/4 inch heater hose product listing" caption="The 90° hose used." />
+  </div>
+  <p>
+    <a href="https://a.co/d/dILkNUc" target="_blank" rel="noopener">Swap heater hose 90° bend + 2 clamps, 3/4" ID (19mm) 5" x 25" for LS LQ4/LQ9</a>
+  </p>
+
+  <CommunityLinks />
 </BaseLayout>

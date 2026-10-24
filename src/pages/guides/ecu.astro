@@ -1,23 +1,79 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="ECUs & Tuning" description="Holley Terminator X, digital dash, and tuning notes for LS Genesis Coupe swaps.">
+<BaseLayout title="ECUs & Tuning" description="Holley Terminator X power, Holley dash mounting, and wiring the T56 VSS for speedometer on LS Genesis Coupe swaps.">
   <h1>ECUs &amp; Tuning</h1>
+  <p>Holley Terminator X is the most common standalone in the Gen Coupe LS community.</p>
+  <nav class="toc">
+    <a href="#power">ECU power</a>
+    <a href="#dash">Holley dash</a>
+    <a href="#speedo">Speedo / VSS</a>
+    <a href="#fans">Fan control</a>
+  </nav>
+
+  <h2 id="power">12V Power While Cranking</h2>
   <p>
-    Holley Terminator X is the most common standalone in the Gen Coupe LS community.
-  </p>
-  <p>
-    Fan control, speedometer output, and reverse-light triggers are all configurable in the Holley software.
+    The Holley needs 12V while cranking: driver's-side fuse box, 2nd row, third down, labeled <em>ECU power</em>.
+    Photo and details on the <a href="/guides/wiring#holley-power">Wiring</a> page.
   </p>
 
-  <h2>Community &amp; Parts Links</h2>
+  <h2 id="dash">Holley Dash</h2>
+  <p>
+    I made a simple 90° L bracket to mount the Holley dash. With this setup I can tint the OEM bezels to dim the backlights and still see the fuel level gauge
+    without rewiring it into the dash. Pushing the steering wheel up holds the dash in place nicely. Cut a hole in the base panel right behind the dash so you can
+    route the harness down behind the dashboard.
+  </p>
+  <div class="figs">
+    <Figure src="holley-dash-cluster.jpg" alt="Holley dash mounted in front of OEM cluster" caption="Dash on the L bracket." />
+    <Figure src="holley-dash-interior.jpg" alt="Interior view with Holley dash installed" caption="Interior view." />
+    <Figure src="holley-dash-driving.jpg" alt="Driver view of Holley dash while driving" caption="From the driver's seat." />
+    <Figure src="holley-dash-fuel-gauge.jpg" alt="OEM fuel gauge still visible behind Holley dash" caption="OEM fuel gauge still visible." />
+  </div>
+
+  <h2 id="speedo">Adding Speedo to the Holley Dash (T56)</h2>
+  <div class="note">
+    <p>This <strong>only</strong> works with the Terminator X Max. <strong>Update:</strong> on the new V3 software you don't need to do this — there's a dropdown setting specifically for the T56 Magnum.</p>
+  </div>
+  <p>
+    To see vehicle speed on the Holley dash or feed it to the ECU, either run the
+    <a href="https://www.holley.com/products/fuel_systems/fuel_injection/modules_and_sensors/parts/554-140" target="_blank" rel="noopener">Holley GPS add-on (554-140)</a>
+    or wire the trans VSS to the ECU.
+  </p>
+  <p>
+    To wire in the VSS, wire a 2-pin VSS connector to pins <strong>B14 (ground)</strong> and <strong>B18 (signal)</strong> of a J4 connector.
+    Then add the Transmission ICF in Holley and set:
+  </p>
   <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
+    <li>Select 4L80 trans</li>
+    <li>Enter custom trans gear ratios</li>
+    <li>Enter tire size</li>
+    <li>Enter <strong>1.17</strong> as the rear end ratio for the T56 Magnum XL</li>
   </ul>
+  <h3>VSS Conversion Math</h3>
+  <table>
+    <tbody>
+      <tr><td>4L80 VSS teeth</td><td>40</td></tr>
+      <tr><td>Tremec Magnum XL VSS teeth</td><td>12</td></tr>
+      <tr><td>40 / 12</td><td>3.333</td></tr>
+      <tr><td>Diff ratio / 3.333 (e.g. 3.91 / 3.333)</td><td><strong>1.173</strong> — enter as the new diff ratio</td></tr>
+    </tbody>
+  </table>
+  <div class="figs">
+    <Figure src="holley-j4-vss-connector.jpg" alt="Holley J4 connector with VSS pigtail" caption="J4 connector with VSS pigtail." />
+    <Figure src="holley-transmission-speed-setup.jpg" alt="Holley Terminator X transmission speed calibration screen" caption="Transmission ICF speed setup." />
+    <Figure src="holley-vss-forum-note.jpg" alt="Holley forum post about VSS on J4 B18" caption="Holley forum note on VSS input." />
+  </div>
+  <ul>
+    <li><a href="https://a.co/d/gPAob6s" target="_blank" rel="noopener">Holley EFI J4 connector kit</a></li>
+    <li><a href="https://a.co/d/5YkYHnv" target="_blank" rel="noopener">Muzzy's T56 pigtail set (back-up lamp, reverse lockout, VSS)</a></li>
+    <li><a href="https://forums.holley.com/forum/holley-efi/terminator-x-efi/38213-terminator-x-max-4l80e-wideband-o2-sensors" target="_blank" rel="noopener">Holley forum: Terminator X Max 4L80E thread</a></li>
+  </ul>
+
+  <h2 id="fans">Fan Control</h2>
+  <p>Fan relay wiring, pin map, and key-on fan settings are on the <a href="/guides/cooling#fans">Cooling</a> page.</p>
+
+  <CommunityLinks />
 </BaseLayout>

@@ -1,0 +1,16 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+const { src, alt, caption } = Astro.props;
+const path = src.startsWith('/') ? src : `/images/${src}`;
+---
+
+<figure class="fig">
+  <a href={path} target="_blank" rel="noopener" title="Open full size">
+    <img src={path} alt={alt} loading="lazy" decoding="async" />
+  </a>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

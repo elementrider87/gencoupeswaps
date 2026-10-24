@@ -1,23 +1,27 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="Driveshaft" description="Driveshaft length, material, and yoke notes for LS Genesis Coupe swaps.">
+<BaseLayout title="Driveshaft" description="Driveshaft adapter, yoke, and length notes for LS Genesis Coupe swaps.">
   <h1>Driveshaft</h1>
   <p>
-    Driveshaft length changes with the transmission and differential choice. Measure from the transmission output to the differential flange with the car at ride height.
+    You'll need a 3-bolt to 4-bolt adapter for the Genesis differential. I used the <a href="https://collinsadapters.com/review/product/list/id/105/category/31/" target="_blank" rel="noopener">Collins adapter</a>.
+    Note: only the <strong>Spicer 3-2-119</strong> yoke works — the others they list will not.
   </p>
   <p>
-    Chromoly and 7075 aluminum are both used. Chromoly is stronger; aluminum is lighter.
+    I ordered my driveshaft from Ron Wicks at PST (Precision Shaft Technologies): 3.5" aluminum with a Strange front yoke.
+    Your driveshaft length depends on the transmission and engine mounts you use.
   </p>
+  <div class="figs">
+    <Figure src="collins-guibo-adapter.jpg" alt="Collins differential drive shaft adapter listing" caption="Collins adapter." />
+    <Figure src="driveshaft-aluminum-full.jpg" alt="3.5 inch aluminum driveshaft" caption="3.5 inch aluminum shaft from PST." />
+    <Figure src="driveshaft-trans-strange-yoke.jpg" alt="Strange front yoke at transmission" caption="Strange yoke at the trans." />
+    <Figure src="driveshaft-diff-yoke.jpg" alt="Driveshaft rear yoke and adapter at differential" caption="Rear yoke and adapter at the diff." />
+    <Figure src="driveshaft-length-measure.jpg" alt="Tape measure measuring driveshaft length" caption="Measuring length." />
+    <Figure src="driveshaft-tunnel-clearance.jpg" alt="Driveshaft clearance in transmission tunnel" caption="Tunnel clearance." />
+  </div>
 
-  <h2>Community &amp; Parts Links</h2>
-  <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
-  </ul>
+  <CommunityLinks />
 </BaseLayout>

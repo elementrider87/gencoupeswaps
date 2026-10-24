@@ -1,28 +1,29 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="Troubleshooting" description="ABS delete, heat shielding, and common LS Gen Coupe swap issues.">
-  <h1>Troubleshooting &amp; Common Jobs</h1>
+<BaseLayout title="Troubleshooting" description="Quick fixes for common LS Genesis Coupe swap problems.">
+  <h1>Troubleshooting</h1>
+  <p>Common problems from real builds, and where the fix lives.</p>
+  <table>
+    <thead><tr><th>Symptom</th><th>Likely fix</th></tr></thead>
+    <tbody>
+      <tr><td>Running hot</td><td>3.8 upgraded radiator + shroud, push/pull fans, oil cooler, Corvette spacing on BK1 — <a href="/guides/cooling">Cooling</a></td></tr>
+      <tr><td>Fans come on at key-on</td><td>Disable key-on fan operation in Holley — <a href="/guides/cooling#key-on">Cooling</a></td></tr>
+      <tr><td>Wild intake air temp readings</td><td>IAT in hot radiator air; relocate to the back of the intake — <a href="/guides/cooling#iat">Cooling</a></td></tr>
+      <tr><td>Battery not charging</td><td>Alternator needs a resistor-equipped trigger; set Holley input to digital frequency — <a href="/guides/alternator">Alternator</a></td></tr>
+      <tr><td>Won't crank with push to start</td><td>Ground the starter relay, then use the pink wire — <a href="/guides/wiring#push-to-start">Wiring</a></td></tr>
+      <tr><td>Holley drops out while cranking</td><td>Feed ECU power from the driver's fuse box ECU slot — <a href="/guides/wiring#holley-power">Wiring</a></td></tr>
+      <tr><td>Fuel tank building pressure</td><td>Vent the EVAP line to atmosphere — <a href="/guides/fuel-system#evap">Fuel System</a></td></tr>
+      <tr><td>Power steering leaks / heavy steering</td><td>Use the correct adapter and a pressure reducer; Pentosin CHF 202 — <a href="/guides/power-steering">Power Steering</a></td></tr>
+      <tr><td>Odometer stopped after ABS delete</td><td>Keep the ABS module plugged in — <a href="/guides/brakes">Brakes &amp; ABS</a></td></tr>
+      <tr><td>No speedo on Holley dash</td><td>Wire the VSS to J4 or update to V3 software — <a href="/guides/ecu#speedo">ECUs &amp; Tuning</a></td></tr>
+      <tr><td>No reverse lights</td><td>Reverse switch pigtail and relay wiring — <a href="/guides/wiring#auto-reverse">Wiring</a></td></tr>
+      <tr><td>Cabin / pedal area too hot</td><td>DEI tunnel shielding plus exhaust wrap — <a href="/guides/exhaust#heat">Heat Shielding</a></td></tr>
+      <tr><td>Broken axles</td><td>Sedan -LAM axles to ~600 hp; Ford 8.8 IRS beyond — <a href="/guides/differential">Differential &amp; Axles</a></td></tr>
+    </tbody>
+  </table>
 
-  <h2>Heat Shielding</h2>
-  <p>
-    LS exhaust heat will cook the tunnel, floor, and nearby wiring if you don’t plan for it.
-    Wrap headers, use tunnel heat shields, and protect fuel lines and brake lines.
-  </p>
-
-  <h2>ABS Delete</h2>
-  <p>
-    Some high-power builds remove the ABS hydraulic unit. If you do, the proportioning valve location matters for burnouts.
-  </p>
-
-  <h2>Community &amp; Parts Links</h2>
-  <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
-  </ul>
+  <CommunityLinks />
 </BaseLayout>

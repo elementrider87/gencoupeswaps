@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
+---
+
+<BaseLayout title="Gas Pedal" description="Cable and drive-by-wire gas pedal options, GM pedal, and keeping the OEM pedal with Holley on LS Gen Coupe swaps.">
+  <h1>Gas Pedal</h1>
+  <nav class="toc">
+    <a href="#cable">Cable throttle</a>
+    <a href="#dbw">Drive-by-wire</a>
+    <a href="#gm">GM 10379038</a>
+    <a href="#oem">Keeping the OEM pedal</a>
+  </nav>
+
+  <h2 id="cable">Cable Throttle Pedal Examples</h2>
+  <div class="figs">
+    <Figure src="cable-pedal-firewall.jpg" alt="Cable throttle pedal mounted at firewall" caption="Cable pedal at the firewall." />
+    <Figure src="cable-throttle-bracket.jpg" alt="Cable throttle bracket through firewall" caption="Cable bracket through the firewall." />
+    <Figure src="custom-pedal-box.jpg" alt="Custom pedal setup by Dominic Corelli" caption="Dominic Corelli: started with the 240 pedal, then made his own." />
+  </div>
+
+  <h2 id="dbw">Drive-by-Wire Pedal Examples</h2>
+  <p>Jason Riddle makes this one:</p>
+  <div class="figs">
+    <Figure src="jason-riddle-dbw-closeup.jpg" alt="Jason Riddle drive by wire pedal bracket close-up" caption="Jason Riddle DBW bracket." />
+    <Figure src="jason-riddle-dbw-installed.jpg" alt="Jason Riddle drive by wire pedal installed" caption="Installed." />
+  </div>
+  <p>Dustin Shoulta's setup:</p>
+  <Figure src="dustin-shoulta-dbw-pedal.jpg" alt="Dustin Shoulta drive by wire pedal braced to floor" caption="Dustin Shoulta's DBW pedal." />
+
+  <h2 id="gm">GM 10379038 Pedal</h2>
+  <p>
+    <a href="https://a.co/d/8oOQHmO" target="_blank" rel="noopener">GM Genuine Parts 10379038 accelerator pedal with position sensor</a>
+  </p>
+  <Figure src="gm-10379038-pedal.jpg" alt="GM 10379038 accelerator pedal product listing" caption="GM 10379038 pedal." />
+
+  <h2 id="oem">Keeping the OEM Pedal (Holley DBW)</h2>
+  <p>
+    <strong>Technical post by Liam Heuvel:</strong> for anyone running a Holley Terminator with drive-by-wire, here is how to wire the factory pedal to the Terminator harness.
+  </p>
+  <div class="figs">
+    <Figure src="bk1-pedal-pinout.jpg" alt="BK1 accelerator pedal position sensor pinout table" caption="BK1 pedal pinout." />
+    <Figure src="bk2-pedal-pinout.jpg" alt="BK2 accelerator pedal position sensor pinout table" caption="BK2 pedal pinout." />
+    <Figure src="oem-pedal-holley-handwritten.jpg" alt="Handwritten Genesis pedal to Holley pin mapping for BK1 and BK2" caption="Genesis pedal → Holley pin mapping (BK1 and BK2)." />
+    <Figure src="holley-dbw-harness-diagram.jpg" alt="Holley drive by wire harness diagram" caption="Holley DBW harness diagram." />
+  </div>
+
+  <CommunityLinks />
+</BaseLayout>

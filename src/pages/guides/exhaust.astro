@@ -1,23 +1,25 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="Exhaust" description="Headers, heat, and exhaust notes for LS Genesis Coupe swaps.">
-  <h1>Exhaust</h1>
+<BaseLayout title="Exhaust & Heat Shielding" description="Headers and heat shielding for LS Genesis Coupe swaps.">
+  <h1>Exhaust &amp; Heat Shielding</h1>
   <p>
-    Header choice is tied to engine mounts and steering/rack clearance. Long-tubes, mid-lengths, and turbo manifolds are all used.
-  </p>
-  <p>
-    Sikky headers are the most commonly referenced. ISR headers sit lower and are generally not recommended on powered cars.
+    Header choice is tied to engine mounts and steering/rack clearance. Sikky headers are the most commonly referenced; ISR headers sit lower and are generally not recommended on powered cars.
   </p>
 
-  <h2>Community &amp; Parts Links</h2>
-  <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
-  </ul>
+  <h2 id="heat">Heat Shielding</h2>
+  <p>
+    LS engines put out a ton of heat. I highly recommend spending the money on a good amount of DEI heat shielding in the tunnel and on the exhaust.
+    With no shielding at all my legs were literally frying near the gas pedal. Wrapping only the exhaust helps, but stick-on tunnel shielding together with wrap is best.
+  </p>
+  <div class="figs">
+    <Figure src="heat-shield-exhaust-wrap.jpg" alt="Wrapped exhaust pipes" caption="Wrapped exhaust." />
+    <Figure src="heat-shield-tunnel-underside.jpg" alt="DEI shielding in transmission tunnel from underneath" caption="Tunnel shielding from below." />
+    <Figure src="heat-shield-cabin-floor.jpg" alt="Heat shielding on cabin floor (mike.built)" caption="Cabin floor shielding (Mike Built)." />
+  </div>
+
+  <CommunityLinks />
 </BaseLayout>

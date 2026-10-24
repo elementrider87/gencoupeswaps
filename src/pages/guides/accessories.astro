@@ -1,34 +1,25 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="Accessories" description="A/C, gas pedals, clutch master, and accessory drive notes for LS Gen Coupe swaps.">
+<BaseLayout title="Accessories" description="Accessory drive spacing, A/C, gas pedal, and clutch notes for LS Gen Coupe swaps.">
   <h1>Accessories</h1>
+  <p>Accessory drive spacing, A/C retention, pedal choice, and clutch hydraulics all affect how "daily-able" the finished car feels.</p>
+
+  <h2>Accessory Drive Spacing</h2>
   <p>
-    Accessory drive spacing, A/C retention, pedal choice, and clutch hydraulics all affect how "daily-able" the finished car feels.
+    On a BK1, get a Corvette-spacing front accessory drive. F-body (middle) spacing can work, but you want as much room as possible between the engine and the radiator fans.
+    The BK2 has about 1.5" more front clearance. See <a href="/guides/cooling#clearance">Cooling</a> for measurements.
   </p>
 
-  <h2>A/C System</h2>
-  <p>
-    Wire colors for A/C request vary by year. Verify with power on and the A/C button pressed.
-  </p>
+  <h2>Related Guides</h2>
   <ul>
-    <li><strong>2010 2.0T example:</strong> Yellow and Blue wires on the A/C control module.</li>
-    <li><strong>2013 3.8:</strong> Same colors on the larger plug leading to the passenger-side fuse box.</li>
+    <li><a href="/guides/ac">A/C System</a> — keeping A/C, wire colors by year, Holley A/C add-on, compressor brackets and hoses</li>
+    <li><a href="/guides/gas-pedal">Gas Pedal</a> — cable, drive-by-wire, GM pedal, and OEM pedal with Holley</li>
+    <li><a href="/guides/transmission#clutch-master">Clutch Master Cylinder</a> — Wilwood + ISR adapter fixes</li>
+    <li><a href="/guides/alternator">Alternator</a> and <a href="/guides/power-steering">Power Steering</a></li>
   </ul>
 
-  <h2>Gas Pedal</h2>
-  <p>
-    Cable or drive-by-wire options exist. Several builders have documented keeping the OEM pedal or using a GM pedal with Holley.
-  </p>
-
-  <h2>Community &amp; Parts Links</h2>
-  <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
-  </ul>
+  <CommunityLinks />
 </BaseLayout>

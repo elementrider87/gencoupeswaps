@@ -1,23 +1,39 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="Fuel System" description="Fuel pump, regulator, and line notes for LS Genesis Coupe swaps.">
+<BaseLayout title="Fuel System" description="Dedicated fuel pump relay wiring and EVAP solenoid handling for LS Genesis Coupe swaps.">
   <h1>Fuel System</h1>
+
+  <h2 id="fuel-pump-relay">Fuel Pump Relay</h2>
   <p>
-    Most LS swaps need a higher-flow fuel pump and a return-style regulator if you are running a return system.
+    Upgraded fuel pumps should run a dedicated fuel pump power relay. I recommend watching Brian Paul's video on wiring his relay kit:
+    <a href="https://www.youtube.com/watch?v=BbU_6PtXyb0&t=814s" target="_blank" rel="noopener">Genesis Coupe Fuel Pump Relay Kit | Install &amp; Overview</a>.
   </p>
+  <p>The green and blue wires are fuel level — no need to touch them.</p>
+  <table>
+    <thead><tr><th>Wire</th><th>Goes to</th></tr></thead>
+    <tbody>
+      <tr><td>OEM harness red/white (12V trigger)</td><td>Relay pin 86</td></tr>
+      <tr><td>OEM harness black (ground)</td><td>Relay pin 85</td></tr>
+      <tr><td>Fuel pump black</td><td>Chassis ground (seat belt bolt is a good ground)</td></tr>
+      <tr><td>Fuel pump red</td><td>Relay pin 87 (power to FP)</td></tr>
+      <tr><td>Red power wire from battery</td><td>Relay pin 30</td></tr>
+    </tbody>
+  </table>
+  <Figure src="fuel-pump-relay-wiring.jpg" alt="Fuel pump relay wiring labeled battery to pin 30, harness ground to 85, trigger to 86, pin 87 to FP power" caption="Relay wiring: battery → 30, harness ground → 85, harness 12V trigger → 86, 87 → FP power." />
   <p>
-    The factory fuel pump can be used as a trigger for a dedicated relay on higher-power builds.
+    The red/white OEM fuel pump wire is also available at the passenger fuse box and near the driver's kick panel — see <a href="/guides/wiring#fuse-box">Wiring</a>.
   </p>
 
-  <h2>Community &amp; Parts Links</h2>
-  <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
-  </ul>
+  <h2 id="evap">EVAP Solenoid</h2>
+  <p>
+    The current consensus is to remove the EVAP solenoid and leave the line next to the fuel feed line (where it comes into the engine bay) open,
+    or go back to the carbon canister and unplug it there. Either way it needs to vent to atmosphere so the tank doesn't build pressure.
+  </p>
+  <Figure src="evap-solenoid-location.jpg" alt="EVAP line location circled in engine bay" caption="EVAP line next to the fuel feed." />
+
+  <CommunityLinks />
 </BaseLayout>

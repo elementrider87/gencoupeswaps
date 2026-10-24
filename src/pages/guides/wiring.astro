@@ -1,42 +1,109 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
 ---
 
-<BaseLayout title="Wiring" description="Wiring harness, fuse box, reverse lights, push-to-start, and ECU power for LS Genesis Coupe swaps.">
+<BaseLayout title="Wiring" description="Passenger fuse box, push-to-start, Holley cranking power, reverse lights, and brake switch wiring for LS Genesis Coupe swaps.">
   <h1>Wiring</h1>
   <p>
-    Wiring is the most year-specific part of an LS Gen Coupe swap. Colors and pinouts change between BK1/BK2 and 2.0T/3.8 models.
-    Always verify with a multimeter and your factory service manuals before cutting or splicing.
+    Wiring is the most year-specific part of an LS Gen Coupe swap. Colors and pinouts change between BK1/BK2 and 2.0T/3.8 models,
+    so verify with a multimeter and your factory service manuals before cutting or splicing.
   </p>
   <p>
     <strong>Shop manuals &amp; wiring diagrams:</strong>
-    <a href="https://drive.google.com/drive/folders/1p-_n4A5JZTp92iz3rK1sQcm1jPLSvz5W?usp=sharing" target="_blank" rel="noopener">Google Drive folder (all years)</a>
+    <a href="https://drive.google.com/drive/folders/1p-_n4A5JZTp92iz3rK1sQcm1jPLSvz5W?usp=sharing" target="_blank" rel="noopener">Google Drive folder (all years/models)</a>
   </p>
 
-  <h2>Passenger-Side Fuse Box</h2>
+  <nav class="toc">
+    <a href="#fuse-box">Passenger fuse box</a>
+    <a href="#push-to-start">Push to start</a>
+    <a href="#holley-power">Holley cranking power</a>
+    <a href="#auto-reverse">Reverse lights (auto)</a>
+    <a href="#manual-reverse">Reverse lights (manual)</a>
+    <a href="#tcc">Torque converter unlock</a>
+  </nav>
   <p>
-    If you want to keep factory A/C function, keep the passenger-side fuse box and the stock ECU (or at least the harness sections that feed A/C).
-    Otherwise you can simplify and remove more of the factory engine harness.
+    Related wiring lives on its own pages: <a href="/guides/fuel-system#fuel-pump-relay">fuel pump relay</a>,
+    <a href="/guides/cooling#fans">radiator fans &amp; relays</a>, <a href="/guides/alternator">alternator</a>,
+    <a href="/guides/ac">A/C</a>, <a href="/guides/gas-pedal">gas pedal</a>, and <a href="/guides/ecu#speedo">VSS / speedo</a>.
   </p>
 
-  <img src="/images/passenger-fuse-box-labeled.jpg" alt="Passenger side fuse box wires labeled: 12V, FP, A/C, CAN, Starter" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Key wires pulled from the passenger-side area. Labels match the functions below.
+  <h2 id="fuse-box">Passenger-Side Fuse Box</h2>
+  <div class="note">
+    <p><strong>Note:</strong> If you want to keep the factory A/C function, depending on how you wire the new engine ECU, keep the passenger-side fuse box and the stock ECU. Otherwise check the <a href="/guides/ac">A/C page</a> for details.</p>
+  </div>
+  <p>The main wires you will need from here:</p>
+  <ul>
+    <li><strong>Large pink</strong> — wire this directly to your starter.</li>
+    <li><strong>Red/white</strong> — the OEM fuel pump power wire. Use it as a trigger wire: attach it to the Holley green FP wire if you already have a dedicated FP relay. You can also find this wire near the driver's kick panel if you don't want it in the engine bay.</li>
+    <li><strong>Large red</strong> — several switched-on 12V feeds. Leave a few open for easy access down the road (relays, accessories), or just tap a fuse.</li>
+    <li><strong>Twisted red/blue pair</strong> — CAN bus. You most likely won't need these.</li>
+  </ul>
+  <div class="figs">
+    <Figure src="passenger-fuse-box-labeled.jpg" alt="Passenger side fuse box wires labeled 12V, FP, A/C, CAN and Starter" caption="Wires pulled from the passenger-side box: 12V, FP, A/C, CAN, and starter." />
+    <Figure src="passenger-fuse-box-pink-starter.jpg" alt="Hand holding pink starter wire and harness pulled from passenger fuse box" caption="Harness opened up — the large pink starter wire." />
+  </div>
+  <p>
+    Some people open up the whole harness and pull out the extra wires. Personally I just capped the extras and wrapped them back up —
+    it looks just as clean, but it's up to you.
   </p>
 
-  <p>Key wires commonly used from this box:</p>
-  <ul>
-    <li><strong>Large pink</strong> — Starter signal. Wire directly to the small stud on the starter.</li>
-    <li><strong>FP (fuel pump)</strong> — OEM fuel-pump power (often red/white). Use as a trigger for a dedicated fuel-pump relay (or to the Holley green FP wire if you already have a relay). Also available near the driver's kick panel if you prefer to keep it out of the bay.</li>
-  </ul>
+  <h2 id="push-to-start">Push to Start</h2>
+  <p>
+    The pink starter wire provides 12V when you press in the clutch pedal and the Push to Start button. It attaches directly to the small stud on the starter.
+  </p>
+  <p>
+    On some other starters the pink wire won't work by itself — you first have to ground the starter relay, then use the pink wire to the starter.
+  </p>
+  <Figure src="push-to-start-wiring.jpg" alt="Pink push-to-start wire routed in engine bay toward the starter" caption="Pink push-to-start wire routed toward the starter." />
 
-  <h2>Community &amp; Parts Links</h2>
+  <h2 id="holley-power">Holley 12V Power While Cranking</h2>
+  <p>
+    A Holley Terminator X setup needs 12V power while cranking. Use the driver's-side fuse box, 2nd row, third down, labeled <em>ECU power</em> —
+    the Holley ECU power wire goes here.
+  </p>
+  <Figure src="ecu-power-fuse-tap.jpg" alt="Fuse tap installed in driver side fuse box ECU power slot" caption="Fuse tap in the driver's-side box ECU power slot." />
+
+  <h2 id="auto-reverse">Automatic Reverse Lights</h2>
+  <blockquote>
+    "Wired up backup lights for T56. Used a short reverse sensor from Sikky and a pigtail. Used it as the ground switch for the backup lights relay on the
+    driver's-side fuse box, so one wire ground, one up to the switch side of the relay. There should be current going to the relay. I spliced the always-on 12V
+    for the relay to also act as the positive side of the switch. Relay numbering perspective is top-down, as if you took the relay out and are looking at the female connectors."
+  </blockquote>
   <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
+    <li><strong>Slot 1</strong> spliced with <strong>slot 3</strong></li>
+    <li><strong>Slot 5</strong> goes to the reverse switch</li>
   </ul>
+  <div class="figs">
+    <Figure src="reverse-light-harness-location.jpg" alt="Reverse light relay location in driver side fuse box with arrow" caption="Reverse light relay location." />
+    <Figure src="reverse-sensor-harness.jpg" alt="Braided reverse sensor harness made for T56" caption="Reverse sensor harness." />
+  </div>
+
+  <h2 id="manual-reverse">Manual Reverse Lights</h2>
+  <div class="note">
+    <p>Manuals should note the reverse switch connector on the OEM transmission if you want to reuse the passenger-side fuse box relays or wires. (No pictures or pinouts for these yet.)</p>
+  </div>
+  <p>
+    If you have a T56-variant transmission and no passenger-side relay box, simply run a long pigtail so the reverse lights work when you shift into reverse.
+    Run a fuse power tap from the driver's-side fuse panel (seat heater shown below) to the green side of the reverse switch on the passenger side of the transmission.
+    Then take the black switch lead and connect it to the corner white wire under the driver's kick panel.
+  </p>
+  <div class="figs">
+    <Figure src="reverse-fuse-box-diagram.jpg" alt="Driver side fuse panel with fuse label diagram" caption="Driver's-side fuse panel — tap the seat heater fuse for power." />
+    <Figure src="reverse-fuse-box-pin12.jpg" alt="Diagram of driver side cabin fuse box rear view with wire 12 marked" caption="Rear view of the in-cab fuse box: tap wire #12 (may be grey or red/black)." />
+    <Figure src="t56-reverse-sensor-trans.jpg" alt="T56 transmission with reverse switch pigtail attached" caption="Pigtail made for the T56 reverse switch." />
+    <Figure src="muzzys-t56-reverse-pigtail.jpg" alt="Muzzys T56 reverse lamp pigtail product listing" caption="Muzzy's T56 pigtail set (back-up lamp, lockout, VSS)." />
+  </div>
+  <p><strong>2016 BK2</strong> might be this wire — the gray wire at the tail light is reverse; provide it with power and it lights up:</p>
+  <Figure src="reverse-tail-light-gray-wire.jpg" alt="Message screenshot showing gray reverse wire at BK2 tail light" caption="BK2: gray wire at the tail light is reverse (unconfirmed on all years)." />
+
+  <h2 id="tcc">Automatic Torque Converter Unlock Signal</h2>
+  <p>Terminator X brake light switch hookup for BK2: run the <strong>grey</strong> wire from the Term X transmission harness to the <strong>red/black</strong> wire from the brake switch.</p>
+  <div class="figs">
+    <Figure src="brake-switch-connector.jpg" alt="Brake switch connector with red/black wire" caption="Brake switch connector." />
+    <Figure src="stop-lamp-switch-diagram.jpg" alt="Stop lamp switch wiring diagram" caption="Stop lamp switch diagram." />
+  </div>
+
+  <CommunityLinks />
 </BaseLayout>
