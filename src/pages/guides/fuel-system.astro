@@ -2,52 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Fuel System" description="Fuel pump relay wiring, evap, and pump notes for LS Genesis Coupe swaps.">
+<BaseLayout title="Fuel System" description="Fuel pump, regulator, and line notes for LS Genesis Coupe swaps.">
   <h1>Fuel System</h1>
   <p>
-    Most LS swaps need more fuel volume than the stock Genesis pump can supply once power rises.
-    Plan a dedicated relay, correct feed/return (or returnless strategy), and a vented tank path.
+    Most LS swaps need a higher-flow fuel pump and a return-style regulator if you are running a return system.
+  </p>
+  <p>
+    The factory fuel pump can be used as a trigger for a dedicated relay on higher-power builds.
   </p>
 
-  <h2>Dedicated Fuel Pump Relay</h2>
-  <p>
-    Recommended for any upgraded pump. Example wiring used with OEM harness + relay kit:
-  </p>
+  <h2>Community &amp; Parts Links</h2>
   <ul>
-    <li><strong>Pin 86</strong> — Harness 12V trigger (OEM fuel-pump signal / Holley FP output)</li>
-    <li><strong>Pin 85</strong> — Harness ground</li>
-    <li><strong>Pin 30</strong> — Battery positive (fused)</li>
-    <li><strong>Pin 87</strong> — Fuel-pump power out</li>
-  </ul>
-  <p>
-    Fuel-pump ground (black) goes to a solid chassis ground (seat-belt bolt is a common choice).
-  </p>
-
-  <img src="/images/fuel-pump-relay-wiring.jpg" alt="Labeled fuel pump relay harness: pin 85 ground, pin 86 trigger, pin 30 battery, pin 87 FP power" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Relay socket wiring labeled — ground to 85, 12V trigger to 86, battery to 30, pin 87 out to the fuel pump.
-  </p>
-
-  <p>
-    Leave the green and blue fuel-level sender wires alone unless you are rewiring the gauge.
-    Brian Paul's Genesis Coupe fuel-pump relay kit videos are a good visual reference for the physical install.
-  </p>
-
-  <h2>Evap / Tank Venting</h2>
-  <p>
-    Remove or bypass the evap solenoid. Either leave the line next to the fuel feed open to atmosphere in the engine bay, or disconnect at the charcoal canister.
-    The tank must vent so pressure does not build — otherwise you can collapse the tank or starve the pump.
-  </p>
-
-  <img src="/images/evap-solenoid-location.jpg" alt="Factory EVAP solenoid location circled near fuel lines under vehicle" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Factory EVAP solenoid (circled) near the fuel lines — remove or bypass so the tank can vent freely after the swap.
-  </p>
-
-  <h2>Community Notes</h2>
-  <ul>
-    <li>Match Holley's fuel-pump output to your relay trigger (green FP wire on many Holley harnesses).</li>
-    <li>Return-style systems are easier to tune for high horsepower; returnless can work with the right regulator and pump.</li>
-    <li>Filter placement and hose rating (EFI-rated) matter — fuel under pressure is not the place to improvise.</li>
+    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
+    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
+    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
+    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
+    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
+    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
   </ul>
 </BaseLayout>

@@ -2,85 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="ECUs & Tuning" description="Holley Terminator X, dash, speedo, and tuning notes for LS Genesis Coupe swaps.">
+<BaseLayout title="ECUs & Tuning" description="Holley Terminator X, digital dash, and tuning notes for LS Genesis Coupe swaps.">
   <h1>ECUs &amp; Tuning</h1>
   <p>
-    Holley Terminator X / X Max is the most documented stand-alone choice in the Gen Coupe LS community.
-    Factory PCMs are used less often once the harness is heavily modified.
+    Holley Terminator X is the most common standalone in the Gen Coupe LS community.
   </p>
-
-  <h2>Holley Dash Mount</h2>
   <p>
-    A simple 90° L-bracket can mount the Holley digital dash in the gauge area.
-    Some builders tint the OEM bezels to dim residual back-lighting while still reading the stock fuel gauge without rewiring it.
-    Raising the steering wheel can help hold the dash; cut a hole in the base panel behind the dash to route the harness cleanly.
+    Fan control, speedometer output, and reverse-light triggers are all configurable in the Holley software.
   </p>
 
-  <img src="/images/holley-dash-interior.jpg" alt="Genesis Coupe interior with Holley gauges and digital dash area" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Cabin overview — pillar gauges and cluster area where the Holley digital dash is commonly mounted.
-  </p>
-
-  <img src="/images/holley-dash-cluster.jpg" alt="Holley digital dash mounted in instrument cluster area" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Digital dash in the cluster / hood area — L-bracket or similar keeps it readable without blocking the wheel.
-  </p>
-
-  <img src="/images/holley-dash-fuel-gauge.jpg" alt="Stock fuel gauge still working in cluster" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Stock fuel gauge can stay live without full rewiring — many keep the OEM sender circuit and only add the Holley display for RPM, AFR, etc.
-  </p>
-
-  <img src="/images/holley-dash-driving.jpg" alt="Holley digital dash in use on highway showing RPM and speed" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Holley digital dash on the road — RPM, speed, and other channels readable with the wheel raised and the display centered in the cluster area.
-  </p>
-
-  <h2>Vehicle Speed on Holley (T56)</h2>
-  <p>
-    Terminator X Max is preferred for built-in transmission ICF options.
-    <strong>Holley V3 software</strong> includes a dropdown for T56 Magnum — use that when available and skip the manual ratio math below.
-    On <strong>V2</strong> (and similar older bases) you still load the Transmission ICF and set ratios by hand.
-  </p>
-
-  <img src="/images/holley-transmission-speed-setup.jpg" alt="Holley Terminator X Transmission Setup with custom gear ratios and 27 inch tire" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Example V2 Transmission Setup — custom ratios (e.g. 2.66 / 1.78 / 1.30 / 1.00), 27&quot; tire, scaled rear gear (~1.17) for correct speed calc.
-  </p>
-
-  <p>Manual VSS wiring path when needed (V2 / no T56 dropdown):</p>
+  <h2>Community &amp; Parts Links</h2>
   <ul>
-    <li>2-pin VSS connector to Holley J4: <strong>B14</strong> (ground) and <strong>B18</strong> (signal)</li>
-    <li>Add Transmission ICF in Holley software — VSS only works on those pins once the ICF is loaded</li>
-    <li>Select 4L80 as base type, then enter custom gear ratios and tire size</li>
-    <li>For T56 Magnum XL (12-tooth VSS) vs 4L80 (40-tooth): 40/12 = 3.333. Example: 3.91 axle / 3.333 ≈ <strong>1.173</strong> as the "rear end" value Holley expects</li>
-  </ul>
-
-  <img src="/images/holley-vss-forum-note.jpg" alt="Holley forum note on VSS J4-B18 and ground J4-B14 with Transmission ICF" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Community confirmation — VSS on J4-B18, ground on J4-B14, only after Transmission ICF is loaded; no separate input setup required.
-  </p>
-
-  <img src="/images/holley-j4-vss-connector.jpg" alt="Holley harness connectors for VSS wiring" />
-  <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: -0.5rem;">
-    Typical Holley-side connectors used when wiring the T56 VSS into the ECU harness.
-  </p>
-
-  <p>
-    Parts often used:
-    Holley EFI J4 connector kit; Muzzys T56 pigtail set (backup lamp, reverse lockout, VSS).
-    Holley GPS module is an alternative if you do not want to wire the transmission VSS.
-  </p>
-
-  <h2>Fans in the Tune</h2>
-  <p>
-    Disable key-on fan operation in Terminator X so the fans do not run until the engine is actually running.
-  </p>
-
-  <h2>Community Realities</h2>
-  <ul>
-    <li>Budget daily builds often get speedo + fuel gauge working first; tach and coolant temp via CAN come later.</li>
-    <li>Push-to-start cars need a strategy for starter cutout (Arduino + tach, or carefully tuned control).</li>
-    <li>FiTech and other self-learning ECUs appear on Reddit budget builds; Holley has more Gen Coupe-specific write-ups.</li>
+    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
+    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
+    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
+    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
+    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
+    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
   </ul>
 </BaseLayout>
