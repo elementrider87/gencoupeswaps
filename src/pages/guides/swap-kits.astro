@@ -1,27 +1,70 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
-<BaseLayout title="Swap Kits" description="Available LS swap kits for the Hyundai Genesis Coupe.">
+<BaseLayout title="Swap Kits" description="LS swap kits for the Hyundai Genesis Coupe: Sikky Stage 2, LOJ basic kits, ISR, what's included, prices, and lessons from real builds.">
   <h1>Swap Kits</h1>
   <p>
-    Complete kits that include motor mounts, oil pans, and headers make the swap much more straightforward.
+    Complete kits that include motor mounts, a Genesis-specific oil pan, and headers make the swap much more straightforward. The oil pan is the part most people underestimate: you need one designed to clear the Genesis front subframe.
   </p>
 
-  <h2>Available Kits</h2>
+  <h2>What's in Each Kit</h2>
+  <table>
+    <thead><tr><th>Kit</th><th>Price</th><th>Includes</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Sikky Stage 2</strong></td>
+        <td>$3,695.90</td>
+        <td>Engine + trans mounts, ~8 qt aluminum oil pan with remote filter kit, 1-7/8" stainless headers (V-band), one-piece steel driveshaft (1310 U-joints, 4-bolt diff flange). No subframe modifications; the engine doesn't hang below the crossmember.</td>
+      </tr>
+      <tr>
+        <td><strong>Sikky build-your-own</strong></td>
+        <td>$615.98 base</td>
+        <td>Mounts + trans mount, then add: oil pan $727.97, headers $1,231.99, driveshaft $709.99 steel / $939.99 aluminum (T56), PS line kit $167.99, fuel line kit $55.99.</td>
+      </tr>
+      <tr>
+        <td><strong>LOJ Basic — T56</strong></td>
+        <td>$1,399.95</td>
+        <td>Engine mounts, T56/Magnum trans mount, 6.5 qt road-race-baffled oil pan with pickup, dipstick and gasket. Headers, accessory drive, driveshaft, ECU and fuel are separate.</td>
+      </tr>
+      <tr>
+        <td><strong>LOJ Basic — Z33 6MT</strong></td>
+        <td>$3,579.95</td>
+        <td>Keep a Nissan 350Z 6-speed: mounts, Z33 trans mount, oil pan, adapter plate, Clutchmasters billet flywheel (takes a 350Z/G35 clutch), mini starter, and a shortened shift linkage.</td>
+      </tr>
+      <tr>
+        <td><strong>ISR mount kit</strong></td>
+        <td>$412.50</td>
+        <td>Engine + T56 trans mounts. Headers ($990) and a T56 shifter relocation kit are separate. Lowest cost, but headers sit lower.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Prices as listed by each vendor in October 2026. Call to confirm stock; LOJ notes most items are in stock but asks you to confirm by phone.</p>
+
+  <h2>Things the Kits Don't Cover</h2>
   <ul>
-    <li><strong>Sikky</strong> — most popular. Complete kits with mounts, oil pan, and headers. <a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky kit</a></li>
-    <li><strong>LOJ Conversions</strong> — mounts with more adjustment for engine position. <a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ collection</a></li>
-    <li><strong>ISR Performance</strong> — cheapest mounts. Headers sit lower and are not recommended on powered cars. <a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR mounts</a></li>
+    <li><strong>Wiring and ECU</strong>: see <a href="/guides/wiring">Wiring</a> and <a href="/guides/ecu">ECUs &amp; Tuning</a>.</li>
+    <li><strong>Cooling</strong>: radiator, fans, and the steam vent line. See <a href="/guides/cooling">Cooling</a>.</li>
+    <li><strong>Clutch hydraulics</strong>: you'll need a Wilwood master and adapter. See <a href="/guides/transmission#clutch-master">Clutch Master</a>.</li>
+    <li><strong>Power steering</strong>: line adapters or an electric pump. See <a href="/guides/power-steering">Power Steering</a>.</li>
+    <li><strong>Accessory drive and A/C brackets.</strong></li>
   </ul>
 
-  <h2>Community &amp; Parts Links</h2>
+  <h2>Lessons From Real Builds</h2>
   <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
+    <li>Using an older Enjuku-sourced kit, one LS1 build needed an adapter for the clutch master, plus notching and grinding of the shifter plate for the T56.</li>
+    <li>The same build had headers sitting too close to the main fuse box, which caught fire. Heat-shield and check clearance around the fuse box and wiring. See <a href="/guides/exhaust#heat">Heat Shielding</a>.</li>
   </ul>
+
+  <CommunityLinks />
+  <Sources items={[
+    { label: 'Sikky — Stage 2 Hyundai Genesis LS swap package', href: 'https://www.sikky.com/product/sikky-2013-genesis-stage-2-ls-swap-kit/' },
+    { label: 'Sikky — Spec your own Genesis Coupe LS swap kit', href: 'https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/' },
+    { label: 'LOJ Conversions — Genesis Coupe LSx Basic Swap Kit (T56)', href: 'https://lojkits.com/products/genesis-coupe-lsx-basic-swap-kit-t56-transmission' },
+    { label: 'LOJ Conversions — Genesis Coupe LSx Basic Swap Kit (Z33 6MT)', href: 'https://lojkits.com/products/genesis-coupe-lsx-basic-swap-kit' },
+    { label: 'ISR Performance — Hyundai Genesis LS mount kit', href: 'https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/' },
+    { label: 'Super Street — LS1 Genesis Coupe feature', href: 'https://s3mag.com/you-got-no-future-kid-ls1-genesis-coupe/' },
+  ]} />
 </BaseLayout>

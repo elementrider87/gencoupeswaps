@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Alternator" description="Alternator excitation wiring and Holley configuration for LS Genesis Coupe swaps.">
@@ -9,6 +10,12 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <p>
     You need to run a 12V trigger wire for the alternator to charge your battery. It must have a resistor on it — it <strong>cannot</strong> be a straight wire, so buy the right part.
     You can wire it into a Holley ECU or tap into one of the driver's-side fuse box wires.
+  </p>
+
+  <h2>Simplest Option: GM 4-Pin Pigtail</h2>
+  <p>
+    Holley's 197-400 pigtail plugs into the GM 4-pin oval alternator connector and has a 560 ohm, 1/2 watt resistor inline.
+    Run its lead to a switched 12V source that's live in the ignition <em>run</em> position. You can route it through a charge light if you want a warning when the alternator stops charging.
   </p>
 
   <h2>Holley Setup</h2>
@@ -23,4 +30,8 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   </p>
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Holley 197-400 GM 4-pin alternator pigtail (EFI System Pro)", href: "https://www.efisystempro.com/holley-197-400" },
+    { label: "Sloppy Mechanics — Holley flex fuel / alternator combo harness", href: "https://www.sloppymechanics.com/products/holley-plug-and-play-flex-fuel-alternator-combo-harness" },
+  ]} />
 </BaseLayout>

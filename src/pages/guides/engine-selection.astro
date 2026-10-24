@@ -1,31 +1,80 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
-<BaseLayout title="Engine Selection" description="Choosing an LS engine for a Hyundai Genesis Coupe swap.">
+<BaseLayout title="Engine Selection" description="Choosing an LS engine for a Hyundai Genesis Coupe swap: engine options, accessory drive spacing, crank reluctor, and what to buy with the engine.">
   <h1>Engine Selection</h1>
   <p>
     Almost any Gen III/IV LS will fit with the right mounts and oil pan. The most common choices in the Gen Coupe community are 5.3s, LS1s, and LS3-style engines.
+    Sikky lists its Genesis kit for the LS1, LS2, LS3, LS6, L99, LQ4, LQ9, LSA, LS7, LS9 and LSX, plus any LS engine with the same mount and oil pan bolt pattern.
   </p>
+  <nav class="toc">
+    <a href="#choices">Engine options</a>
+    <a href="#spacing">Accessory spacing</a>
+    <a href="#reluctor">24x vs 58x</a>
+    <a href="#buy">What to buy with it</a>
+    <a href="#builds">Example builds</a>
+  </nav>
 
-  <h2>Common Choices</h2>
-  <ul>
-    <li><strong>5.3L (LM7, LY5, etc.)</strong> — cheapest and most available. Plenty of power for a street car; responds well to a cam and headers.</li>
-    <li><strong>6.0L (LQ4/LQ9)</strong> — strong iron-block option, good for boost later.</li>
-    <li><strong>LS1 / LS2 / LS3</strong> — aluminum, lighter, more aftermarket support. LS3-style is the sweet spot for many Gen Coupe builds.</li>
-    <li><strong>LSA / LS9</strong> — supercharged from the factory; more expensive but turn-key power.</li>
-  </ul>
+  <h2 id="choices">Common Choices</h2>
+  <table>
+    <thead><tr><th>Engine</th><th>Why people pick it</th><th>Watch out for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>5.3L</strong> (LM7, LY5, L33, etc.)</td><td>Cheapest and most available. Plenty for a street car; responds well to a cam and headers, and takes boost well.</td><td>Truck intake is tall (hood clearance). Truck accessory spacing is the longest.</td></tr>
+      <tr><td><strong>6.0L</strong> (LQ4 / LQ9)</td><td>Strong iron block, popular for turbo builds.</td><td>Heavier on the nose. Same truck intake and spacing issues.</td></tr>
+      <tr><td><strong>LS1 / LS6</strong></td><td>Aluminum, light, low car intake and short accessory drive.</td><td>Older 24x crank reluctor, so match your ECU kit.</td></tr>
+      <tr><td><strong>LS2 / LS3 / L99</strong></td><td>Aluminum, more power stock. LS3-style is the sweet spot for many Gen Coupe builds.</td><td>Costs more. L99 has cam phasing (VVT).</td></tr>
+      <tr><td><strong>LSA / LS9</strong></td><td>Supercharged from the factory, turn-key power.</td><td>Expensive, needs intercooler plumbing and hood clearance.</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="spacing">Accessory Drive Spacing (Big Deal in a Gen Coupe)</h2>
   <p>
-    Whatever you choose, buy the long-block with accessories if possible (alternator, power steering pump, intake, coils).
-    Corvette accessory spacing is often preferred on BK1 for radiator clearance; BK2 has roughly 1.5&quot; more room.
+    The front accessory drive decides how much room is left between the engine and the radiator fans. On a <strong>BK1</strong>, get <strong>Corvette spacing</strong>.
+    F-body (middle) spacing can work, but you want as much clearance as possible. The <strong>BK2</strong> has about 1.5" more front clearance.
+  </p>
+  <table>
+    <thead><tr><th>Spacing</th><th>Found on</th><th>Crank pulley offset</th></tr></thead>
+    <tbody>
+      <tr><td>Corvette (shortest)</td><td>Corvette, CTS-V, G8, SS sedan</td><td>~1.4"</td></tr>
+      <tr><td>F-body (middle)</td><td>1998–02 Camaro/Firebird, GTO</td><td>~2.25"</td></tr>
+      <tr><td>Truck (longest)</td><td>Trucks/SUVs, 2010–15 Camaro</td><td>~3.0"</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <p>Engines with VVT (variable cam timing) have a bigger timing cover and generally need <strong>truck-spacing</strong> water pumps to clear it. Check this before buying Corvette-spacing parts for a VVT engine.</p>
+  </div>
+
+  <h2 id="reluctor">Crank Reluctor: 24x vs 58x</h2>
+  <p>
+    Early Gen III engines (LS1, LS6, early 4.8/5.3/6.0) use a 24x crank reluctor; most Gen IV engines (LS2, LS3, later trucks) use 58x.
+    Holley sells separate Terminator X kits for each, so confirm which one your engine has before ordering the ECU. See <a href="/guides/ecu">ECUs &amp; Tuning</a>.
   </p>
 
-  <h2>Useful Links</h2>
+  <h2 id="buy">What to Buy With the Engine</h2>
   <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
+    <li>Get the complete pull-out with accessories if you can: alternator, power steering pump, intake, coils, throttle body, and the harness.</li>
+    <li>Check which pedal and throttle body it came with (6-pin drive-by-wire parts are easiest with Holley). See <a href="/guides/gas-pedal">Gas Pedal</a>.</li>
+    <li>Plan for the steam vent line. Every LS needs it routed correctly in the swap. See <a href="/guides/cooling#steam">Cooling</a>.</li>
+    <li>Budget for a Genesis-specific oil pan designed to clear the front subframe. See <a href="/guides/swap-kits">Swap Kits</a>.</li>
   </ul>
+
+  <h2 id="builds">Example Builds</h2>
+  <ul>
+    <li><strong>LS1 + T56</strong> (Super Street feature): 853 heads, LS6 intake, BTR Stage 3 cam, Corvette crank pulley, Mishimoto radiator with SPAL twin fans, FuelTech EMS, drive-by-wire conversion. The owner's lessons: the clutch master needed an adapter, the T56 shifter plate needed notching, and headers sitting too close caused a fuse box fire.</li>
+    <li><strong>Matt Haugen's 427 LS3</strong>: started as an LS1 with a cam, moved to a CBM-built LS2 (~600 hp), and after that engine failed, a Whipple-supercharged 427 LS3 making around 1,000 hp to the wheels.</li>
+  </ul>
+  <p>Got your own numbers? Post them on <a href="/hp-wars">HP Wars</a>.</p>
+
+  <CommunityLinks />
+  <Sources items={[
+    { label: 'Sikky — Genesis Coupe LS swap kit (compatible engines)', href: 'https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/' },
+    { label: 'Chevy Hardcore — Finding the right accessory brackets for your LS swap', href: 'https://www.chevyhardcore.com/?p=1446722' },
+    { label: 'ICT Billet — LS crank pulley / balancer swap guide', href: 'https://www.ictbillet.com/pages/swap-guide/ls-crank-pulley-harmonic-balancer-swap-guide' },
+    { label: 'Holley — Terminator X 550-903T (24x LS1/LS6 kit)', href: 'https://www.holley.com/products/ls_power/ls_efi_systems/parts/550-903T' },
+    { label: 'Super Street — LS1 Genesis Coupe feature', href: 'https://s3mag.com/you-got-no-future-kid-ls1-genesis-coupe/' },
+    { label: "LSX Mag — Matt Haugen's 1,000 hp LS3 Genesis Coupe", href: 'https://www.lsxmag.com/?p=5366' },
+  ]} />
 </BaseLayout>

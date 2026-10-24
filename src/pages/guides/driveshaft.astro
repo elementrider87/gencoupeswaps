@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Driveshaft" description="Driveshaft adapter, yoke, and length notes for LS Genesis Coupe swaps.">
@@ -14,6 +15,19 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
     I ordered my driveshaft from Ron Wicks at PST (Precision Shaft Technologies): 3.5" aluminum with a Strange front yoke.
     Your driveshaft length depends on the transmission and engine mounts you use.
   </p>
+  <h2>Off-the-Shelf Option</h2>
+  <p>Sikky sells one-piece driveshafts sized for their mounts, with high-strength U-joints, for 4-bolt differential flanges:</p>
+  <table>
+    <thead><tr><th>Shaft</th><th>Price</th></tr></thead>
+    <tbody>
+      <tr><td>3" steel, T56 (SKHYSH1-S)</td><td>$709.99</td></tr>
+      <tr><td>3.5" aluminum, T56 (SKHYSH1-A)</td><td>$939.99</td></tr>
+      <tr><td>Aluminum, TR6060 (SKHYSH2-A)</td><td>$1,349.99</td></tr>
+    </tbody>
+  </table>
+  <p>Only order an off-the-shelf length if you're using that brand's mounts and transmission. Otherwise measure with the car at ride height and have one built.</p>
+
+  <h2>Photos</h2>
   <div class="figs">
     <Figure src="collins-guibo-adapter.jpg" alt="Collins differential drive shaft adapter listing" caption="Collins adapter." />
     <Figure src="driveshaft-aluminum-full.jpg" alt="3.5 inch aluminum driveshaft" caption="3.5 inch aluminum shaft from PST." />
@@ -24,4 +38,9 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   </div>
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Sikky — Genesis LS swap kit (driveshaft options)", href: "https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" },
+    { label: "Sikky — Stage 2 package (one-piece steel shaft, 1310 U-joints)", href: "https://www.sikky.com/product/sikky-2013-genesis-stage-2-ls-swap-kit/" },
+    { label: "Collins Adapters — differential adapters", href: "https://collinsadapters.com/review/product/list/id/105/category/31/" },
+  ]} />
 </BaseLayout>

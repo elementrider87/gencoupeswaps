@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Exhaust & Heat Shielding" description="Headers and heat shielding for LS Genesis Coupe swaps.">
@@ -9,6 +10,19 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <p>
     Header choice is tied to engine mounts and steering/rack clearance. Sikky headers are the most commonly referenced; ISR headers sit lower and are generally not recommended on powered cars.
   </p>
+
+  <h2>Header Options</h2>
+  <table>
+    <thead><tr><th>Header</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td>Sikky (HDR015SS)</td><td>100% stainless, 1-7/8" primaries, merge-collector with V-band flanges. $1,231.99 alone or included in the Stage 2 package. Designed around Sikky mounts.</td></tr>
+      <tr><td>ISR (IS-GEN-LS1H)</td><td>About $990. Made for ISR mounts; sits lower, which is why it's generally not recommended on powered cars.</td></tr>
+      <tr><td>Custom / turbo manifolds</td><td>Common on boosted builds. Leave room for the steering shaft and keep heat away from the fuse box.</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <p><strong>Real-world warning:</strong> on one LS1 Gen Coupe, headers sitting too close caused the main fuse box to catch fire. Check clearance to the fuse box, harness, brake lines, and steering shaft, and shield anything within a few inches.</p>
+  </div>
 
   <h2 id="heat">Heat Shielding</h2>
   <p>
@@ -22,4 +36,9 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   </div>
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Sikky — Genesis LS swap kit (HDR015SS headers)", href: "https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" },
+    { label: "ISR Performance — Genesis LS mount kit (headers sold separately)", href: "https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" },
+    { label: "Super Street — LS1 Genesis Coupe (fuse box fire)", href: "https://s3mag.com/you-got-no-future-kid-ls1-genesis-coupe/" },
+  ]} />
 </BaseLayout>

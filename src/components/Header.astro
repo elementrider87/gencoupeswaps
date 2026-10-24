@@ -11,18 +11,19 @@ const currentPath = Astro.url.pathname;
       type="search"
       id="site-search"
       class="search-input"
-      placeholder="Search guides… (e.g. power steering)"
+      placeholder="Search guides…"
       autocomplete="off"
       aria-label="Search guides"
     />
     <ul class="search-results" id="search-results" hidden></ul>
   </div>
 
-  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">☰</button>
 
   <nav class="top-nav" id="top-nav">
     <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
     <a href="/featured" class={currentPath.startsWith('/featured') ? 'active' : ''}>Featured Builds</a>
+    <a href="/hp-wars" class={currentPath.startsWith('/hp-wars') ? 'active' : ''}>HP Wars</a>
     <a href="/resources" class={currentPath.startsWith('/resources') ? 'active' : ''}>Resources</a>
     <a href="/about" class={currentPath.startsWith('/about') ? 'active' : ''}>About</a>
     <a href="/contact" class={currentPath.startsWith('/contact') ? 'active' : ''}>Contact</a>
@@ -31,29 +32,31 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
-  // ---- Mobile menu ----
+  // ---- Mobile menu: the ☰ button opens the sidebar drawer (site links + all guides) ----
   const toggle = document.getElementById('menu-toggle');
-  const topNav = document.getElementById('top-nav');
   const sidebar = document.getElementById('sidebar');
+  const backdrop = document.createElement('div');
+  backdrop.className = 'drawer-backdrop';
+  document.body.appendChild(backdrop);
 
-  toggle?.addEventListener('click', () => {
-    const isOpen = topNav?.classList.toggle('open');
-    document.body.classList.toggle('menu-open', !!isOpen);
-    if (isOpen) sidebar?.classList.remove('open');
-  });
+  function setMenu(open: boolean) {
+    sidebar?.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    toggle?.setAttribute('aria-expanded', String(open));
+    toggle?.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (toggle) toggle.textContent = open ? '✕' : '☰';
+  }
 
-  document.querySelectorAll('.top-nav a, .sidebar a').forEach(link => {
-    link.addEventListener('click', () => {
-      topNav?.classList.remove('open');
-      sidebar?.classList.remove('open');
-      document.body.classList.remove('menu-open');
-    });
-  });
+  toggle?.addEventListener('click', () => setMenu(!sidebar?.classList.contains('open')));
+  backdrop.addEventListener('click', () => setMenu(false));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  document.querySelectorAll('.sidebar a').forEach(link => link.addEventListener('click', () => setMenu(false)));
 
   // ---- Site search (client-side, no backend) ----
   const pages = [
     { label: 'Home', href: '/', keywords: 'home start main' },
     { label: 'Featured Builds', href: '/featured', keywords: 'featured builds showcase submit' },
+    { label: 'HP Wars', href: '/hp-wars', keywords: 'hp wars horsepower dyno leaderboard whp power numbers rankings' },
     { label: 'Resources', href: '/resources', keywords: 'resources links parts kits forums' },
     { label: 'About', href: '/about', keywords: 'about story why' },
     { label: 'Contact', href: '/contact', keywords: 'contact email contribute submit' },

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Transmission" description="T56 Magnum XL notes, pilot bushing, clutch alignment tool, and Wilwood clutch master cylinder for LS Genesis Coupe swaps.">
@@ -23,6 +24,32 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
     <Figure src="mcleod-pilot-bushing-mrr-8-1094-2.jpg" alt="McLeod 8-1094-2 pilot bushing in bag" caption="McLeod 8-1094-2 pilot bushing." />
     <Figure src="ram-clutch-alignment-tool.jpg" alt="RAM 26-spline clutch alignment tool listing" caption="RAM 26-spline alignment tool." />
   </div>
+  <h3>Magnum XL (GM) Specs</h3>
+  <table>
+    <tbody>
+      <tr><td>Torque rating</td><td>700 lb-ft, 7,800 rpm max</td></tr>
+      <tr><td>Ratios (TUET18131)</td><td>2.66 / 1.78 / 1.30 / 1.00 / 0.80 / 0.63, rev 2.90</td></tr>
+      <tr><td>Ratios (TUET18132)</td><td>2.97 / 2.10 / 1.46 / 1.00 / 0.80 / 0.63, rev 2.90</td></tr>
+      <tr><td>Input / output</td><td>26-spline input (6.5" long) / 31-spline slip yoke</td></tr>
+      <tr><td>Electrical</td><td>Electronic speedo output, reverse lockout solenoid, reverse light switch</td></tr>
+      <tr><td>Fluid</td><td>3.66 qt: Tremec HP-MTF, Synchromesh, or Dexron III ATF</td></tr>
+      <tr><td>Weight</td><td>~150 lb dry</td></tr>
+    </tbody>
+  </table>
+  <p>The 2.66 first gear suits higher-power and boosted cars; the 2.97 gives a stronger launch with a mild N/A engine.</p>
+
+  <h3>Shifter</h3>
+  <p>
+    The T56 shifter lands in a different spot than the stock Genesis shifter. Expect to notch the tunnel or shifter plate. ISR sells a T56 Genesis shifter relocation kit (IS-GNLS-SHFT), and one LS1 build used a Hurst short shifter, GTO shifter cup, and a shifter extension.
+  </p>
+
+  <h2>Other Transmission Options</h2>
+  <ul>
+    <li><strong>TR6060</strong>: supported by Sikky's trans mount and driveshaft options.</li>
+    <li><strong>Keep a Nissan Z33/Z34 6-speed</strong>: LOJ's Z33 kit includes an adapter plate, Clutchmasters billet flywheel (350Z/G35 clutch), mini starter, and shortened 350Z-style linkage.</li>
+    <li><strong>Automatics (4L80E, 6L80/6L90)</strong>: LOJ sells trans mounts for these. Automatic control needs a Terminator X Max or a separate controller. LOJ warns that GM transmissions may require tunnel modification.</li>
+  </ul>
+
   <p>
     Reverse lights and speedo for the T56 are covered under <a href="/guides/wiring#manual-reverse">Wiring</a> and <a href="/guides/ecu#speedo">ECUs &amp; Tuning</a>.
   </p>
@@ -36,4 +63,11 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <Figure src="clutch-master-cylinder-pin.jpg" alt="Clutch pedal pin and Wilwood master cylinder mount" caption="Clutch pedal pin and master cylinder mount." />
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Shift SST — Tremec Magnum XL (GM) features and dimensions", href: "https://www.shiftsst.com/blog/tremec-magnum-xl-gm-features-and-dimensions/315" },
+    { label: "LOJ Conversions — Genesis Coupe LSx Basic Swap Kit (Z33 6MT)", href: "https://lojkits.com/products/genesis-coupe-lsx-basic-swap-kit" },
+    { label: "LOJ Conversions — Genesis Coupe LS transmission mounts", href: "https://lojkits.com/products/genesis-coupe-lsx-swap-transmission-mount-for-4l80-automatic-transmission" },
+    { label: "ISR Performance — Genesis LS mount kit (shifter relocation kit listed)", href: "https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" },
+    { label: "Super Street — LS1 Genesis Coupe (T56 shifter notes)", href: "https://s3mag.com/you-got-no-future-kid-ls1-genesis-coupe/" },
+  ]} />
 </BaseLayout>

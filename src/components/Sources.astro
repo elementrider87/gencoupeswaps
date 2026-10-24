@@ -1,0 +1,14 @@
+---
+interface Props {
+  items: { label: string; href: string }[];
+}
+const { items } = Astro.props;
+---
+
+<details class="sources">
+  <summary>Sources &amp; further reading</summary>
+  <ul>
+    {items.map((s) => <li><a href={s.href} target="_blank" rel="noopener">{s.label}</a></li>)}
+  </ul>
+  <p class="sources-note">Prices and part numbers were checked in October 2026 and can change. Always confirm with the vendor before ordering.</p>
+</details>

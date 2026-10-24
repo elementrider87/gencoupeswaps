@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Brakes & ABS Delete" description="ABS delete fittings, brake lines, proportioning valve and line lock placement, and Brembo rebuild for LS Genesis Coupe swaps.">
@@ -19,6 +20,14 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
     Use any proportioning valve — it doesn't matter which master cylinder port you run to the PV. You can put a line lock before or after the PV,
     but the correct method is <strong>after the PV</strong>: it holds line pressure to the front brakes when engaged, so the rears stay free for a burnout.
   </p>
+  <h3>Adjustable Proportioning Valve</h3>
+  <p>
+    A knob-style valve like the Wilwood 260-8419 lets you dial rear pressure in or out (100–1500 psi range, up to 57% reduction, 1/8" NPT ports; 3/8"-24 and 10mm-1.0 bubble flare versions exist).
+    Start with the knob near the middle and adjust on a safe, empty road until the rears don't lock before the fronts.
+  </p>
+  <h3>Line Lock</h3>
+  <p>The line lock goes on the line feeding the <strong>front</strong> brakes, after the proportioning valve, so it holds the fronts while the rears stay free for a burnout. Wire it through a momentary switch.</p>
+
   <div class="note">
     <p><strong>Keep your odometer working:</strong> leave the ABS electrical connection plugged in. Simply unscrew the module from the ABS housing and keep it plugged in (shown in the last pictures below).</p>
   </div>
@@ -41,4 +50,7 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <Figure src="brembo-rebuild-kit-parts.jpg" alt="Comment thread with Brembo rebuild kit part numbers" caption="Brembo rebuild kit part numbers from the community." />
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Speedway Motors — Wilwood 260-8419 knob-style proportioning valve", href: "https://www.speedwaymotors.com/Wilwood-260-8419-Knob-Style-Proportioning-Valve,6494.html" },
+  ]} />
 </BaseLayout>

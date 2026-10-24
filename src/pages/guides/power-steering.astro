@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Power Steering" description="Hydraulic power steering adapters, pressure reducer, and electric power steering for LS Genesis Coupe swaps.">
@@ -9,25 +10,33 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <div class="note"><p><strong>Use Pentosin CHF 202 synthetic hydraulic fluid.</strong></p></div>
 
   <h2>Hydraulic (GM Pump)</h2>
-  <h3>High-Pressure Line Adapter</h3>
+  <h3>Option A: Sikky Line Kit</h3>
+  <p>Sikky sells a Genesis power steering line kit (PS105, $167.99) for LS1/LS2-style pumps, either alone or as an add-on to their swap kit. It's the bolt-in route.</p>
+
+  <h3>Option B: Adapt the Factory Lines</h3>
   <p>
-    If you're not getting the Sikky PS lines kit, you'll need an adapter for the high-pressure PS line that ends near the front subframe.
-    Don't cheap out — other adapters have been tried and leak. Or mount directly to the rack with the fitting below.
+    If you're not getting the Sikky line kit, you'll need an adapter for the high-pressure PS line that ends near the front subframe.
+    Don't cheap out: other adapters have been tried and leak. Or mount directly to the rack with the Russell fitting below.
   </p>
+  <ul>
+    <li>
+      <a href="https://www.summitracing.com/parts/krs-krc10122000" target="_blank" rel="noopener">KRC 10122000</a>: steel, male -6 AN to male M16 x 1.5 O-ring, straight (O-rings included).
+      Summit currently lists it as unavailable, so check other KRC dealers.
+    </li>
+    <li>
+      <a href="https://www.summitracing.com/parts/rus-648060" target="_blank" rel="noopener">Russell 648060</a>: aluminum, -6 AN to 16mm x 1.5 O-ring, straight. Adapts directly to the rack.
+    </li>
+  </ul>
+
   <h3>Pressure Reducer</h3>
   <p>
     The GM pump puts out about <strong>1200 psi</strong>; the Genesis rack needs about <strong>850 psi</strong>. Use a pressure reducer kit with 2 or 3 of the supplied shims.
     Some have gotten away without shims, so this is debatable.
   </p>
   <ul>
-    <li><a href="https://www.summitracing.com/parts/krs-krc10122000" target="_blank" rel="noopener">KRC pressure reducer kit (Summit KRS-KRC10122000)</a></li>
-  </ul>
-  <h3>Rack Fitting</h3>
-  <p>Or use this to adapt directly to the PS rack if you don't get the full Sikky kit:</p>
-  <ul>
     <li>
-      <a href="https://www.summitracing.com/parts/rus-648060" target="_blank" rel="noopener">Russell 648060</a> —
-      AN to metric adapter fitting, straight, aluminum, -6 AN to 16mm x 1.5 O-ring.
+      Example: <a href="https://www.speedwaymotors.com/Tuff-Stuff-5552-Power-Steering-Pressure-Valve-850-PSI,278221.html" target="_blank" rel="noopener">Tuff Stuff 5552 850 psi pressure valve</a> (about $23), used by LS swappers to reduce pressure on GM Type II pumps.
+      Confirm it fits your specific pump before ordering.
     </li>
   </ul>
 
@@ -46,4 +55,11 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   </div>
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Sikky — Genesis LS swap kit (PS105 power steering line kit)", href: "https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" },
+    { label: "Summit Racing — KRC 10122000 -6 AN to M16x1.5 adapter", href: "https://www.summitracing.com/parts/krs-krc10122000" },
+    { label: "Summit Racing — Russell 648060 AN to metric adapter", href: "https://www.summitracing.com/parts/rus-648060" },
+    { label: "Speedway Motors — Tuff Stuff 5552 850 psi pressure valve", href: "https://www.speedwaymotors.com/Tuff-Stuff-5552-Power-Steering-Pressure-Valve-850-PSI,278221.html" },
+    { label: "Reform Motorsports — EHPS controllers", href: "https://reformmotorsports.com" },
+  ]} />
 </BaseLayout>

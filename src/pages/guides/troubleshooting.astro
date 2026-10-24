@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Troubleshooting" description="Quick fixes for common LS Genesis Coupe swap problems.">
@@ -10,6 +11,9 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
     <thead><tr><th>Symptom</th><th>Likely fix</th></tr></thead>
     <tbody>
       <tr><td>Running hot</td><td>3.8 upgraded radiator + shroud, push/pull fans, oil cooler, Corvette spacing on BK1 — <a href="/guides/cooling">Cooling</a></td></tr>
+      <tr><td>Hot spots, temps creep, cooling system won't bleed</td><td>Steam vent line missing or routed wrong; run it to just below the radiator cap — <a href="/guides/cooling#steam">Cooling</a></td></tr>
+      <tr><td>Melted wiring / burning smell near fuse box</td><td>Header too close to the fuse box or harness; add clearance and shielding — <a href="/guides/exhaust">Exhaust</a></td></tr>
+      <tr><td>Can't get DBW pedal to work with Holley</td><td>Needs a 6-pin pedal + Terminator X Max with the right harness — <a href="/guides/gas-pedal#which">Gas Pedal</a></td></tr>
       <tr><td>Fans come on at key-on</td><td>Disable key-on fan operation in Holley — <a href="/guides/cooling#key-on">Cooling</a></td></tr>
       <tr><td>Wild intake air temp readings</td><td>IAT in hot radiator air; relocate to the back of the intake — <a href="/guides/cooling#iat">Cooling</a></td></tr>
       <tr><td>Battery not charging</td><td>Alternator needs a resistor-equipped trigger; set Holley input to digital frequency — <a href="/guides/alternator">Alternator</a></td></tr>
@@ -26,4 +30,8 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   </table>
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "LSX Mag — Do LS engines really need steam tubes?", href: "https://www.lsxmag.com/?p=3220" },
+    { label: "Super Street — LS1 Genesis Coupe (fuse box fire)", href: "https://s3mag.com/you-got-no-future-kid-ls1-genesis-coupe/" },
+  ]} />
 </BaseLayout>

@@ -2,10 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Differential & Axles" description="Genesis sedan axle upgrade, Ford 8.8 IRS kit, and custom DSS axles for LS Genesis Coupe swaps.">
   <h1>Differential &amp; Axles</h1>
+
+  <h2 id="stock">Stock Differential</h2>
+  <ul>
+    <li>R-Spec cars came with a <strong>Torsen limited-slip</strong>. Other trims may be open, so check yours before building around it.</li>
+    <li>2010–16 manual cars had a <strong>recall</strong> covering the rear differential and suspension crossmember bolts. Make sure it was done before adding LS torque.</li>
+    <li>The stock diff and axles are the usual weak point once you add power. Plan on axles first, then an 8.8 swap for big power.</li>
+  </ul>
 
   <h2 id="axles">Genesis Sedan Axles (Budget Upgrade)</h2>
   <p>
@@ -73,4 +81,8 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <Figure src="dss-invoice-page4.jpg" alt="DSS invoice page 4 — totals and tracking" caption="Page 4 — totals and shipping." />
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Three Piece — Genesis Coupe 3.8 buying guide (Torsen R-Spec, diff recall)", href: "https://www.threepiece.us/blog/hyundai-genesis-coupe-38-buying-guide-bk2-in-2026/" },
+    { label: "TikTok — Ford 8.8 IRS install", href: "https://www.tiktok.com/t/ZTfag4jc8/" },
+  ]} />
 </BaseLayout>

@@ -1,27 +1,45 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
-<BaseLayout title="Motor Mounts" description="LS motor mounts for the Hyundai Genesis Coupe.">
+<BaseLayout title="Motor Mounts" description="LS motor mount options for the Hyundai Genesis Coupe: Sikky, LOJ Conversions, and ISR Performance compared, including BK1 vs BK2 fitment.">
   <h1>Motor Mounts</h1>
   <p>
-    Engine position sets the tone for the rest of the swap (radiator clearance, header fitment, driveshaft angle, accessory access).
-    Most people use a complete kit rather than universal brackets.
+    Engine position sets the tone for the rest of the swap: radiator clearance, header fitment, driveshaft angle, and accessory access.
+    Most people use a complete mount kit rather than universal brackets, and stick with the same brand's oil pan and headers so everything lines up.
   </p>
 
-  <h2>Common Options</h2>
+  <div class="note">
+    <p><strong>BK1 vs BK2:</strong> the factory 2009–12 (BK1) engine mount uses three studs to the subframe; the 2013–16 (BK2) mount uses a single center stud. Check that the kit you buy covers your chassis. LOJ, for example, designs for BK2 and ships BK1 orders with a drill and washer to modify the subframe.</p>
+  </div>
+
+  <h2>The Three Main Kits</h2>
+  <table>
+    <thead><tr><th></th><th>Sikky</th><th>LOJ Conversions</th><th>ISR Performance</th></tr></thead>
+    <tbody>
+      <tr><td>Price (mounts)</td><td>$615.98 base (engine + trans mount)</td><td>$429.95 BK2 / $509.95 BK1 (engine mounts)</td><td>$412.50 (engine + trans mount)</td></tr>
+      <tr><td>Build</td><td>CNC 6061-T6 aluminum, urethane or aluminum bushings</td><td>Water-jet steel brackets, billet 6061 pedestals, Energy Suspension urethane</td><td>Pivoting pedestal + bracket, 85A urethane</td></tr>
+      <tr><td>Trans mount</td><td>T56 / Magnum included; TR6060 and CD00X optional</td><td>Sold separately or in kits (T56, Z33, 4L80, 6L80 options)</td><td>F-body T56 included</td></tr>
+      <tr><td>Best with</td><td>Sikky pan, headers, driveshaft</td><td>LOJ pan and kits</td><td>ISR headers and shifter relocation kit</td></tr>
+      <tr><td>Notes</td><td>Lifetime warranty on mounts; designed to fit when all Sikky parts are used</td><td>Designed for BK2; BK1 needs subframe drilling (tools included)</td><td>Cheapest; headers sit lower and are generally not recommended on powered cars. Listed as competition-use only</td></tr>
+    </tbody>
+  </table>
+  <p>Prices as listed by each vendor in October 2026.</p>
+
+  <h2>Choosing</h2>
   <ul>
-    <li><strong>Sikky</strong> — most popular complete kit. Designed to work with their oil pan and headers. <a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Kit builder</a></li>
-    <li><strong>LOJ Conversions</strong> — slotted mounts that allow more fine-tuning of engine position. <a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ collection</a></li>
-    <li><strong>ISR Performance</strong> — cheapest mounts. Headers sit lower and are generally not recommended on powered cars. <a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR mounts</a></li>
+    <li><strong>Plan the whole package, not just mounts.</strong> Mount position decides which oil pan, headers, and driveshaft length you need. Mixing brands is where most fitment headaches come from.</li>
+    <li><strong>Urethane vs aluminum bushings:</strong> urethane is the street choice; solid aluminum transfers a lot more vibration into the cabin.</li>
+    <li><strong>Keep the steering shaft and fuse box in mind</strong>: header routing around them changes with engine position.</li>
   </ul>
 
-  <h2>Useful Links</h2>
-  <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-  </ul>
+  <CommunityLinks />
+  <Sources items={[
+    { label: 'Sikky — Spec your own Genesis Coupe LS swap kit', href: 'https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/' },
+    { label: 'LOJ Conversions — Genesis Coupe LS swap engine mounts', href: 'https://www.lojkits.com/products/genesis-coupe-lsx-swap-engine-mounts' },
+    { label: 'LOJ Conversions — Genesis Coupe LS transmission mounts', href: 'https://lojkits.com/products/genesis-coupe-lsx-swap-transmission-mount-for-4l80-automatic-transmission' },
+    { label: 'ISR Performance — Hyundai Genesis LS mount kit', href: 'https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/' },
+  ]} />
 </BaseLayout>

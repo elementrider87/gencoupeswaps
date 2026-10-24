@@ -1,0 +1,19 @@
+---
+const currentPath = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/featured', label: 'Featured Builds' },
+  { href: '/hp-wars', label: 'HP Wars' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/donate', label: 'Donate' },
+];
+---
+
+<div class="sidebar-site">
+  <div class="sidebar-label">Site</div>
+  {links.map((l) => (
+    <a href={l.href} class={(l.href === '/' ? currentPath === '/' : currentPath.startsWith(l.href)) ? 'active' : ''}>{l.label}</a>
+  ))}
+</div>

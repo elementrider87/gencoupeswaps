@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import entriesRaw from '../data/hp-wars.json';
+
+type Entry = {
+  name: string; handle?: string; car: string; engine: string;
+  induction: 'na' | 'turbo' | 'supercharged' | 'nitrous';
+  trans?: string; fuel?: string; whp: number; wtq?: number;
+  dyno?: string; date?: string; proof?: string; photo?: string;
+};
+const entries = (entriesRaw as Entry[]).slice().sort((a, b) => b.whp - a.whp);
+const labels: Record<string, string> = { na: 'N/A', turbo: 'Turbo', supercharged: 'Supercharged', nitrous: 'Nitrous' };
+const tabs = [
+  { id: 'all', label: 'All' },
+  { id: 'na', label: 'N/A' },
+  { id: 'turbo', label: 'Turbo' },
+  { id: 'supercharged', label: 'Supercharged' },
+  { id: 'nitrous', label: 'Nitrous' },
+];
+const top = entries[0];
+---
+
+<BaseLayout title="HP Wars" description="Dyno leaderboard for LS-swapped Hyundai Genesis Coupes: N/A, turbo, supercharged, and nitrous wheel horsepower.">
+  <h1>HP Wars</h1>
+  <p>The dyno leaderboard for LS-swapped Genesis Coupes. Wheel numbers only, with proof.</p>
+
+  <div class="hp-tabs" role="tablist" aria-label="Filter by power adder">
+    {tabs.map((t, i) => (
+      <button type="button" role="tab" class="hp-tab" data-filter={t.id} aria-selected={i === 0 ? 'true' : 'false'}>
+        {t.label}
+        <span class="hp-tab-count">{t.id === 'all' ? entries.length : entries.filter((e) => e.induction === t.id).length}</span>
+      </button>
+    ))}
+  </div>
+
+  {entries.length === 0 ? (
+    <div class="hp-empty">
+      <p class="hp-empty-big">No entries yet. Be the first on the board.</p>
+      <p>Send your dyno sheet using the steps below and your car will be posted here.</p>
+    </div>
+  ) : (
+    <ol class="hp-list" id="hp-list">
+      {entries.map((e) => (
+        <li class="hp-card" data-induction={e.induction}>
+          <div class="hp-rank" aria-hidden="true"></div>
+          {e.photo && <img class="hp-photo" src={e.photo} alt={`${e.name}'s ${e.car}`} loading="lazy" />}
+          <div class="hp-main">
+            <div class="hp-name">{e.name}{e.handle && <span class="hp-handle"> {e.handle}</span>}</div>
+            <div class="hp-car">{e.car}</div>
+            <div class="hp-spec">
+              <span class={`hp-badge hp-${e.induction}`}>{labels[e.induction]}</span>
+              <span>{e.engine}</span>
+              {e.trans && <span>· {e.trans}</span>}
+              {e.fuel && <span>· {e.fuel}</span>}
+            </div>
+            <div class="hp-meta">
+              {e.dyno && <span>{e.dyno}</span>}
+              {e.date && <span> · {e.date}</span>}
+              {e.proof && <span> · <a href={e.proof} target="_blank" rel="noopener">Dyno proof</a></span>}
+            </div>
+          </div>
+          <div class="hp-num">
+            <div class="hp-whp">{e.whp}<small> whp</small></div>
+            {e.wtq && <div class="hp-wtq">{e.wtq} wtq</div>}
+          </div>
+        </li>
+      ))}
+    </ol>
+  )}
+  <p class="hp-none" id="hp-none" hidden>No entries in this class yet.</p>
+
+  <h2>Get on the Board</h2>
+  <p>Email <a href="mailto:Elementrider87@gmail.com?subject=HP%20Wars%20submission">Elementrider87@gmail.com</a> with:</p>
+  <ul>
+    <li>Your name and Instagram / Facebook / YouTube handle</li>
+    <li>Car (year, BK1 or BK2), engine, power adder, transmission, and fuel</li>
+    <li>A clear photo of the <strong>dyno sheet</strong>, plus a dyno video if you have one</li>
+    <li>Dyno type (Dynojet, Mustang, Dynapack, hub dyno…) and date</li>
+    <li>One good photo of the car</li>
+  </ul>
+
+  <h2>Rules</h2>
+  <ul>
+    <li>Wheel horsepower only (no crank estimates).</li>
+    <li>Your best pull, with the dyno sheet visible. A video is preferred.</li>
+    <li>Classes: N/A, Turbo, Supercharged, Nitrous. Running two adders? You go in the bigger class.</li>
+    <li>Dyno brands read differently (a Mustang dyno usually reads lower than a Dynojet), so dyno type is listed on every entry.</li>
+    <li>Re-submit any time you make more power and your entry gets updated.</li>
+  </ul>
+
+  {top && <p class="updated">Current leader: {top.name}, {top.whp} whp.</p>}
+</BaseLayout>
+
+<script>
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.hp-tab'));
+  const cards = Array.from(document.querySelectorAll<HTMLLIElement>('.hp-card'));
+  const none = document.getElementById('hp-none');
+
+  function apply(filter: string) {
+    let rank = 0;
+    cards.forEach((c) => {
+      const show = filter === 'all' || c.dataset.induction === filter;
+      c.hidden = !show;
+      if (show) {
+        rank += 1;
+        const r = c.querySelector('.hp-rank');
+        if (r) r.textContent = '#' + rank;
+      }
+    });
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.filter === filter)));
+    if (none) none.hidden = !(cards.length > 0 && rank === 0);
+    try { history.replaceState(null, '', filter === 'all' ? location.pathname : '#' + filter); } catch {}
+  }
+
+  tabs.forEach((t) => t.addEventListener('click', () => apply(t.dataset.filter || 'all')));
+  const start = location.hash.replace('#', '');
+  apply(tabs.some((t) => t.dataset.filter === start) ? start : 'all');
+</script>
+
+<style>
+  .hp-tabs { display: flex; gap: 0.5rem; overflow-x: auto; padding: 0.25rem 0 0.75rem; margin: 0.5rem 0 1rem; scrollbar-width: none; position: sticky; top: var(--header-height); background: var(--bg-deep); z-index: 5; }
+  .hp-tabs::-webkit-scrollbar { display: none; }
+  .hp-tab { flex: 0 0 auto; min-height: 40px; padding: 0.45rem 0.95rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted); font: inherit; font-size: 0.95rem; cursor: pointer; }
+  .hp-tab[aria-selected='true'] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .hp-tab-count { margin-left: 0.35rem; font-size: 0.8rem; opacity: 0.8; }
+  .hp-empty { background: var(--bg-card); border: 1px dashed var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
+  .hp-empty-big { font-size: 1.2rem; font-weight: 600; }
+  .hp-list { list-style: none; margin: 0 !important; padding: 0; display: grid; gap: 0.75rem; }
+  .hp-card { display: grid; grid-template-columns: auto auto 1fr auto; gap: 0.9rem; align-items: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; margin: 0 !important; }
+  .hp-card[hidden] { display: none; }
+  .hp-rank { font-weight: 800; font-size: 1.3rem; color: var(--accent); min-width: 2.2rem; }
+  .hp-photo { width: 72px; height: 54px; object-fit: cover; border-radius: 6px; margin: 0 !important; border: 0 !important; }
+  .hp-name { font-weight: 700; }
+  .hp-handle, .hp-meta { color: var(--text-muted); font-size: 0.85rem; }
+  .hp-car { font-size: 0.92rem; }
+  .hp-spec { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem; }
+  .hp-badge { color: #fff; border-radius: 999px; padding: 0.05rem 0.55rem; font-size: 0.75rem; font-weight: 600; background: #555; }
+  .hp-na { background: #2f7d4f; } .hp-turbo { background: #2563a8; } .hp-supercharged { background: #8b3fb0; } .hp-nitrous { background: #b03f3f; }
+  .hp-num { text-align: right; }
+  .hp-whp { font-size: 1.6rem; font-weight: 800; line-height: 1; }
+  .hp-whp small { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
+  .hp-wtq { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem; }
+  @media (max-width: 600px) {
+    .hp-card { grid-template-columns: auto 1fr auto; gap: 0.6rem; padding: 0.75rem; }
+    .hp-photo { display: none; }
+    .hp-whp { font-size: 1.35rem; }
+  }
+</style>

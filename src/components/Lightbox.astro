@@ -1,0 +1,83 @@
+---
+---
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-top">
+    <span class="lb-count" id="lb-count"></span>
+    <button type="button" class="lb-btn lb-close" id="lb-close" aria-label="Close">✕</button>
+  </div>
+  <div class="lb-stage" id="lb-stage">
+    <img id="lb-img" alt="" />
+  </div>
+  <p class="lb-cap" id="lb-cap"></p>
+  <button type="button" class="lb-btn lb-nav lb-prev" id="lb-prev" aria-label="Previous photo">‹</button>
+  <button type="button" class="lb-btn lb-nav lb-next" id="lb-next" aria-label="Next photo">›</button>
+</div>
+
+<script>
+  const lb = document.getElementById('lb') as HTMLDivElement;
+  const img = document.getElementById('lb-img') as HTMLImageElement;
+  const cap = document.getElementById('lb-cap') as HTMLParagraphElement;
+  const count = document.getElementById('lb-count') as HTMLSpanElement;
+  const items = Array.from(document.querySelectorAll<HTMLButtonElement>('.fig-open'));
+  let idx = 0;
+  let lastFocus: HTMLElement | null = null;
+
+  function show(i: number) {
+    idx = (i + items.length) % items.length;
+    const b = items[idx];
+    const thumb = b.querySelector('img');
+    img.src = b.dataset.full || thumb?.currentSrc || '';
+    img.alt = thumb?.alt || '';
+    cap.textContent = b.dataset.caption || '';
+    count.textContent = items.length > 1 ? `${idx + 1} / ${items.length}` : '';
+  }
+
+  function open(i: number) {
+    lastFocus = document.activeElement as HTMLElement;
+    show(i);
+    lb.hidden = false;
+    document.body.classList.add('lb-open');
+    history.pushState({ lb: true }, '');
+    (document.getElementById('lb-close') as HTMLButtonElement).focus();
+  }
+
+  function close(fromPop = false) {
+    if (lb.hidden) return;
+    lb.hidden = true;
+    document.body.classList.remove('lb-open');
+    img.src = '';
+    if (!fromPop && history.state && history.state.lb) history.back();
+    lastFocus?.focus();
+  }
+
+  items.forEach((b, i) => b.addEventListener('click', () => open(i)));
+  document.getElementById('lb-close')?.addEventListener('click', () => close());
+  document.getElementById('lb-prev')?.addEventListener('click', () => show(idx - 1));
+  document.getElementById('lb-next')?.addEventListener('click', () => show(idx + 1));
+  lb.addEventListener('click', (e) => {
+    const t = e.target as HTMLElement;
+    if (t === lb || t.id === 'lb-stage') close();
+  });
+  window.addEventListener('popstate', () => close(true));
+  document.addEventListener('keydown', (e) => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+
+  // Swipe left/right to change photo, swipe down to close (ignored while pinch-zooming)
+  let sx = 0, sy = 0, multi = false;
+  lb.addEventListener('touchstart', (e) => {
+    multi = e.touches.length > 1;
+    sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+  }, { passive: true });
+  lb.addEventListener('touchend', (e) => {
+    if (multi || (window.visualViewport && window.visualViewport.scale > 1.05)) return;
+    const dx = e.changedTouches[0].clientX - sx;
+    const dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(dx < 0 ? idx + 1 : idx - 1);
+    else if (dy > 90 && Math.abs(dy) > Math.abs(dx)) close();
+  }, { passive: true });
+</script>

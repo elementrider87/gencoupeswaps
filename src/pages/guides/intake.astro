@@ -1,23 +1,36 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
-<BaseLayout title="Intake & Air" description="Intake manifolds, throttle body, and IAT placement for LS Gen Coupe swaps.">
+<BaseLayout title="Intake & Air" description="Intake manifold choice, hood clearance, throttle body, and IAT sensor placement for LS Genesis Coupe swaps.">
   <h1>Intake &amp; Air</h1>
+  <p>Hood clearance and radiator airflow drive intake choices as much as power goals.</p>
+
+  <h2>Intake Manifold</h2>
+  <ul>
+    <li><strong>Car intakes</strong> (LS1/LS6/LS3) are the lowest and fit under the hood most easily.</li>
+    <li><strong>Truck intakes</strong> are tall, with long runners, and may not clear the Genesis hood. Many builders swap to a car-style or aftermarket manifold.</li>
+    <li><strong>FAST 102mm</strong> is a common upgrade. Order the right head-port version: the <em>LSXRT</em> is for cathedral-port truck heads (4.8/5.3/6.0) and the <em>LSXR</em> is for rectangle-port heads (LS3/L92/L99).</li>
+  </ul>
+
+  <h2 id="iat">IAT Sensor Placement</h2>
   <p>
-    Hood clearance and radiator airflow drive intake choices as much as power goals.
+    Keep the intake air temp sensor out of hot radiator air. In my car the IAT in the throttle-body coupler read wildly high, so it got moved to the back of the FAST 102, tapped for 3/8" NPT (grind down the tab that's in the way).
   </p>
+  <Figure src="iat-sensor-location.jpg" alt="IAT sensor tapped into back of FAST 102 intake manifold" caption="IAT relocated to the back of the FAST 102." />
+
+  <h2>Throttle Body &amp; Pedal</h2>
   <p>
-    Low-profile intakes or relocated throttle bodies are common. Keep the IAT sensor in clean, cool airflow.
+    Drive-by-wire throttle bodies need a matching pedal and an ECU that supports DBW (Holley Terminator X <strong>Max</strong>). Cable throttle works with any setup. See <a href="/guides/gas-pedal">Gas Pedal</a>.
   </p>
 
-  <h2>Community &amp; Parts Links</h2>
-  <ul>
-    <li><a href="https://www.facebook.com/share/g/19PJahbKRm/?mibextid=wwXIfr" target="_blank" rel="noopener">Swapped GCs</a> (Facebook)</li>
-    <li><a href="https://www.facebook.com/share/g/1KYpk5EjgQ/?mibextid=wwXIfr" target="_blank" rel="noopener">Genesis Coupe LS Swaps</a> (Facebook)</li>
-    <li><a href="https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" target="_blank" rel="noopener">Sikky LS swap kit</a></li>
-    <li><a href="https://lojkits.com/collections/hyundai-genesis-coupe-bk-engine-swap-parts" target="_blank" rel="noopener">LOJ Conversions</a></li>
-    <li><a href="https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" target="_blank" rel="noopener">ISR Performance mounts</a></li>
-    <li><a href="https://dmzrated.square.site/" target="_blank" rel="noopener">Jason Riddle / Dream Machine Z</a></li>
-  </ul>
+  <CommunityLinks />
+  <Sources items={[
+    { label: 'Chevy Hardcore — LS accessory brackets and intake profiles', href: 'https://www.chevyhardcore.com/?p=1446722' },
+    { label: 'LM Performance — FAST LSXRT 102mm truck (cathedral port) intake', href: 'https://www.lmperformance.com/588518/146602b-fast-lsxrt-intake-102mm-truck-intake-manifold-48l-53l-60l.html' },
+    { label: 'Michigan Motorsports — FAST LSXR 102mm (rectangle port) intake', href: 'https://www.michiganmotorsports.com/intake-throttle-body-fuel-injectors/fast-lsxr-102mm-ls3-intake-manifold-for-rectangle-port-ls-l99-l76-l77-lsa-l92-l96-ly6/' },
+  ]} />
 </BaseLayout>

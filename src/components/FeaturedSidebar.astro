@@ -1,4 +1,5 @@
 ---
+import SiteLinks from './SiteLinks.astro';
 const currentPath = Astro.url.pathname;
 const categories = [
   { href: '/featured#na', label: 'N/A (Naturally Aspirated)' },
@@ -8,7 +9,8 @@ const categories = [
 ];
 ---
 
-<aside class="sidebar" id="sidebar">
+<aside class="sidebar" id="sidebar" aria-label="Site and featured build navigation">
+  <SiteLinks />
   <div class="sidebar-label">Featured Builds</div>
   {categories.map(c => (
     <a href={c.href}>

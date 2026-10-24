@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Gas Pedal" description="Cable and drive-by-wire gas pedal options, GM pedal, and keeping the OEM pedal with Holley on LS Gen Coupe swaps.">
@@ -9,6 +10,7 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <nav class="toc">
     <a href="#cable">Cable throttle</a>
     <a href="#dbw">Drive-by-wire</a>
+    <a href="#which">Holley compatibility</a>
     <a href="#gm">GM 10379038</a>
     <a href="#oem">Keeping the OEM pedal</a>
   </nav>
@@ -29,6 +31,14 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <p>Dustin Shoulta's setup:</p>
   <Figure src="dustin-shoulta-dbw-pedal.jpg" alt="Dustin Shoulta drive by wire pedal braced to floor" caption="Dustin Shoulta's DBW pedal." />
 
+  <h2 id="which">Which DBW Pedal Works With Holley?</h2>
+  <ul>
+    <li>Holley's GM LS drive-by-wire harness (<strong>558-406</strong>) is built for late GM <strong>6-pin</strong> throttle bodies and pedals: 2005–13 cars and 2007–13 trucks/SUVs.</li>
+    <li>Pedals it lists: GM <strong>10379038</strong> and <strong>19417903</strong> (C6 Corvette), plus Holley's own <strong>145-160</strong> pedal, which is plug-and-play.</li>
+    <li>It is <strong>not</strong> for older 8-pin pedals or 3-bolt throttle bodies (2006-and-earlier trucks, 2004-and-earlier cars).</li>
+    <li>Holley lists this harness for the Terminator X <strong>Max</strong> and Dominator ECUs, so plan on a Max if you want drive-by-wire.</li>
+  </ul>
+
   <h2 id="gm">GM 10379038 Pedal</h2>
   <p>
     <a href="https://a.co/d/8oOQHmO" target="_blank" rel="noopener">GM Genuine Parts 10379038 accelerator pedal with position sensor</a>
@@ -47,4 +57,8 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   </div>
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Michigan Motorsports — Holley 558-406 GM LS DBW harness (compatibility)", href: "https://www.michiganmotorsports.com/tuning-and-programmers/holley-558-406-gm-ls-drive-by-wire-harness-for-6-pin-throttle-body-and-pedal-2005-car-2007-truck-suv-4-8l-5-3l-6-0l-6-2l/" },
+    { label: "EFI System Pro — Holley 145-160 DBW pedal and harness options", href: "https://www.efisystempro.com/holley-145-160" },
+  ]} />
 </BaseLayout>

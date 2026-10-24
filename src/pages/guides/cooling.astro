@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Cooling System" description="Radiator, fan clearance, fan relays, Holley fan control, IAT placement, and heater hoses for LS Gen Coupe swaps.">
@@ -18,6 +19,7 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
     <a href="#key-on">Key-on fans</a>
     <a href="#iat">IAT sensor</a>
     <a href="#heater-hose">Heater hose</a>
+    <a href="#steam">Steam vent</a>
   </nav>
 
   <h2 id="clearance">Before You Start — Clearance</h2>
@@ -90,6 +92,18 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   </p>
   <Figure src="iat-sensor-location.jpg" alt="IAT sensor tapped into back of FAST 102 intake manifold" caption="IAT relocated to the back of the FAST 102." />
 
+  <h2 id="steam">Steam Vent Line (Don't Skip This)</h2>
+  <p>
+    The LS thermostat sits low in the water pump housing, so air gets trapped at the top of the heads. The steam ports bleed that air off.
+    Without them you get hot spots, which can lead to overheating and detonation.
+  </p>
+  <ul>
+    <li>Connect the steam ports (two at the front on later engines, four on early ones) and run the common line to a port <strong>just below the radiator cap</strong>.</li>
+    <li>Don't route it to the overflow port. Routing it to the water pump is debated: LSX Mag lists a tapped water pump port as an option, but Motion Raceworks says the pump just recirculates the steam.</li>
+    <li>Many aftermarket swap radiators don't have a steam fitting. Check before you buy, or have one welded in.</li>
+    <li>An engine that sits level (common in swaps) benefits from a four-corner steam kit.</li>
+  </ul>
+
   <h2 id="heater-hose">Heater Hose</h2>
   <p>
     The heater core inlet is on the driver's side and the outlet is on the passenger side. 3/4" hose fits great on both.
@@ -107,4 +121,10 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   </p>
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "LSX Mag — Do LS engines really need steam tubes?", href: "https://www.lsxmag.com/?p=3220" },
+    { label: "Motion Raceworks — 5 facts about LS coolant crossover steam kits", href: "https://motionraceworks.com/blogs/motionblog/5-facts-about-ls-coolant-crossover-steam-kits" },
+    { label: "Chevy Hardcore — LS accessory drive spacing", href: "https://www.chevyhardcore.com/?p=1446722" },
+    { label: "Super Street — LS1 Genesis Coupe (Mishimoto radiator, SPAL twin fans)", href: "https://s3mag.com/you-got-no-future-kid-ls1-genesis-coupe/" },
+  ]} />
 </BaseLayout>

@@ -2,10 +2,24 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="Fuel System" description="Dedicated fuel pump relay wiring and EVAP solenoid handling for LS Genesis Coupe swaps.">
   <h1>Fuel System</h1>
+
+  <h2 id="pump">In-Tank Pump Options</h2>
+  <p>An LS needs more fuel than the stock Genesis engines, so many builders upgrade the in-tank pump while the tank is open. Drop-in options listed for the Genesis Coupe:</p>
+  <table>
+    <thead><tr><th>Pump</th><th>Flow</th><th>Fits</th></tr></thead>
+    <tbody>
+      <tr><td>DeatschWerks DW420 (with install kit)</td><td>420 lph</td><td>2010–12 Genesis Coupe (2.0T and 3.8)</td></tr>
+      <tr><td>DeatschWerks DW430C compact</td><td>430 lph</td><td>2013–16 3.8, 2013–14 2.0T</td></tr>
+      <tr><td>DeatschWerks DW300 series</td><td>340 lph</td><td>Genesis Coupe 2.0T / 3.8 (check year)</td></tr>
+    </tbody>
+  </table>
+  <p>Fitment listings vary between sellers, so confirm your exact year and trim. Fuel pumps usually aren't returnable.</p>
+  <p>On the engine side, Sikky sells a Genesis fuel line kit (FFK-GEN, $55.99) to connect the factory feed line to the LS rail.</p>
 
   <h2 id="fuel-pump-relay">Fuel Pump Relay</h2>
   <p>
@@ -36,4 +50,11 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <Figure src="evap-solenoid-location.jpg" alt="EVAP line location circled in engine bay" caption="EVAP line next to the fuel feed." />
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Nippon Power — DeatschWerks DW420 for 2009–12 Genesis Coupe", href: "https://nipponpower.com/products/deatschwerks-dw420-series-420-lph-in-tank-fuel-pump-with-install-kit-for-2009-2012-hyundai-genesis-coupe-and-2010-2012-kia-forte" },
+    { label: "Nippon Power — DeatschWerks DW430C for 2013–16 Genesis Coupe", href: "https://nipponpower.com/products/deatschwerks-dw430c-compact-fuel-pump-for-2013-2016-hyundai-genesis-coupe-2-0t-and-3-8r-spec" },
+    { label: "Vivid Racing — DeatschWerks DW300 340 lph Genesis Coupe", href: "https://vividracing.com/catalog/Deatschwerks-DW300-Series-340lph-in-Tank-Fuel-Pump-with-Install-Kit-Hyundai-Genesis-Coupe-2.0T-|-3.8L-10-14-p-151330725.html" },
+    { label: "Sikky — Genesis LS swap kit (FFK-GEN fuel line kit)", href: "https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" },
+    { label: "YouTube — Brian Paul: Genesis Coupe fuel pump relay kit install", href: "https://www.youtube.com/watch?v=BbU_6PtXyb0" },
+  ]} />
 </BaseLayout>

@@ -1,16 +1,34 @@
 ---
+import sizes from '../data/images.json';
+
 interface Props {
   src: string;
   alt: string;
   caption?: string;
 }
 const { src, alt, caption } = Astro.props;
-const path = src.startsWith('/') ? src : `/images/${src}`;
+const file = src.replace(/^\/?images\//, '');
+const stem = file.replace(/\.[^.]+$/, '');
+const dims = (sizes as Record<string, { w: number; h: number }>)[file];
+const w640 = `/images/web/${stem}-640.webp`;
+const w1280 = `/images/web/${stem}-1280.webp`;
+const original = `/images/${file}`;
+const width = dims ? Math.min(dims.w, 640) : undefined;
+const height = dims ? Math.round((dims.h * (width ?? 640)) / dims.w) : undefined;
 ---
 
 <figure class="fig">
-  <a href={path} target="_blank" rel="noopener" title="Open full size">
-    <img src={path} alt={alt} loading="lazy" decoding="async" />
-  </a>
+  <button
+    type="button"
+    class="fig-open"
+    data-full={w1280}
+    data-caption={caption ?? alt}
+    aria-label={`Enlarge photo: ${caption ?? alt}`}
+  >
+    <picture>
+      <source type="image/webp" srcset={`${w640} 640w, ${w1280} 1280w`} sizes="(max-width: 860px) 100vw, 720px" />
+      <img src={original} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+    </picture>
+  </button>
   {caption && <figcaption>{caption}</figcaption>}
 </figure>

@@ -2,17 +2,27 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
 ---
 
 <BaseLayout title="ECUs & Tuning" description="Holley Terminator X power, Holley dash mounting, and wiring the T56 VSS for speedometer on LS Genesis Coupe swaps.">
   <h1>ECUs &amp; Tuning</h1>
   <p>Holley Terminator X is the most common standalone in the Gen Coupe LS community.</p>
   <nav class="toc">
+    <a href="#which">Which kit</a>
     <a href="#power">ECU power</a>
     <a href="#dash">Holley dash</a>
     <a href="#speedo">Speedo / VSS</a>
     <a href="#fans">Fan control</a>
   </nav>
+
+  <h2 id="which">Picking the Right Terminator X Kit</h2>
+  <ul>
+    <li><strong>Crank reluctor:</strong> Holley sells separate kits for 24x engines (LS1/LS6 and early trucks) and 58x engines (most Gen IV). Example: 550-903T is the 24x LS1/LS6 kit with EV1 injector connectors, about $1,450.</li>
+    <li><strong>Terminator X vs X Max:</strong> get the <strong>Max</strong> if you want drive-by-wire throttle or automatic transmission control. Holley's DBW harnesses are listed for X Max and Dominator.</li>
+    <li><strong>Inputs/outputs:</strong> the Terminator X has 4 programmable inputs/outputs (12V, ground, 5V, frequency inputs), which fill up fast with fans, A/C, alternator and VSS. Plan which pins go where before wiring.</li>
+    <li><strong>Display:</strong> some kits ship with a USB/CAN tuning cable instead of the handheld. The 7" digital dash and 6.86" Pro Dash are sold separately.</li>
+  </ul>
 
   <h2 id="power">12V Power While Cranking</h2>
   <p>
@@ -76,4 +86,9 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
   <p>Fan relay wiring, pin map, and key-on fan settings are on the <a href="/guides/cooling#fans">Cooling</a> page.</p>
 
   <CommunityLinks />
+  <Sources items={[
+    { label: "Holley — Terminator X 550-903T (24x LS1/LS6)", href: "https://www.holley.com/products/ls_power/ls_efi_systems/parts/550-903T" },
+    { label: "Michigan Motorsports — Holley 558-406 DBW harness (X Max / Dominator)", href: "https://www.michiganmotorsports.com/tuning-and-programmers/holley-558-406-gm-ls-drive-by-wire-harness-for-6-pin-throttle-body-and-pedal-2005-car-2007-truck-suv-4-8l-5-3l-6-0l-6-2l/" },
+    { label: "Holley — GPS speed module 554-140", href: "https://www.holley.com/products/fuel_systems/fuel_injection/modules_and_sensors/parts/554-140" },
+  ]} />
 </BaseLayout>

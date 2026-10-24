@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import FeaturedSidebar from '../components/FeaturedSidebar.astro';
 import Footer from '../components/Footer.astro';
+import Lightbox from '../components/Lightbox.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -22,7 +23,8 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#12141a" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Gen Coupe Swaps</title>
@@ -38,5 +40,17 @@ const {
       </div>
       <Footer />
     </div>
+    <Lightbox />
+    <script>
+      // Give table cells their column name so wide tables can stack into cards on phones
+      document.querySelectorAll<HTMLTableElement>('.main-content table').forEach((t) => {
+        const heads = Array.from(t.querySelectorAll('thead th')).map((th) => th.textContent?.trim() || '');
+        if (heads.length < 3) return;
+        t.classList.add('stack');
+        t.querySelectorAll('tbody tr').forEach((tr) => {
+          Array.from(tr.children).forEach((td, i) => td.setAttribute('data-label', heads[i] || ''));
+        });
+      });
+    </script>
   </body>
 </html>

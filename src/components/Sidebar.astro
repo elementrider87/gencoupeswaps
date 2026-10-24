@@ -1,4 +1,5 @@
 ---
+import SiteLinks from './SiteLinks.astro';
 const currentPath = Astro.url.pathname;
 
 const guides = [
@@ -24,10 +25,11 @@ const guides = [
 ];
 ---
 
-<aside class="sidebar" id="sidebar">
+<aside class="sidebar" id="sidebar" aria-label="Site and guide navigation">
+  <SiteLinks />
   <div class="sidebar-label">Build Guides</div>
   {guides.map(g => (
-    <a href={g.href} class={currentPath === g.href ? 'active' : ''}>
+    <a href={g.href} class={currentPath.replace(/\/$/, '') === g.href ? 'active' : ''}>
       {g.label}
     </a>
   ))}
