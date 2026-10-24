@@ -551,7 +551,7 @@ img {
 
 /* photo viewer */
 body.lb-open { overflow: hidden; }
-.lb { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.97); display: flex; flex-direction: column; touch-action: pan-y pinch-zoom; }
+.lb { position: fixed; inset: 0; z-index: 1000; background: #000; display: flex; flex-direction: column; touch-action: pan-y pinch-zoom; }
 .lb[hidden] { display: none; }
 .lb-top { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.75rem; padding-top: max(0.5rem, env(safe-area-inset-top)); color: var(--text-muted); font-size: 0.9rem; }
 .lb-stage { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; padding: 0 0.5rem; }
