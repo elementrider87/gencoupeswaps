@@ -37,14 +37,16 @@ const currentPath = Astro.url.pathname;
   const sidebar = document.getElementById('sidebar');
 
   toggle?.addEventListener('click', () => {
-    topNav?.classList.toggle('open');
-    sidebar?.classList.toggle('open');
+    const isOpen = topNav?.classList.toggle('open');
+    document.body.classList.toggle('menu-open', !!isOpen);
+    if (isOpen) sidebar?.classList.remove('open');
   });
 
   document.querySelectorAll('.top-nav a, .sidebar a').forEach(link => {
     link.addEventListener('click', () => {
       topNav?.classList.remove('open');
       sidebar?.classList.remove('open');
+      document.body.classList.remove('menu-open');
     });
   });
 
@@ -107,7 +109,6 @@ const currentPath = Astro.url.pathname;
     if (input.value.trim()) doSearch(input.value);
   });
 
-  // Close results when clicking outside
   document.addEventListener('click', (e) => {
     const wrap = document.getElementById('search-wrap');
     if (wrap && !wrap.contains(e.target as Node) && resultsEl) {
@@ -115,7 +116,6 @@ const currentPath = Astro.url.pathname;
     }
   });
 
-  // Navigate on Enter if there’s exactly one match or highlight first
   input?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       const first = resultsEl?.querySelector('a') as HTMLAnchorElement | null;
