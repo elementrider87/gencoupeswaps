@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import raw from '../data/discounts.json';
+
+type Deal = {
+  category: string; vendor: string; description?: string; offer: string; redeem?: string;
+  code?: string; website?: string; facebook?: string; email?: string; expires?: string;
+};
+const today = new Date().toISOString().slice(0, 10);
+const deals = (raw as Deal[]).filter((d) => !d.expires || d.expires >= today);
+const fmt = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+---
+
+<BaseLayout title="Discounts" description="Discount codes and deals for Genesis Coupe LS swap parts and services, including Holley EFI tuning, from vendors recommended on Gen Coupe Swaps.">
+  <h1>Discounts</h1>
+  <p>
+    Deals for Gen Coupe Swaps readers from tuners and vendors we recommend in the guides.
+    Mention the site or use the code shown, and you'll save some money while helping keep these guides free.
+  </p>
+
+  <div class="deals">
+    {deals.map((d) => (
+      <article class="deal">
+        <div class="deal-cat">{d.category}</div>
+        <h2 class="deal-vendor">{d.vendor}</h2>
+        {d.description && <p class="deal-desc">{d.description}</p>}
+        <div class="deal-offer">{d.offer}</div>
+        {d.redeem && <p class="deal-redeem">{d.redeem}</p>}
+        {d.code && (
+          <button type="button" class="deal-code" data-code={d.code} aria-label={`Copy code ${d.code}`}>
+            <span class="deal-code-text">{d.code}</span><span class="deal-code-hint">Tap to copy</span>
+          </button>
+        )}
+        <div class="deal-links">
+          {d.website && <a class="deal-btn" href={d.website} target="_blank" rel="noopener sponsored">Website</a>}
+          {d.facebook && <a class="deal-btn" href={d.facebook} target="_blank" rel="noopener sponsored">Facebook</a>}
+          {d.email && <a class="deal-btn" href={`mailto:${d.email}?subject=${encodeURIComponent('GenCoupeSwaps.com sent me')}`}>Email {d.email}</a>}
+        </div>
+        {d.expires && <p class="deal-exp">Valid through {fmt(d.expires)}</p>}
+      </article>
+    ))}
+  </div>
+
+  <div class="note">
+    <p><strong>More deals coming.</strong> We're working with the vendors linked throughout the guides, like Sikky and LOJ Conversions, to add discount codes here. Check back soon.</p>
+  </div>
+
+  <h2>Are You a Vendor?</h2>
+  <p>
+    If you make or sell parts or services for LS-swapped Genesis Coupes and want to offer a discount to readers,
+    <a href="/contact">get in touch</a>.
+  </p>
+
+  <p class="updated">
+    Disclosure: some links on this page may earn Gen Coupe Swaps a small commission, at no extra cost to you. It helps cover hosting and keeps the guides free.
+    Offers are set by each vendor and can change.
+  </p>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.deal-code').forEach((b) => {
+    b.addEventListener('click', async () => {
+      const hint = b.querySelector('.deal-code-hint');
+      try {
+        await navigator.clipboard.writeText(b.dataset.code || '');
+        if (hint) hint.textContent = 'Copied!';
+      } catch {
+        if (hint) hint.textContent = 'Press and hold to copy';
+      }
+      setTimeout(() => { if (hint) hint.textContent = 'Tap to copy'; }, 2000);
+    });
+  });
+</script>
+
+<style>
+  .deals { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin: 1.25rem 0 1.5rem; }
+  .deal { background: var(--bg-card); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: var(--radius); padding: 1.1rem 1.2rem 1.2rem; }
+  .deal-cat { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); font-weight: 700; }
+  .main-content .deal-vendor { margin: 0.3rem 0 0.4rem; font-size: 1.25rem; }
+  .deal-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.75rem !important; }
+  .deal-offer { font-size: 1.35rem; font-weight: 800; line-height: 1.25; margin-bottom: 0.35rem; }
+  .deal-redeem { font-size: 0.95rem; margin-bottom: 0.9rem !important; }
+  .deal-code { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 0.5rem; min-height: 44px; padding: 0.5rem 0.85rem; margin-bottom: 0.9rem; border: 2px dashed var(--accent); border-radius: var(--radius); background: var(--bg-deep); color: var(--text); font: inherit; cursor: pointer; }
+  .deal-code-text { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; }
+  .deal-code-hint { font-size: 0.8rem; color: var(--text-muted); }
+  .deal-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .deal-btn { display: inline-flex; align-items: center; min-height: 40px; padding: 0.45rem 0.9rem; border-radius: 999px; background: var(--accent); color: #fff !important; font-weight: 600; font-size: 0.9rem; word-break: break-all; }
+  .deal-btn:hover { background: var(--accent-hover); }
+  .deal-exp { color: var(--text-muted); font-size: 0.85rem; margin: 0.75rem 0 0 !important; }
+  @media (max-width: 600px) { .deals { grid-template-columns: 1fr; } }
+</style>

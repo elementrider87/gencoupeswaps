@@ -27,6 +27,7 @@ const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(
     <a href="/resources" class={currentPath.startsWith('/resources') ? 'active' : ''}>Resources</a>
     <a href="/about" class={currentPath.startsWith('/about') ? 'active' : ''}>About</a>
     <a href="/contact" class={currentPath.startsWith('/contact') ? 'active' : ''}>Contact</a>
+    <a href="/discounts" class={currentPath.startsWith('/discounts') ? 'active' : ''}>Discounts</a>
     <a href="/donate" class="donate-btn">Donate</a>
   </nav>
 </header>
@@ -60,6 +61,7 @@ const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(
     { label: 'Resources', href: '/resources', keywords: 'resources links parts kits forums' },
     { label: 'About', href: '/about', keywords: 'about story why' },
     { label: 'Contact', href: '/contact', keywords: 'contact email contribute submit' },
+    { label: 'Discounts', href: '/discounts', keywords: 'discounts discount codes coupons deals promo vendor holley tune tuning turbo joe' },
     { label: 'Donate', href: '/donate', keywords: 'donate support tip' },
     { label: 'Engine Selection', href: '/guides/engine-selection', keywords: 'engine selection ls ls1 ls2 ls3 ls7 lq4 lq9 5.3 6.0 6.2 donor' },
     { label: 'Motor Mounts', href: '/guides/motor-mounts', keywords: 'motor mounts engine mounts kit loj sikky poly' },

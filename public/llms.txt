@@ -30,6 +30,7 @@ Written and maintained by Alexander Knight (@elementrider87). Wire colors and pi
 
 - [HP Wars](https://gencoupeswaps.com/hp-wars): Dyno leaderboard for LS-swapped Hyundai Genesis Coupes: N/A, turbo, supercharged, and nitrous wheel horsepower.
 - [Featured Builds](https://gencoupeswaps.com/featured): Community LS swapped Genesis Coupes — submit your build.
+- [Discounts](https://gencoupeswaps.com/discounts): Discount codes and deals from tuners and vendors recommended in the guides, including Holley EFI remote tuning.
 - [Resources](https://gencoupeswaps.com/resources): Facebook groups, YouTube channels, kits, and manuals for LS Genesis Coupe swaps.
 
 ## Optional
