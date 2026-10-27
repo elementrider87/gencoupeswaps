@@ -587,3 +587,11 @@ body.lb-open { overflow: hidden; }
 .roadmap { counter-reset: step; list-style: none; margin-left: 0 !important; padding: 0; }
 .roadmap li { counter-increment: step; position: relative; padding: 0.55rem 0 0.55rem 2.6rem; border-bottom: 1px solid var(--border); margin: 0 !important; }
 .roadmap li::before { content: counter(step); position: absolute; left: 0; top: 0.55rem; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+
+/* vendor call-to-action button inside guides */
+.buy-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0.55rem 1.1rem; border-radius: var(--radius); background: var(--accent); color: #fff !important; font-weight: 600; }
+.buy-btn:hover { background: var(--accent-hover); }
+
+/* small product photos (vendor images that are low-res) */
+.fig-small { max-width: 480px; }
+.fig-small .fig img { background: #fff; }
