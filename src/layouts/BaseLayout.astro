@@ -19,7 +19,7 @@ const {
 } = Astro.props;
 
 const site = 'https://gencoupeswaps.com';
-const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const path = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(/\/$/, '') || '/';
 const canonical = site + (path === '/' ? '/' : path);
 const isGuide = path.startsWith('/guides/');
 const fullTitle = path === '/'

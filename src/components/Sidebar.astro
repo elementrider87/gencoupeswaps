@@ -1,6 +1,6 @@
 ---
 import SiteLinks from './SiteLinks.astro';
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(/\/$/, '') || '/';
 
 const guides = [
   { href: '/guides/engine-selection', label: 'Engine Selection' },
@@ -29,7 +29,7 @@ const guides = [
   <SiteLinks />
   <div class="sidebar-label">Build Guides</div>
   {guides.map(g => (
-    <a href={g.href} class={currentPath.replace(/\/$/, '') === g.href ? 'active' : ''}>
+    <a href={g.href} class={currentPath === g.href ? 'active' : ''}>
       {g.label}
     </a>
   ))}
