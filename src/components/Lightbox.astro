@@ -19,7 +19,8 @@
   const img = document.getElementById('lb-img') as HTMLImageElement;
   const cap = document.getElementById('lb-cap') as HTMLParagraphElement;
   const count = document.getElementById('lb-count') as HTMLSpanElement;
-  const items = Array.from(document.querySelectorAll<HTMLButtonElement>('.fig-open'));
+  const all = Array.from(document.querySelectorAll<HTMLButtonElement>('.fig-open'));
+  let items: HTMLButtonElement[] = all;
   let idx = 0;
   let lastFocus: HTMLElement | null = null;
 
@@ -51,7 +52,10 @@
     lastFocus?.focus();
   }
 
-  items.forEach((b, i) => b.addEventListener('click', () => open(i)));
+  all.forEach((b) => b.addEventListener('click', () => {
+    items = all.filter((x) => x.offsetParent !== null);
+    open(Math.max(0, items.indexOf(b)));
+  }));
   document.getElementById('lb-close')?.addEventListener('click', () => close());
   document.getElementById('lb-prev')?.addEventListener('click', () => show(idx - 1));
   document.getElementById('lb-next')?.addEventListener('click', () => show(idx + 1));

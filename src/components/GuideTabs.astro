@@ -1,0 +1,60 @@
+---
+import { guideTabs } from '../data/guideTabs';
+const path = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(/\/$/, '');
+const tabs = guideTabs[path] ?? [];
+---
+
+{tabs.length > 0 && (
+  <nav class="guide-tabs" role="tablist" aria-label="Sections of this guide">
+    {tabs.map((t, i) => (
+      <a href={`#${t.id}`} role="tab" data-tab={t.id} aria-selected={i === 0 ? 'true' : 'false'}>{t.label}</a>
+    ))}
+  </nav>
+)}
+
+<script>
+  const bar = document.querySelector<HTMLElement>('.guide-tabs');
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('.tab-panel'));
+
+  if (bar && panels.length) {
+    const tabLinks = Array.from(bar.querySelectorAll<HTMLAnchorElement>('a[data-tab]'));
+    const sideLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.sidebar a[data-tab]'));
+
+    const panelFor = (hash: string) => {
+      const id = decodeURIComponent(hash.replace(/^#/, ''));
+      if (!id) return { panel: panels[0], target: null as HTMLElement | null };
+      const el = document.getElementById(id);
+      const panel = el?.closest<HTMLElement>('.tab-panel') ?? panels[0];
+      return { panel, target: el && el !== panel ? el : null };
+    };
+
+    const show = (panel: HTMLElement) => {
+      panels.forEach((p) => { p.hidden = p !== panel; });
+      [...tabLinks, ...sideLinks].forEach((a) => {
+        const on = a.dataset.tab === panel.id;
+        a.setAttribute('aria-selected', String(on));
+        a.classList.toggle('active', on);
+      });
+      bar.querySelector<HTMLElement>(`a[data-tab="${panel.id}"]`)?.scrollIntoView({ block: 'nearest', inline: 'center' });
+    };
+
+    const fromHash = (scroll: boolean) => {
+      const { panel, target } = panelFor(location.hash);
+      show(panel);
+      if (scroll) (target ?? bar).scrollIntoView({ block: 'start' });
+    };
+
+    tabLinks.forEach((a) => a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const panel = panels.find((p) => p.id === a.dataset.tab);
+      if (!panel) return;
+      show(panel);
+      history.replaceState(null, '', `#${panel.id}`);
+      const top = bar.getBoundingClientRect().top;
+      if (top < 0 || top > window.innerHeight / 2) bar.scrollIntoView({ block: 'start' });
+    }));
+
+    window.addEventListener('hashchange', () => fromHash(true));
+    fromHash(Boolean(location.hash));
+  }
+</script>

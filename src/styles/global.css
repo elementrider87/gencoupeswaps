@@ -595,3 +595,18 @@ body.lb-open { overflow: hidden; }
 /* small product photos (vendor images that are low-res) */
 .fig-small { max-width: 480px; }
 .fig-small .fig img { background: #fff; }
+
+/* ===== Guide tabs ===== */
+.guide-tabs { position: sticky; top: var(--header-height); z-index: 20; display: flex; gap: 0.4rem; overflow-x: auto; scrollbar-width: none; background: var(--bg-deep); padding: 0.6rem 0; margin: 0.25rem 0 1.25rem; border-bottom: 1px solid var(--border); }
+.guide-tabs::-webkit-scrollbar { display: none; }
+.guide-tabs a { flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 40px; padding: 0.45rem 1rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted); font-weight: 600; font-size: 0.95rem; white-space: nowrap; }
+.guide-tabs a:hover { color: var(--text); }
+.guide-tabs a[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tab-panel[hidden] { display: none; }
+.tab-panel { scroll-margin-top: calc(var(--header-height) + 4rem); }
+.tab-panel > h2:first-child { margin-top: 0.25rem; }
+.main-content .tab-panel h2, .main-content .tab-panel h3 { scroll-margin-top: calc(var(--header-height) + 4.5rem); }
+.sidebar-sub { margin: 0.1rem 0 0.4rem; border-left: 2px solid var(--border); margin-left: 1.5rem; }
+.sidebar .sidebar-sub a { padding: 0.35rem 0.9rem; font-size: 0.86rem; border-left: 0; }
+.sidebar .sidebar-sub a.active { color: var(--accent); background: none; }
+@media (max-width: 1024px) { .sidebar .sidebar-sub a { padding: 0.6rem 0.9rem; font-size: 0.95rem; } }

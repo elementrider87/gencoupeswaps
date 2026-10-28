@@ -1,10 +1,10 @@
 ---
 import SiteLinks from './SiteLinks.astro';
+import { guideTabs } from '../data/guideTabs';
 const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(/\/$/, '') || '/';
 
 const guides = [
   { href: '/guides/engine-selection', label: 'Engine Selection' },
-  { href: '/guides/motor-mounts', label: 'Motor Mounts' },
   { href: '/guides/swap-kits', label: 'Swap Kits' },
   { href: '/guides/alternator', label: 'Alternator' },
   { href: '/guides/power-steering', label: 'Power Steering' },
@@ -29,8 +29,17 @@ const guides = [
   <SiteLinks />
   <div class="sidebar-label">Build Guides</div>
   {guides.map(g => (
-    <a href={g.href} class={currentPath === g.href ? 'active' : ''}>
-      {g.label}
-    </a>
+    <>
+      <a href={g.href} class={currentPath === g.href ? 'active' : ''}>
+        {g.label}
+      </a>
+      {currentPath === g.href && guideTabs[g.href] && (
+        <div class="sidebar-sub">
+          {guideTabs[g.href].map((t, i) => (
+            <a href={`${g.href}#${t.id}`} data-tab={t.id} class={i === 0 ? 'active' : ''}>{t.label}</a>
+          ))}
+        </div>
+      )}
+    </>
   ))}
 </aside>

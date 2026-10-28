@@ -2,22 +2,28 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
 import Sources from '../../components/Sources.astro';
+import GuideTabs from '../../components/GuideTabs.astro';
 ---
 
-<BaseLayout title="Swap Kits" description="LS swap kits for the Hyundai Genesis Coupe: Sikky Stage 2, LOJ basic kits, ISR, what's included, prices, and lessons from real builds.">
+<BaseLayout title="Swap Kits" description="LS swap kits for the Hyundai Genesis Coupe: complete kits, oil pans (front and rear sump), motor mounts, headers, and transmission mounts from Sikky, LOJ, ISR, and CX Racing.">
   <h1>Swap Kits</h1>
   <p>
-    Complete kits that include motor mounts, a Genesis-specific oil pan, and headers make the swap much more straightforward. The oil pan is the part most people underestimate: you need one designed to clear the Genesis front subframe.
+    The core swap parts are the motor mounts, a Genesis-specific oil pan, headers, and a transmission mount. You can buy them as a complete kit or piece by piece.
+    Whichever way you go, these parts have to work together: mount position decides which oil pan, headers, and driveshaft length fit.
   </p>
 
-  <h2>What's in Each Kit</h2>
+  <GuideTabs />
+
+  <!-- ===================== COMPLETE KITS ===================== -->
+  <div class="tab-panel" id="overview">
+  <h2>Complete Kits</h2>
   <table>
     <thead><tr><th>Kit</th><th>Price</th><th>Includes</th></tr></thead>
     <tbody>
       <tr>
         <td><strong>Sikky Stage 2</strong></td>
         <td>$3,695.90</td>
-        <td>Engine + trans mounts, ~8 qt aluminum oil pan with remote filter kit, 1-7/8" stainless headers (V-band), one-piece steel driveshaft (1310 U-joints, 4-bolt diff flange). No subframe modifications; the engine doesn't hang below the crossmember.</td>
+        <td>Engine + trans mounts, ~8 qt aluminum front-sump oil pan with remote filter kit, 1-7/8" stainless headers (V-band), one-piece steel driveshaft (1310 U-joints, 4-bolt diff flange). No subframe modifications; the engine doesn't hang below the crossmember.</td>
       </tr>
       <tr>
         <td><strong>Sikky build-your-own</strong></td>
@@ -35,6 +41,11 @@ import Sources from '../../components/Sources.astro';
         <td>Keep a Nissan 350Z 6-speed: mounts, Z33 trans mount, oil pan, adapter plate, Clutchmasters billet flywheel (takes a 350Z/G35 clutch), mini starter, and a shortened shift linkage.</td>
       </tr>
       <tr>
+        <td><strong>CX Racing mounts + headers</strong></td>
+        <td>$1,218.39</td>
+        <td>Engine mounts, T56 trans mount, headers with a 3" stainless Y-pipe and V-band clamps. CX Racing lists this kit for <strong>2.0T cars only</strong>; the listing is unclear on what's included, so confirm with them.</td>
+      </tr>
+      <tr>
         <td><strong>ISR mount kit</strong></td>
         <td>$412.50</td>
         <td>Engine + T56 trans mounts. Headers ($990) and a T56 shifter relocation kit are separate. Lowest cost, but headers sit lower.</td>
@@ -43,7 +54,7 @@ import Sources from '../../components/Sources.astro';
   </table>
   <p>Prices as listed by each vendor in October 2026. Call to confirm stock; LOJ notes most items are in stock but asks you to confirm by phone.</p>
 
-  <h2>Things the Kits Don't Cover</h2>
+  <h3>Things the Kits Don't Cover</h3>
   <ul>
     <li><strong>Wiring and ECU</strong>: see <a href="/guides/wiring">Wiring</a> and <a href="/guides/ecu">ECUs &amp; Tuning</a>.</li>
     <li><strong>Cooling</strong>: radiator, fans, and the steam vent line. See <a href="/guides/cooling">Cooling</a>.</li>
@@ -52,19 +63,132 @@ import Sources from '../../components/Sources.astro';
     <li><strong>Accessory drive and A/C brackets.</strong></li>
   </ul>
 
-  <h2>Lessons From Real Builds</h2>
+  <h3>Lessons From Real Builds</h3>
   <ul>
     <li>Using an older Enjuku-sourced kit, one LS1 build needed an adapter for the clutch master, plus notching and grinding of the shifter plate for the T56.</li>
     <li>The same build had headers sitting too close to the main fuse box, which caught fire. Heat-shield and check clearance around the fuse box and wiring. See <a href="/guides/exhaust#heat">Heat Shielding</a>.</li>
   </ul>
+  </div>
+
+  <!-- ===================== OIL PAN ===================== -->
+  <div class="tab-panel" id="oil-pan">
+  <h2>Oil Pan</h2>
+  <p>
+    Every swap needs a pan designed to clear the Genesis front subframe. The main choice is <strong>front sump</strong> or <strong>rear sump</strong>, meaning whether the deep part of the pan sits at the front or the back of the engine.
+  </p>
+  <table>
+    <thead><tr><th>Pan</th><th>Price</th><th>Sump</th><th>Capacity</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>CX Racing rear sump</strong></td>
+        <td>$499</td>
+        <td>Rear</td>
+        <td>TBD</td>
+        <td>Aluminum, built-in baffles, 1/2" CNC aluminum flange, AN8 port for an external filter/oil cooler, AN6 oil-level port. Includes the pickup; gasket and dipstick aren't listed. Needs a <strong>1.5" sway bar spacer</strong> (not included). The best-priced option, and the rear sump is its big advantage.</td>
+      </tr>
+      <tr>
+        <td><strong>LOJ Conversions</strong></td>
+        <td>$749.95</td>
+        <td>Not stated</td>
+        <td>6.0 qt sump</td>
+        <td>Powder-coated mild steel (won't crack like fabricated aluminum if you hit debris), road-race diamond baffling with trap doors, anti-slosh baffle, reinforced rail, -10AN ports for filter relocation. Includes pickup, dipstick, gasket and hardware.</td>
+      </tr>
+      <tr>
+        <td><strong>Sikky (OP003H)</strong></td>
+        <td>$727.97</td>
+        <td>Front, 6" deep</td>
+        <td>8 qt</td>
+        <td>Aluminum with 1/2" billet 6061 flange, side-port remote filter adapter, dipstick, magnetic drain plug. Requires Sikky mounts and the GM GTO pickup tube (12572654, sold as a $99.99 option). Keep at least 3/8" between pickup and pan floor.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <a class="buy-btn" href="https://ebay.io/m/Ci43Lz" target="_blank" rel="noopener sponsored">CX Racing rear sump pan on eBay</a>
+  </p>
+  <div class="note">
+    <p><strong>Pan, mounts and pickup go together.</strong> Each pan is designed around its maker's mount position, and each needs its own pickup tube. Mixing brands can work, but check with the vendor first.</p>
+  </div>
+  </div>
+
+  <!-- ===================== MOTOR MOUNTS ===================== -->
+  <div class="tab-panel" id="motor-mounts">
+  <h2>Motor Mounts</h2>
+  <p>
+    Engine position sets the tone for the rest of the swap: radiator clearance, header fitment, driveshaft angle, and accessory access.
+    Most people use a complete mount kit rather than universal brackets.
+  </p>
+  <div class="note">
+    <p><strong>BK1 vs BK2:</strong> the factory 2009–12 (BK1) engine mount uses three studs to the subframe; the 2013–16 (BK2) mount uses a single center stud. Check that the kit you buy covers your chassis. LOJ, for example, designs for BK2 and ships BK1 orders with a drill and washer to modify the subframe.</p>
+  </div>
+  <table>
+    <thead><tr><th></th><th>Sikky</th><th>LOJ Conversions</th><th>ISR Performance</th><th>CX Racing</th></tr></thead>
+    <tbody>
+      <tr><td>Price</td><td>$615.98 base (engine + trans mount)</td><td>$429.95 BK2 / $509.95 BK1 (engine mounts)</td><td>$412.50 (engine + trans mount)</td><td>$472.72 (engine + T56 trans mount)</td></tr>
+      <tr><td>Build</td><td>CNC 6061-T6 aluminum, urethane or aluminum bushings</td><td>Water-jet steel brackets, billet 6061 pedestals, Energy Suspension urethane</td><td>Pivoting pedestal + bracket, 85A urethane</td><td>Not listed</td></tr>
+      <tr><td>Trans mount</td><td>T56 / Magnum included; TR6060 and CD00X optional</td><td>Sold separately or in kits</td><td>F-body T56 included</td><td>T56 included</td></tr>
+      <tr><td>Best with</td><td>Sikky pan, headers, driveshaft</td><td>LOJ pan and kits</td><td>ISR headers and shifter relocation kit</td><td>CX Racing pan and headers</td></tr>
+      <tr><td>Notes</td><td>Lifetime warranty on mounts; designed to fit when all Sikky parts are used</td><td>Designed for BK2; BK1 needs subframe drilling (tools included)</td><td>Cheapest; headers sit lower, generally not recommended on powered cars. Listed as competition-use only</td><td>Listed for LS1 engines, 2008–16. Competition-use only</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li><strong>Plan the whole package, not just mounts.</strong> Mount position decides which oil pan, headers, and driveshaft length you need. Mixing brands is where most fitment headaches come from.</li>
+    <li><strong>Urethane vs aluminum bushings:</strong> urethane is the street choice; solid aluminum transfers a lot more vibration into the cabin.</li>
+    <li><strong>Keep the steering shaft and fuse box in mind</strong>: header routing around them changes with engine position.</li>
+  </ul>
+  </div>
+
+  <!-- ===================== HEADERS ===================== -->
+  <div class="tab-panel" id="headers">
+  <h2>Headers</h2>
+  <p>Headers are tied to mount position and steering shaft clearance, so most people buy them from the same maker as their mounts.</p>
+  <table>
+    <thead><tr><th>Header</th><th>Price</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sikky (HDR015SS)</strong></td><td>$1,231.99</td><td>100% stainless, 1-7/8" primaries, merge collectors with V-band flanges. Also included in the Stage 2 package. Designed around Sikky mounts.</td></tr>
+      <tr><td><strong>ISR (IS-GEN-LS1H)</strong></td><td>~$990</td><td>Made for ISR mounts. Sits lower, which is why it's generally not recommended on powered cars.</td></tr>
+      <tr><td><strong>CX Racing</strong></td><td>In $1,218.39 kit</td><td>Sold with CX Racing mounts and trans mount, plus a 3" stainless Y-pipe that connects to the factory cat-back. Listed for 2.0T cars only.</td></tr>
+      <tr><td><strong>Custom / turbo manifolds</strong></td><td>Varies</td><td>Common on boosted builds. Leave room for the steering shaft and keep heat away from the fuse box.</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <p><strong>Real-world warning:</strong> on one LS1 Gen Coupe, headers sitting too close caused the main fuse box to catch fire. Check clearance to the fuse box, harness, brake lines, and steering shaft, and shield anything within a few inches. See <a href="/guides/exhaust#heat">Heat Shielding</a>.</p>
+  </div>
+  </div>
+
+  <!-- ===================== TRANS MOUNT ===================== -->
+  <div class="tab-panel" id="trans-mount">
+  <h2>Transmission Mount</h2>
+  <p>The trans mount has to match both your transmission and your engine mount position. Most kits include one for the T56.</p>
+  <table>
+    <thead><tr><th>Mount</th><th>Price</th><th>Fits</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td><strong>CX Racing (TM-T56-GENESIS)</strong></td><td>$232</td><td>T56</td><td>Sold on its own for 2008–16 Genesis Coupes with an LS1/T56 swap. Engine mounts not included. Competition-use only.</td></tr>
+      <tr><td><strong>Sikky</strong></td><td>In $615.98 mount kit</td><td>T56, T56 Magnum; TR6060 and CD00X optional</td><td>CNC-bent steel bracket with urethane bushing, lifetime warranty.</td></tr>
+      <tr><td><strong>LOJ Conversions</strong></td><td>Separate or in kits</td><td>T56, T56 Magnum, Z33/Z34, 4L80, 6L80/6L90</td><td>Energy Suspension urethane mount. LOJ notes GM transmissions may need tunnel modification.</td></tr>
+      <tr><td><strong>ISR</strong></td><td>In $412.50 mount kit</td><td>F-body T56</td><td>Urethane bushing. T56 shifter relocation kit sold separately.</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <a class="buy-btn" href="https://ebay.io/m/5SZ2kn" target="_blank" rel="noopener sponsored">CX Racing T56 trans mount on eBay</a>
+  </p>
+  <p>For transmission choices, shifter, and clutch, see <a href="/guides/transmission">Transmission &amp; Clutch</a>.</p>
+  </div>
 
   <CommunityLinks />
   <Sources items={[
     { label: 'Sikky — Stage 2 Hyundai Genesis LS swap package', href: 'https://www.sikky.com/product/sikky-2013-genesis-stage-2-ls-swap-kit/' },
     { label: 'Sikky — Spec your own Genesis Coupe LS swap kit', href: 'https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/' },
+    { label: 'Sikky — Genesis Coupe front sump oil pan (OP003H)', href: 'https://www.sikky.com/product/genesis-coupe-lsx-swap-front-sump-oil-pan-kit' },
     { label: 'LOJ Conversions — Genesis Coupe LSx Basic Swap Kit (T56)', href: 'https://lojkits.com/products/genesis-coupe-lsx-basic-swap-kit-t56-transmission' },
     { label: 'LOJ Conversions — Genesis Coupe LSx Basic Swap Kit (Z33 6MT)', href: 'https://lojkits.com/products/genesis-coupe-lsx-basic-swap-kit' },
+    { label: 'LOJ Conversions — Genesis Coupe LS swap oil pan', href: 'https://lojkits.com/products/genesis-coupe-bk-s-lsx-swap-oil-pan' },
+    { label: 'LOJ Conversions — Genesis Coupe LS swap engine mounts', href: 'https://www.lojkits.com/products/genesis-coupe-lsx-swap-engine-mounts' },
+    { label: 'LOJ Conversions — Genesis Coupe LS transmission mounts', href: 'https://lojkits.com/products/genesis-coupe-lsx-swap-transmission-mount-for-4l80-automatic-transmission' },
     { label: 'ISR Performance — Hyundai Genesis LS mount kit', href: 'https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/' },
+    { label: 'CX Racing — Rear sump LS oil pan for Genesis Coupe', href: 'https://www.cxracing.com/OP-LS1-300ZX-for-Genesis' },
+    { label: 'CX Racing — T56 transmission mount for Genesis Coupe', href: 'https://www.cxracing.com/TM-T56-GENESIS' },
+    { label: 'CX Racing — Motor mount + T56 trans mount kit', href: 'https://cxracing.com/engine-swap-kit-hyundai-kia-genesis-coupe/ESK-TM-LS-GENESIS-KIT' },
+    { label: 'CX Racing — Mounts + headers kit', href: 'https://www.cxracing.com/ESK-TM-HD-LS-GENESIS-KIT' },
     { label: 'Super Street — LS1 Genesis Coupe feature', href: 'https://s3mag.com/you-got-no-future-kid-ls1-genesis-coupe/' },
   ]} />
 </BaseLayout>

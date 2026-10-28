@@ -7,8 +7,7 @@ Written and maintained by Alexander Knight (@elementrider87). Wire colors and pi
 ## Build guides
 
 - [Engine Selection](https://gencoupeswaps.com/guides/engine-selection): Choosing an LS engine for a Hyundai Genesis Coupe swap: engine options, accessory drive spacing, crank reluctor, and what to buy with the engine.
-- [Swap Kits](https://gencoupeswaps.com/guides/swap-kits): LS swap kits for the Hyundai Genesis Coupe: Sikky Stage 2, LOJ basic kits, ISR, what's included, prices, and lessons from real builds.
-- [Motor Mounts](https://gencoupeswaps.com/guides/motor-mounts): LS motor mount options for the Hyundai Genesis Coupe: Sikky, LOJ Conversions, and ISR Performance compared, including BK1 vs BK2 fitment.
+- [Swap Kits](https://gencoupeswaps.com/guides/swap-kits): LS swap kits for the Hyundai Genesis Coupe with tabs for complete kits, oil pans (front and rear sump), motor mounts (BK1 vs BK2), headers, and transmission mounts from Sikky, LOJ, ISR, and CX Racing.
 - [Wiring](https://gencoupeswaps.com/guides/wiring): Passenger fuse box, push-to-start, Holley cranking power, reverse lights, and brake switch wiring for LS Genesis Coupe swaps.
 - [ECUs & Tuning](https://gencoupeswaps.com/guides/ecu): Choosing a Holley Terminator X kit (24x vs 58x, X vs X Max), ECU cranking power, Holley dash mounting, and T56 VSS speedo wiring for LS Genesis Coupe swaps.
 - [Cooling System](https://gencoupeswaps.com/guides/cooling): Radiator, fan clearance, fan relays, Holley fan control, steam vent routing, IAT placement, and heater hoses for LS Genesis Coupe swaps.
@@ -19,7 +18,7 @@ Written and maintained by Alexander Knight (@elementrider87). Wire colors and pi
 - [Exhaust & Heat Shielding](https://gencoupeswaps.com/guides/exhaust): Sikky vs ISR headers, header clearance around the fuse box, and DEI heat shielding for LS Genesis Coupe swaps.
 - [Transmission & Clutch](https://gencoupeswaps.com/guides/transmission): T56 Magnum XL specs and ratios, pilot bushing, shifter relocation, Z33 and automatic options, and the Wilwood clutch master fix for LS Genesis Coupe swaps.
 - [Driveshaft](https://gencoupeswaps.com/guides/driveshaft): Collins 3-to-4 bolt adapter, Spicer yoke, Sikky driveshaft options, and length notes for LS Genesis Coupe swaps.
-- [Differential & Axles](https://gencoupeswaps.com/guides/differential): Stock Torsen diff, Genesis sedan axle upgrade part numbers, Ford 8.8 IRS kit, and custom DSS axles for LS Genesis Coupe swaps.
+- [Differential & Axles](https://gencoupeswaps.com/guides/differential): OEM Genesis Coupe diff with billet cover and sedan axle part numbers, or the Ford 8.8 IRS swap with custom DSS axles.
 - [Brakes & ABS Delete](https://gencoupeswaps.com/guides/brakes): ABS delete fittings, brake lines, adjustable proportioning valve, line lock placement, and Brembo rebuild for LS Genesis Coupe swaps.
 - [A/C System](https://gencoupeswaps.com/guides/ac): Keeping A/C on an LS Genesis Coupe swap: A/C request wires by year, Holley A/C add-on, and compressor/hose setup.
 - [Gas Pedal](https://gencoupeswaps.com/guides/gas-pedal): Cable and drive-by-wire gas pedal options, Holley-compatible GM pedals (10379038, 19417903), and keeping the OEM pedal on LS Gen Coupe swaps.
