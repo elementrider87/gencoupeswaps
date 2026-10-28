@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
 import Sources from '../../components/Sources.astro';
 import GuideTabs from '../../components/GuideTabs.astro';
+import Figure from '../../components/Figure.astro';
 ---
 
 <BaseLayout title="Swap Kits" description="LS swap kits for the Hyundai Genesis Coupe: complete kits, oil pans (front and rear sump), motor mounts, headers, and transmission mounts from Sikky, LOJ, ISR, and CX Racing.">
@@ -102,6 +103,10 @@ import GuideTabs from '../../components/GuideTabs.astro';
       </tr>
     </tbody>
   </table>
+  <div class="figs">
+    <Figure src="loj-oil-pan.jpg" alt="LOJ Conversions Genesis Coupe LS swap oil pan with pickup and dipstick" caption="LOJ Conversions: powder-coated steel, 6 qt, with pickup and dipstick." />
+    <Figure src="sikky-oil-pan.jpg" alt="Sikky Genesis Coupe LS swap aluminum front sump oil pan" caption="Sikky OP003H: 8 qt aluminum front sump with billet flange." />
+  </div>
   <p>
     <a class="buy-btn" href="https://ebay.io/m/Ci43Lz" target="_blank" rel="noopener sponsored">CX Racing rear sump pan on eBay</a>
   </p>
@@ -130,6 +135,11 @@ import GuideTabs from '../../components/GuideTabs.astro';
       <tr><td>Notes</td><td>Lifetime warranty on mounts; designed to fit when all Sikky parts are used</td><td>Designed for BK2; BK1 needs subframe drilling (tools included)</td><td>Cheapest; headers sit lower, generally not recommended on powered cars. Listed as competition-use only</td><td>Listed for LS1 engines, 2008–16. Competition-use only</td></tr>
     </tbody>
   </table>
+  <div class="figs">
+    <Figure src="sikky-motor-mounts.jpg" alt="Sikky CNC machined aluminum Genesis Coupe LS motor mounts" caption="Sikky: CNC-machined 6061-T6 aluminum mounts." />
+    <Figure src="loj-motor-mounts.jpg" alt="LOJ Conversions Genesis Coupe LS engine mounts with hardware" caption="LOJ Conversions: steel brackets, billet pedestals, urethane inserts." />
+    <Figure src="isr-mount-kit.jpg" alt="ISR Performance Genesis Coupe LS mount kit with transmission mount" caption="ISR Performance: engine mounts plus T56 trans mount crossmember." />
+  </div>
   <ul>
     <li><strong>Plan the whole package, not just mounts.</strong> Mount position decides which oil pan, headers, and driveshaft length you need. Mixing brands is where most fitment headaches come from.</li>
     <li><strong>Urethane vs aluminum bushings:</strong> urethane is the street choice; solid aluminum transfers a lot more vibration into the cabin.</li>
@@ -150,6 +160,10 @@ import GuideTabs from '../../components/GuideTabs.astro';
       <tr><td><strong>Custom / turbo manifolds</strong></td><td>Varies</td><td>Common on boosted builds. Leave room for the steering shaft and keep heat away from the fuse box.</td></tr>
     </tbody>
   </table>
+  <div class="figs">
+    <Figure src="sikky-headers.jpg" alt="Sikky stainless Genesis Coupe LS swap headers" caption="Sikky HDR015SS: stainless, 1-7/8 inch primaries." />
+    <Figure src="isr-headers.jpg" alt="ISR Performance Genesis Coupe LS swap long tube headers" caption="ISR Performance Genesis LS headers." />
+  </div>
   <div class="note">
     <p><strong>Real-world warning:</strong> on one LS1 Gen Coupe, headers sitting too close caused the main fuse box to catch fire. Check clearance to the fuse box, harness, brake lines, and steering shaft, and shield anything within a few inches. See <a href="/guides/exhaust#heat">Heat Shielding</a>.</p>
   </div>
@@ -185,6 +199,8 @@ import GuideTabs from '../../components/GuideTabs.astro';
     { label: 'LOJ Conversions — Genesis Coupe LS swap engine mounts', href: 'https://www.lojkits.com/products/genesis-coupe-lsx-swap-engine-mounts' },
     { label: 'LOJ Conversions — Genesis Coupe LS transmission mounts', href: 'https://lojkits.com/products/genesis-coupe-lsx-swap-transmission-mount-for-4l80-automatic-transmission' },
     { label: 'ISR Performance — Hyundai Genesis LS mount kit', href: 'https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/' },
+    { label: 'Sikky — Genesis Coupe LS swap headers', href: 'https://www.sikky.com/product/hyundai-genesis-ls1-headers/' },
+    { label: 'ISR Performance — Genesis Coupe LS swap headers', href: 'https://www.isrperformance.com/isr-performance-ls-swap-headers-hyundai-genesis-coupe' },
     { label: 'CX Racing — Rear sump LS oil pan for Genesis Coupe', href: 'https://www.cxracing.com/OP-LS1-300ZX-for-Genesis' },
     { label: 'CX Racing — T56 transmission mount for Genesis Coupe', href: 'https://www.cxracing.com/TM-T56-GENESIS' },
     { label: 'CX Racing — Motor mount + T56 trans mount kit', href: 'https://cxracing.com/engine-swap-kit-hyundai-kia-genesis-coupe/ESK-TM-LS-GENESIS-KIT' },
