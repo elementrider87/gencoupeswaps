@@ -5,7 +5,7 @@ import builds from '../../data/featured-builds.json';
 
 type Item = string | { text: string; link?: string };
 type Build = {
-  slug: string; owner: string; title: string; car: string; category: string; summary: string;
+  slug: string; owner: string; title: string; car: string; category: string; summary: string; story?: string[];
   stats: { label: string; value: string }[];
   sections: { title: string; items: Item[] }[];
   photos: { src: string; caption?: string }[];
@@ -25,6 +25,13 @@ const [cover, ...gallery] = build.photos;
   <p class="fb-crumb"><a href="/featured">Featured Builds</a> › <a href={`/featured#${build.category}`}>{categoryLabel[build.category] ?? build.category}</a></p>
   <h1>{build.title}</h1>
   <p class="fb-car">{build.car} · Owner: {build.owner}</p>
+
+  {build.story && build.story.length > 0 && (
+    <blockquote class="fb-story">
+      {build.story.map((para) => <p>{para}</p>)}
+      <cite>— {build.owner}</cite>
+    </blockquote>
+  )}
 
   {cover
     ? <Figure src={cover.src} alt={`${build.owner}'s ${build.car}`} caption={cover.caption} />
@@ -73,6 +80,9 @@ const [cover, ...gallery] = build.photos;
   .fb-car { color: var(--text-muted); margin-top: -0.4rem; }
   .fb-nophoto { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; max-height: 320px; width: 100%; border: 1px dashed var(--border); border-radius: var(--radius); background: var(--bg-card); color: var(--text-muted); margin: 1rem 0; }
   .fb-summary { font-size: 1.05rem; }
+  .fb-story { margin: 1rem 0 1.25rem; padding: 0.9rem 1.1rem; background: var(--bg-card); border-left: 3px solid var(--accent); border-radius: var(--radius); color: var(--text); font-size: 1.02rem; }
+  .fb-story p { margin-bottom: 0.6rem; }
+  .fb-story cite { display: block; color: var(--text-muted); font-style: normal; font-size: 0.9rem; }
   .fb-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.6rem; margin: 1.25rem 0 0.5rem; }
   .fb-stat { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 0.65rem 0.8rem; }
   .fb-stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }

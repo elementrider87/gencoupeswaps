@@ -6,6 +6,10 @@
     "car": "2010 Hyundai Genesis Coupe (BK1)",
     "category": "supercharged",
     "summary": "A sleeved 427 LS3 with a Vortech V2-Ti centrifugal supercharger at 11 psi, a T56 Magnum XL, and a Ford 8.8 rear, rolling on a beadlock drag pack and making 730–750 hp on pump gas.",
+    "story": [
+      "I built the engine and wired the car myself. This website mostly grew out of that process: the notes, photos, and wiring diagrams I made along the way.",
+      "The community as a whole contributed, and I stand on the shoulders of giants who helped me along the way. Special thanks to Jason Riddle and Dustin Shoulta."
+    ],
     "stats": [
       {
         "label": "Engine",
@@ -40,10 +44,21 @@
           "Texas Speed 260cc LS3 CNC heads",
           "Custom CamMotion cam: 238/256 on a 115+5 LSA, .639/.639 lift",
           "PRW adjustable rocker arms",
+          "BTR valve covers",
           "FAST 102mm intake",
           "Nick Williams 103mm throttle body",
           "Injector Dynamics 1050x injectors",
-          "CBM 250 amp alternator"
+          "CBM 250 amp alternator",
+          "Custom -12AN catch can"
+        ]
+      },
+      {
+        "title": "Engine Management",
+        "items": [
+          {
+            "text": "Holley Terminator X Max ECU",
+            "link": "/guides/ecu"
+          }
         ]
       },
       {
@@ -97,7 +112,8 @@
           {
             "text": "Ford 8.8 swap diff kit, 3.73 gear",
             "link": "/guides/differential#ford-88"
-          }
+          },
+          "Custom lathed solid differential mounts"
         ]
       },
       {
