@@ -63,5 +63,20 @@
     "date": "Jun 2023",
     "proof": "/images/hp-wars/billy-sprague-dyno.jpg",
     "note": "Stock-engine baseline. Heads, cam, and intake planned, with a goal of 500+."
+  },
+  {
+    "name": "Harold Calveiro",
+    "car": "Genesis Coupe",
+    "engine": "2JZ",
+    "induction": "turbo",
+    "adder": "Pulsar G40",
+    "boost": "27 psi",
+    "fuel": "E74 pump",
+    "whp": 730.4,
+    "wtq": 598.63,
+    "dyno": "Dynojet (STP Motorsport)",
+    "date": "Apr 2024",
+    "proof": "/images/hp-wars/harold-calveiro-dyno.jpg",
+    "note": "Tuned by Nolman Alfa Espit on conservative timing; boost is turned up for the street."
   }
 ]
