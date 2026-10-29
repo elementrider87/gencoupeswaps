@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Figure from '../../components/Figure.astro';
 import CommunityLinks from '../../components/CommunityLinks.astro';
+import AccessoryDrive from '../../components/AccessoryDrive.astro';
 import Sources from '../../components/Sources.astro';
 ---
 
@@ -40,6 +41,8 @@ import Sources from '../../components/Sources.astro';
     </li>
   </ul>
 
+  <AccessoryDrive />
+
   <h2>Electric Power Steering</h2>
   <p>By Alex Toothman on the Genesis Coupe LS Swaps Facebook page.</p>
   <ul>
@@ -56,6 +59,8 @@ import Sources from '../../components/Sources.astro';
 
   <CommunityLinks />
   <Sources items={[
+    { label: "ICT Billet — LS Corvette low mount alternator / power steering brackets (551769-1)", href: "https://ictbillet.com/ls-corvette-low-mount-alternator-power-steering-pump-brackets-lsx-ls1-ls3-ls2.html" },
+    { label: "Holley — Low mount accessory drive kits", href: "https://www.holley.com/blog/post/holley_releases_low_mount_accessory_drive_kits/" },
     { label: "Sikky — Genesis LS swap kit (PS105 power steering line kit)", href: "https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" },
     { label: "Summit Racing — KRC 10122000 -6 AN to M16x1.5 adapter", href: "https://www.summitracing.com/parts/krs-krc10122000" },
     { label: "Summit Racing — Russell 648060 AN to metric adapter", href: "https://www.summitracing.com/parts/rus-648060" },
