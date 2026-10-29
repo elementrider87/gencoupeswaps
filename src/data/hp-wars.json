@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "name": "Alexander Knight",
+    "car": "2010 Genesis Coupe (BK1)",
+    "engine": "427 LS3",
+    "induction": "supercharged",
+    "adder": "Vortech V2-Ti",
+    "boost": "11 psi",
+    "fuel": "92 octane",
+    "trans": "T56 Magnum XL",
+    "whp": 711.61,
+    "wtq": 637.97,
+    "dyno": "Mustang dyno, SAE",
+    "date": "Oct 2024",
+    "proof": "/images/hp-wars/alexander-knight-dyno.jpg",
+    "build": "/featured/alexander-knight-2010-bk1",
+    "note": "Tune wasn't finished and an axle was breaking on the dyno. Since upgraded from 2.5\" H-pipe to 3\" X-pipe exhaust; likely ~740 now."
+  }
+]

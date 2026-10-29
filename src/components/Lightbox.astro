@@ -19,8 +19,8 @@
   const img = document.getElementById('lb-img') as HTMLImageElement;
   const cap = document.getElementById('lb-cap') as HTMLParagraphElement;
   const count = document.getElementById('lb-count') as HTMLSpanElement;
-  const all = Array.from(document.querySelectorAll<HTMLButtonElement>('.fig-open'));
-  let items: HTMLButtonElement[] = all;
+  const all = Array.from(document.querySelectorAll<HTMLElement>('.fig-open, .lb-link'));
+  let items: HTMLElement[] = all;
   let idx = 0;
   let lastFocus: HTMLElement | null = null;
 
@@ -32,6 +32,9 @@
     img.alt = thumb?.alt || '';
     cap.textContent = b.dataset.caption || '';
     count.textContent = items.length > 1 ? `${idx + 1} / ${items.length}` : '';
+    const multi = items.length > 1;
+    (document.getElementById('lb-prev') as HTMLElement).hidden = !multi;
+    (document.getElementById('lb-next') as HTMLElement).hidden = !multi;
   }
 
   function open(i: number) {
@@ -52,7 +55,8 @@
     lastFocus?.focus();
   }
 
-  all.forEach((b) => b.addEventListener('click', () => {
+  all.forEach((b) => b.addEventListener('click', (e) => {
+    e.preventDefault();
     items = all.filter((x) => x.offsetParent !== null);
     open(Math.max(0, items.indexOf(b)));
   }));
