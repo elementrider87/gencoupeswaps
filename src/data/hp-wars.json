@@ -78,5 +78,16 @@
     "date": "Apr 2024",
     "proof": "/images/hp-wars/harold-calveiro-dyno.jpg",
     "note": "Tuned by Nolman Alfa Espit on conservative timing; boost is turned up for the street."
+  },
+  {
+    "name": "Kollin Lehr",
+    "car": "Genesis Coupe (BK2)",
+    "engine": "LS",
+    "induction": "na",
+    "whp": 435,
+    "wtq": 421,
+    "date": "May 2024",
+    "proof": "/images/hp-wars/kollin-lehr-dyno.jpg",
+    "note": "No dyno sheet posted; numbers are from his post. Conservative tune with knock sensors deleted."
   }
 ]
