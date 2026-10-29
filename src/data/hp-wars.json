@@ -112,5 +112,15 @@
     "induction": "na",
     "whp": 395,
     "note": "Same car off the spray. No dyno sheet posted; numbers are from his post."
+  },
+  {
+    "name": "Mazen Khatib",
+    "car": "Genesis Coupe",
+    "engine": "LS",
+    "induction": "turbo",
+    "whp": 880,
+    "date": "Aug 2025",
+    "proof": "/images/hp-wars/mazen-khatib-dyno.jpg",
+    "note": "No dyno sheet posted; numbers are from his post. Spinning 305/45/17 ET Street tires in 1st–3rd."
   }
 ]
