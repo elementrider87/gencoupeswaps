@@ -28,5 +28,17 @@
     "dyno": "Dyno Dynamics (DB Performance)",
     "date": "Mar 2022",
     "proof": "/images/hp-wars/aaron-dyno.jpg"
+  },
+  {
+    "name": "Jeremy Pickering",
+    "car": "Genesis Coupe",
+    "engine": "LS",
+    "induction": "na",
+    "whp": 366.5,
+    "wtq": 337.7,
+    "dyno": "SuperFlow dyno",
+    "date": "Nov 2022",
+    "proof": "/images/hp-wars/jeremy-pickering-dyno.jpg",
+    "note": "First dyno session. Ran out of injector around 5,800 rpm, and 243 heads weren't installed yet."
   }
 ]
