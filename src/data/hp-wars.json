@@ -146,6 +146,8 @@
     "whp": 430,
     "dyno": "Dynapack hub dyno (Synoptic Tuning), SAE",
     "date": "Feb 2026",
-    "proof": "/images/hp-wars/mathis-thibault-dyno.jpg"
+    "proof": "/images/hp-wars/mathis-thibault-dyno.jpg",
+    "wtq": 376,
+    "wtqApprox": true
   }
 ]

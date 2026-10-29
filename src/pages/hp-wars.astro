@@ -6,7 +6,7 @@ type Entry = {
   name: string; car: string; engine: string;
   induction: 'na' | 'turbo' | 'supercharged' | 'nitrous';
   adder?: string; boost?: string; fuel?: string; trans?: string;
-  whp: number; wtq?: number; dyno?: string; date?: string;
+  whp: number; wtq?: number; wtqApprox?: boolean; dyno?: string; date?: string;
   proof?: string; build?: string; note?: string;
 };
 // Always ranked highest to lowest whp, so new entries drop into place automatically.
@@ -32,9 +32,9 @@ const top = entries[0];
           <div class="hp-main">
             <div class="hp-top">
               {e.proof ? (
-                <a class="hp-name lb-link" href={e.proof} data-full={e.proof} data-caption={`${e.name}: ${fmt(e.whp)} hp${e.wtq ? ' / ' + fmt(e.wtq) + ' tq' : ''}${e.dyno ? ' (' + e.dyno + (e.date ? ', ' + e.date : '') + ')' : ''}`}>{e.name}</a>
+                <a class="hp-name lb-link" href={e.proof} data-full={e.proof} data-caption={`${e.name}: ${fmt(e.whp)} hp${e.wtq ? ' / ' + (e.wtqApprox ? '~' : '') + fmt(e.wtq) + ' tq' : ''}${e.dyno ? ' (' + e.dyno + (e.date ? ', ' + e.date : '') + ')' : ''}`}>{e.name}</a>
               ) : <span class="hp-name">{e.name}</span>}
-              <span class="hp-power"><strong>{fmt(e.whp)}</strong> hp{e.wtq && <> / <strong>{fmt(e.wtq)}</strong> tq</>}</span>
+              <span class="hp-power"><strong>{fmt(e.whp)}</strong> hp{e.wtq && <> / <strong>{e.wtqApprox ? '~' : ''}{fmt(e.wtq)}</strong> tq</>}</span>
             </div>
             <div class="hp-stats">
               {[e.car, e.engine, labels[e.induction] + (e.adder ? ` (${e.adder})` : ''), e.boost, e.fuel, e.trans, e.dyno, e.date].filter(Boolean).join(' · ')}
