@@ -40,5 +40,16 @@
     "date": "Nov 2022",
     "proof": "/images/hp-wars/jeremy-pickering-dyno.jpg",
     "note": "First dyno session. Ran out of injector around 5,800 rpm, and 243 heads weren't installed yet."
+  },
+  {
+    "name": "Dillon Smith",
+    "car": "Genesis Coupe",
+    "engine": "LS",
+    "induction": "na",
+    "whp": 436.4,
+    "dyno": "Dynotech (Dyno Dynamics)",
+    "date": "Apr 2023",
+    "proof": "/images/hp-wars/dillon-smith-dyno.jpg",
+    "note": "Made this before the exhaust was installed."
   }
 ]
