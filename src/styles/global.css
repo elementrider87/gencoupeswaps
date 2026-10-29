@@ -610,3 +610,6 @@ body.lb-open { overflow: hidden; }
 .sidebar .sidebar-sub a { padding: 0.35rem 0.9rem; font-size: 0.86rem; border-left: 0; }
 .sidebar .sidebar-sub a.active { color: var(--accent); background: none; }
 @media (max-width: 1024px) { .sidebar .sidebar-sub a { padding: 0.6rem 0.9rem; font-size: 0.95rem; } }
+
+/* product shots on white: show the whole image instead of cropping */
+.figs-product .fig img { object-fit: contain; background: #fff; }
