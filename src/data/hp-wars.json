@@ -89,5 +89,28 @@
     "date": "May 2024",
     "proof": "/images/hp-wars/kollin-lehr-dyno.jpg",
     "note": "No dyno sheet posted; numbers are from his post. Conservative tune with knock sensors deleted."
+  },
+  {
+    "name": "Eric Kotoun",
+    "car": "Genesis Coupe",
+    "engine": "LY6 (GPI stage 4 cam, LS3 intake)",
+    "fuel": "E85",
+    "date": "Dec 2025",
+    "proof": "/images/hp-wars/eric-kotoun-dyno.jpg",
+    "induction": "nitrous",
+    "adder": "100 shot",
+    "whp": 490,
+    "note": "No dyno sheet posted; numbers are from his post. Only revved to 6,500 (7,000 redline)."
+  },
+  {
+    "name": "Eric Kotoun",
+    "car": "Genesis Coupe",
+    "engine": "LY6 (GPI stage 4 cam, LS3 intake)",
+    "fuel": "E85",
+    "date": "Dec 2025",
+    "proof": "/images/hp-wars/eric-kotoun-dyno.jpg",
+    "induction": "na",
+    "whp": 395,
+    "note": "Same car off the spray. No dyno sheet posted; numbers are from his post."
   }
 ]
