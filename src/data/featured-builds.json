@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "alexander-knight-2010-bk1",
+    "owner": "Alexander Knight",
+    "title": "Alexander's 427 Supercharged 2010 BK1",
+    "car": "2010 Hyundai Genesis Coupe (BK1)",
+    "category": "supercharged",
+    "summary": "A sleeved 427 LS3 with a Vortech V2-Ti centrifugal supercharger at 11 psi, a T56 Magnum XL, and a Ford 8.8 rear, rolling on a beadlock drag pack and making 730–750 hp on pump gas.",
+    "stats": [
+      { "label": "Engine", "value": "427 sleeved LS3" },
+      { "label": "Power adder", "value": "Vortech V2-Ti, 11 psi" },
+      { "label": "Power", "value": "730–750 hp" },
+      { "label": "Fuel", "value": "Pump gas (E85 TBD)" },
+      { "label": "Transmission", "value": "T56 Magnum XL" },
+      { "label": "Rear end", "value": "Ford 8.8, 3.73 gear" }
+    ],
+    "sections": [
+      {
+        "title": "Engine",
+        "items": [
+          "Fully built LS3, sleeved to 427",
+          "Texas Speed 260cc LS3 CNC heads",
+          "Custom CamMotion cam: 238/256 on a 115+5 LSA, .639/.639 lift",
+          "FAST 102mm intake",
+          "Nick Williams 103mm throttle body",
+          "Injector Dynamics 1050x injectors",
+          "CBM 250 amp alternator"
+        ]
+      },
+      {
+        "title": "Supercharger",
+        "items": [
+          "A&A kit with Vortech V2-Ti centrifugal supercharger",
+          "Innovators West dedicated 10-rib pulley",
+          "ECS secondary drive kit",
+          "Treadstone 1045R intercooler"
+        ]
+      },
+      {
+        "title": "Fuel",
+        "items": [
+          "2x Walbro 525 fuel pumps with a surge tank",
+          "Injector Dynamics 1050x injectors"
+        ]
+      },
+      {
+        "title": "Swap Parts & Exhaust",
+        "items": [
+          { "text": "LOJ mount kit", "link": "/guides/swap-kits#motor-mounts" },
+          { "text": "Custom oil pan", "link": "/guides/swap-kits#oil-pan" },
+          { "text": "Sikky headers", "link": "/guides/swap-kits#headers" },
+          "Custom 3\" exhaust with X-pipe and 3\" electric cutouts",
+          { "text": "ABS delete", "link": "/guides/brakes" }
+        ]
+      },
+      {
+        "title": "Drivetrain",
+        "items": [
+          { "text": "Tremec T56 Magnum XL", "link": "/guides/transmission" },
+          "Steeda short throw shifter",
+          "Monster triple disc clutch",
+          "QuickTime bellhousing",
+          { "text": "Ford 8.8 swap diff kit, 3.73 gear", "link": "/guides/differential#ford-88" }
+        ]
+      },
+      {
+        "title": "Body",
+        "items": [
+          "Carbon fiber hood",
+          "VIS carbon fiber fenders",
+          "VIS carbon fiber trunk",
+          "Spec-D tail lights",
+          "25mm URN rear fender flares",
+          "G4Werks carbon fiber front lip and side skirts"
+        ]
+      },
+      {
+        "title": "Suspension, Wheels & Tires",
+        "items": [
+          "PBM coilovers",
+          "Custom beadlock drag pack wheels, 15x10 +17",
+          "Mickey Thompson ET Street 275/60/15"
+        ]
+      }
+    ],
+    "photos": [],
+    "social": [
+      { "label": "TikTok", "url": "https://www.tiktok.com/@alexanderk8738" },
+      { "label": "YouTube", "url": "https://youtube.com/@ridingelements" },
+      { "label": "Contact the owner", "url": "/contact" }
+    ]
+  }
+]

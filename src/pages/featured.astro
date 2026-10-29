@@ -1,5 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import builds from '../data/featured-builds.json';
+
+const cats = [
+  { id: 'supercharged', label: 'Supercharged' },
+  { id: 'turbo', label: 'Turbo' },
+  { id: 'na', label: 'N/A (Naturally Aspirated)' },
+  { id: 'oem', label: 'OEM Builds' },
+];
+type B = { slug: string; title: string; car: string; category: string; summary: string; photos: { src: string }[]; stats: { label: string; value: string }[] };
+const all = builds as B[];
+const thumb = (b: B) => b.photos[0] ? `/images/web/${b.photos[0].src.replace(/\.[^.]+$/, '')}-640.webp` : null;
 ---
 
 <BaseLayout title="Featured Builds" description="Featured LS-swapped Hyundai Genesis Coupe builds: N/A, turbo, supercharged, and OEM-style swaps, with parts lists, photos, and how to submit yours." featured={true}>
@@ -9,7 +20,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     The goal is to show real cars, real parts lists, and real lessons learned — not just glossy photos.
   </p>
 
-  <h2>Submit Your Build — $15</h2>
+  {cats.map((c) => {
+    const list = all.filter((b) => b.category === c.id);
+    return (
+      <section class="fb-cat" id={c.id}>
+        <h2>{c.label}</h2>
+        {list.length === 0
+          ? <p class="fb-empty">No {c.label.toLowerCase()} builds yet. Yours could be the first.</p>
+          : <div class="fb-cards">
+              {list.map((b) => (
+                <a class="fb-card" href={`/featured/${b.slug}`}>
+                  {thumb(b) ? <img src={thumb(b)} alt={b.title} loading="lazy" /> : <div class="fb-card-ph">Photos coming soon</div>}
+                  <div class="fb-card-body">
+                    <h3>{b.title}</h3>
+                    <p class="fb-card-car">{b.car}</p>
+                    <p class="fb-card-stats">{b.stats.slice(0, 3).map((s) => s.value).join(' · ')}</p>
+                  </div>
+                </a>
+              ))}
+            </div>}
+      </section>
+    );
+  })}
+
+  <h2 id="submit">Submit Your Build — $15</h2>
   <p>
     If you want your ride featured, please donate <strong>$15</strong> to help with site costs.
   </p>
@@ -35,7 +69,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     Donate $15 — Feature My Build
   </a>
 
-  <p style="margin-top: 2rem; color: var(--text-muted);">
-    Select a category on the left to view builds.
-  </p>
 </BaseLayout>
+
+<style>
+  .fb-cat { scroll-margin-top: calc(var(--header-height) + 1rem); }
+  .fb-empty { color: var(--text-muted); }
+  .fb-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin: 0.5rem 0 1rem; }
+  .fb-card { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; color: var(--text); transition: border-color 0.15s; }
+  .fb-card:hover { border-color: var(--accent); color: var(--text); }
+  .main-content .fb-card img { margin: 0; border: 0; border-radius: 0; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .fb-card-ph { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; color: var(--text-muted); background: var(--bg-deep); font-size: 0.9rem; }
+  .fb-card-body { padding: 0.8rem 1rem 1rem; }
+  .main-content .fb-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+  .fb-card-car { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.35rem !important; }
+  .fb-card-stats { color: var(--accent); font-size: 0.88rem; font-weight: 600; margin: 0 !important; }
+</style>

@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import builds from '../data/featured-builds.json';
 
 // Builds /sitemap.xml from every page in src/pages automatically.
 const pages = import.meta.glob('./**/*.astro');
@@ -10,6 +11,7 @@ export const GET: APIRoute = () => {
     .map((f) => f.replace(/^\.\//, '/').replace(/\.astro$/, '').replace(/\/index$/, '/'))
     .filter((u) => !u.includes('['))
     .map((u) => (u === '/index' ? '/' : u))
+    .concat((builds as { slug: string }[]).map((b) => `/featured/${b.slug}`))
     .sort();
   const body =
     '<?xml version="1.0" encoding="UTF-8"?>\n' +

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import builds from '../../data/featured-builds.json';
+
+type Item = string | { text: string; link?: string };
+type Build = {
+  slug: string; owner: string; title: string; car: string; category: string; summary: string;
+  stats: { label: string; value: string }[];
+  sections: { title: string; items: Item[] }[];
+  photos: { src: string; caption?: string }[];
+  social: { label: string; url: string }[];
+};
+
+export function getStaticPaths() {
+  return (builds as Build[]).map((b) => ({ params: { slug: b.slug }, props: { build: b } }));
+}
+
+const { build } = Astro.props as { build: Build };
+const categoryLabel: Record<string, string> = { na: 'N/A', turbo: 'Turbo', supercharged: 'Supercharged', oem: 'OEM' };
+const [cover, ...gallery] = build.photos;
+---
+
+<BaseLayout title={build.title} description={`${build.car}: ${build.summary}`} featured={true}>
+  <p class="fb-crumb"><a href="/featured">Featured Builds</a> › <a href={`/featured#${build.category}`}>{categoryLabel[build.category] ?? build.category}</a></p>
+  <h1>{build.title}</h1>
+  <p class="fb-car">{build.car} · Owner: {build.owner}</p>
+
+  {cover
+    ? <Figure src={cover.src} alt={`${build.owner}'s ${build.car}`} caption={cover.caption} />
+    : <div class="fb-nophoto">Photos coming soon</div>}
+
+  <p class="fb-summary">{build.summary}</p>
+
+  <div class="fb-stats">
+    {build.stats.map((s) => (
+      <div class="fb-stat"><div class="fb-stat-label">{s.label}</div><div class="fb-stat-value">{s.value}</div></div>
+    ))}
+  </div>
+
+  {build.sections.map((sec) => (
+    <section class="fb-section">
+      <h2>{sec.title}</h2>
+      <ul>
+        {sec.items.map((it) => typeof it === 'string'
+          ? <li>{it}</li>
+          : <li>{it.link ? <a href={it.link}>{it.text}</a> : it.text}</li>)}
+      </ul>
+    </section>
+  ))}
+
+  {gallery.length > 0 && (
+    <>
+      <h2>Photos</h2>
+      <div class="figs">
+        {gallery.map((p) => <Figure src={p.src} alt={p.caption ?? `${build.owner}'s build`} caption={p.caption} />)}
+      </div>
+    </>
+  )}
+
+  <h2>Follow the Build</h2>
+  <div class="fb-social">
+    {build.social.map((s) => (
+      <a class="buy-btn" href={s.url} target={s.url.startsWith('http') ? '_blank' : undefined} rel={s.url.startsWith('http') ? 'noopener' : undefined}>{s.label}</a>
+    ))}
+  </div>
+
+  <p class="updated" style="margin-top:2rem">Want your build here? See <a href="/featured">how to submit</a>.</p>
+</BaseLayout>
+
+<style>
+  .fb-crumb { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.4rem !important; }
+  .fb-car { color: var(--text-muted); margin-top: -0.4rem; }
+  .fb-nophoto { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; max-height: 320px; width: 100%; border: 1px dashed var(--border); border-radius: var(--radius); background: var(--bg-card); color: var(--text-muted); margin: 1rem 0; }
+  .fb-summary { font-size: 1.05rem; }
+  .fb-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.6rem; margin: 1.25rem 0 0.5rem; }
+  .fb-stat { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 0.65rem 0.8rem; }
+  .fb-stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+  .fb-stat-value { font-weight: 700; font-size: 1.05rem; line-height: 1.3; }
+  .fb-social { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  @media (max-width: 600px) { .fb-stats { grid-template-columns: 1fr 1fr; } }
+</style>

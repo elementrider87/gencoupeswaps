@@ -1,10 +1,12 @@
 ---
 import SiteLinks from './SiteLinks.astro';
-const currentPath = Astro.url.pathname;
+import builds from '../data/featured-builds.json';
+const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(/\/$/, '');
+const all = builds as { slug: string; title: string; category: string }[];
 const categories = [
-  { href: '/featured#na', label: 'N/A (Naturally Aspirated)' },
-  { href: '/featured#turbo', label: 'Turbo' },
   { href: '/featured#supercharged', label: 'Supercharged' },
+  { href: '/featured#turbo', label: 'Turbo' },
+  { href: '/featured#na', label: 'N/A (Naturally Aspirated)' },
   { href: '/featured#oem', label: 'OEM Builds' },
 ];
 ---
@@ -12,12 +14,19 @@ const categories = [
 <aside class="sidebar" id="sidebar" aria-label="Site and featured build navigation">
   <SiteLinks />
   <div class="sidebar-label">Featured Builds</div>
-  {categories.map(c => (
-    <a href={c.href}>
-      {c.label}
-    </a>
-  ))}
-  <p style="padding: 1rem 1.25rem; color: var(--text-muted); font-size: 0.85rem;">
-    Builds will appear here as they are added.
-  </p>
+  {categories.map(c => {
+    const id = c.href.split('#')[1];
+    const list = all.filter((b) => b.category === id);
+    return (
+      <>
+        <a href={c.href}>{c.label}</a>
+        {list.length > 0 && (
+          <div class="sidebar-sub">
+            {list.map((b) => <a href={`/featured/${b.slug}`} class={currentPath === `/featured/${b.slug}` ? 'active' : ''}>{b.title}</a>)}
+          </div>
+        )}
+      </>
+    );
+  })}
+  <a href="/featured#submit">Submit Your Build</a>
 </aside>
