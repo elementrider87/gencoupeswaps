@@ -20,6 +20,10 @@ const thumb = (b: B) => b.photos[0] ? `/images/web/${b.photos[0].src.replace(/\.
     The goal is to show real cars, real parts lists, and real lessons learned — not just glossy photos.
   </p>
 
+  <p class="fb-filter" id="fb-filter" hidden>
+    Showing <strong id="fb-filter-name"></strong> builds · <a href="/featured">Show all categories</a>
+  </p>
+
   {cats.map((c) => {
     const list = all.filter((b) => b.category === c.id);
     return (
@@ -71,7 +75,29 @@ const thumb = (b: B) => b.photos[0] ? `/images/web/${b.photos[0].src.replace(/\.
 
 </BaseLayout>
 
+<script>
+  const sections = Array.from(document.querySelectorAll<HTMLElement>('.fb-cat'));
+  const bar = document.getElementById('fb-filter');
+  const nameEl = document.getElementById('fb-filter-name');
+  const sideLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.sidebar a[href^="/featured#"]'));
+
+  function applyFilter() {
+    const id = decodeURIComponent(location.hash.replace(/^#/, ''));
+    const match = sections.find((s) => s.id === id);
+    sections.forEach((s) => { s.hidden = Boolean(match) && s !== match; });
+    if (bar) bar.hidden = !match;
+    if (match && nameEl) nameEl.textContent = match.querySelector('h2')?.textContent ?? '';
+    sideLinks.forEach((a) => a.classList.toggle('active', Boolean(match) && a.hash === `#${id}`));
+    if (match) window.scrollTo({ top: 0 });
+  }
+
+  window.addEventListener('hashchange', applyFilter);
+  applyFilter();
+</script>
+
 <style>
+  .fb-cat[hidden] { display: none; }
+  .fb-filter { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 0.9rem; font-size: 0.95rem; }
   .fb-cat { scroll-margin-top: calc(var(--header-height) + 1rem); }
   .fb-empty { color: var(--text-muted); }
   .fb-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin: 0.5rem 0 1rem; }
