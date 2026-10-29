@@ -5,7 +5,7 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
 import Sources from '../../components/Sources.astro';
 ---
 
-<BaseLayout title="Exhaust & Heat Shielding" description="Header clearance around the fuse box and DEI heat shielding for the tunnel and exhaust on LS Genesis Coupe swaps.">
+<BaseLayout title="Exhaust & Heat Shielding" description="A dual 3-inch exhaust example (X-pipe, resonators, electric cutouts), header clearance around the fuse box, and DEI heat shielding for the tunnel and exhaust on LS Genesis Coupe swaps.">
   <h1>Exhaust &amp; Heat Shielding</h1>
   <p>
     Header choice is tied to engine mounts and steering/rack clearance. Sikky headers are the most commonly referenced; ISR headers sit lower and are generally not recommended on lowered cars.
@@ -15,6 +15,23 @@ import Sources from '../../components/Sources.astro';
   <p>Header options (Sikky, ISR, CX Racing, custom) are compared on the <a href="/guides/swap-kits#headers">Swap Kits → Headers</a> tab, since they're tied to your motor mounts.</p>
   <div class="note">
     <p><strong>Real-world warning:</strong> on one LS1 Gen Coupe, headers sitting too close caused the main fuse box to catch fire. Check clearance to the fuse box, harness, brake lines, and steering shaft, and shield anything within a few inches.</p>
+  </div>
+
+  <h2 id="example">Exhaust Example</h2>
+  <p>
+    The exhaust system on my <a href="/featured/alexander-knight-2010-bk1">featured build</a> is a custom dual 3" system off the headers. Here are the parts:
+  </p>
+  <ul>
+    <li><strong>Piping:</strong> dual 3" stainless pipes, front to back.</li>
+    <li><strong>X-pipe:</strong> <a href="https://www.projectexhaust.com/product-page/project-exhaust-3-inch-crossover-xpipe-universal-fitment" target="_blank" rel="noopener">Project Exhaust 3" universal X-pipe</a> (PE-3XPIPE-125, ~$179). It's mandrel-bent, TIG-welded 304 stainless with 1.25" pipe spacing and 20" overall length.</li>
+    <li><strong>Resonators:</strong> Vibrant 3" inlet/outlet, 12" long bottle-style resonators, one per side.</li>
+    <li><strong>Cutouts:</strong> Doug's Headers 3" electric exhaust cutouts (dumps), one per side ahead of the muffler, so you can run it open or quiet with a switch.</li>
+    <li><strong>Muffler:</strong> Solo Performance muffler made for the 3.8 V6 Genesis Coupe. It fits the factory rear location, so it tucks up under the bumper like stock.</li>
+  </ul>
+  <div class="figs">
+    <Figure src="alex-bk1-exhaust.jpg" alt="Dual 3 inch exhaust with X-pipe and resonators laid out on the floor" caption="Full dual 3&quot; system mocked up on the floor: flex sections, resonators, X-pipe (wrapped)." />
+    <Figure src="alex-bk1-exhaust-rear.jpg" alt="Underside view of dual 3 inch pipes running back to the X-pipe" caption="Installed: dual 3&quot; pipes running back past the diff to the X-pipe." />
+    <Figure src="alex-bk1-exhaust-underside.jpg" alt="Rear underside showing muffler, electric cutouts and pipes" caption="Rear: Doug's electric cutouts on each side feeding the Solo Performance V6 muffler." />
   </div>
 
   <h2 id="heat">Heat Shielding</h2>
@@ -32,6 +49,9 @@ import Sources from '../../components/Sources.astro';
   <Sources items={[
     { label: "Sikky — Genesis LS swap kit (HDR015SS headers)", href: "https://www.sikky.com/product/hyundai-genesis-lsx-swap-kit/" },
     { label: "ISR Performance — Genesis LS mount kit (headers sold separately)", href: "https://www.isrperformance.com/isr-performance-hyundai-genesis-ls-mount-kit/" },
+    { label: "Project Exhaust — 3\" universal X-pipe (PE-3XPIPE-125)", href: "https://www.projectexhaust.com/product-page/project-exhaust-3-inch-crossover-xpipe-universal-fitment" },
+    { label: "Vibrant — 3\" x 12\" bottle-style resonator (1794)", href: "https://www.evasivemotorsports.com/store/product/vibrant-bottle-style-resonator-3-inletoutlet-x-12-long/" },
+    { label: "Doug's Headers — 3\" electric exhaust cut-outs (DEC300A)", href: "https://www.speedwaymotors.com/Dougs-Headers-DEC300A-Stainless-Steel-Electric-Exhaust-Cut-Outs-3-Inch,64072.html" },
     { label: "Super Street — LS1 Genesis Coupe (fuse box fire)", href: "https://s3mag.com/you-got-no-future-kid-ls1-genesis-coupe/" },
   ]} />
 </BaseLayout>
