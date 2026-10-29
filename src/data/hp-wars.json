@@ -136,5 +136,16 @@
     "date": "Oct 2026",
     "proof": "/images/hp-wars/anthony-pared-dyno.jpg",
     "note": "No dyno sheet posted; numbers are from his comment. Truck accessory spacing, dual CSF drag radiators."
+  },
+  {
+    "name": "Mathis Thibault",
+    "car": "Genesis Coupe",
+    "engine": "1JZ",
+    "induction": "turbo",
+    "boost": "22 psi",
+    "whp": 430,
+    "dyno": "Dynapack hub dyno (Synoptic Tuning), SAE",
+    "date": "Feb 2026",
+    "proof": "/images/hp-wars/mathis-thibault-dyno.jpg"
   }
 ]
