@@ -15,5 +15,18 @@
     "proof": "/images/hp-wars/alexander-knight-dyno.jpg",
     "build": "/featured/alexander-knight-2010-bk1",
     "note": "Tune wasn't finished and an axle was breaking on the dyno. Since upgraded from 2.5\" H-pipe to 3\" X-pipe exhaust; likely ~740 now."
+  },
+  {
+    "name": "Aaron",
+    "car": "Genesis Coupe",
+    "engine": "6.0L LY6 (9.3:1, LS9 cam)",
+    "induction": "supercharged",
+    "adder": "LSA",
+    "boost": "~8 psi (stock pulleys)",
+    "whp": 517.3,
+    "wtq": 452,
+    "dyno": "Dyno Dynamics (DB Performance)",
+    "date": "Mar 2022",
+    "proof": "/images/hp-wars/aaron-dyno.jpg"
   }
 ]
