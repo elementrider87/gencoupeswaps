@@ -77,10 +77,10 @@ const thumb = (b: B) => b.photos[0] ? `/images/web/${b.photos[0].src.replace(/\.
   .fb-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin: 0.5rem 0 1rem; }
   .fb-card { display: block; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; color: var(--text); transition: border-color 0.15s; }
   .fb-card:hover { border-color: var(--accent); color: var(--text); }
-  .main-content .fb-card img { margin: 0; border: 0; border-radius: 0; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .fb-card img { margin: 0; border: 0; border-radius: 0; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
   .fb-card-ph { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; color: var(--text-muted); background: var(--bg-deep); font-size: 0.9rem; }
   .fb-card-body { padding: 0.8rem 1rem 1rem; }
-  .main-content .fb-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+  .fb-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
   .fb-card-car { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.35rem !important; }
   .fb-card-stats { color: var(--accent); font-size: 0.88rem; font-weight: 600; margin: 0 !important; }
 </style>

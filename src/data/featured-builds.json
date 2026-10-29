@@ -7,12 +7,30 @@
     "category": "supercharged",
     "summary": "A sleeved 427 LS3 with a Vortech V2-Ti centrifugal supercharger at 11 psi, a T56 Magnum XL, and a Ford 8.8 rear, rolling on a beadlock drag pack and making 730–750 hp on pump gas.",
     "stats": [
-      { "label": "Engine", "value": "427 sleeved LS3" },
-      { "label": "Power adder", "value": "Vortech V2-Ti, 11 psi" },
-      { "label": "Power", "value": "730–750 hp" },
-      { "label": "Fuel", "value": "Pump gas (E85 TBD)" },
-      { "label": "Transmission", "value": "T56 Magnum XL" },
-      { "label": "Rear end", "value": "Ford 8.8, 3.73 gear" }
+      {
+        "label": "Engine",
+        "value": "427 sleeved LS3"
+      },
+      {
+        "label": "Power adder",
+        "value": "Vortech V2-Ti, 11 psi"
+      },
+      {
+        "label": "Power",
+        "value": "730–750 hp"
+      },
+      {
+        "label": "Fuel",
+        "value": "Pump gas (E85 TBD)"
+      },
+      {
+        "label": "Transmission",
+        "value": "T56 Magnum XL"
+      },
+      {
+        "label": "Rear end",
+        "value": "Ford 8.8, 3.73 gear"
+      }
     ],
     "sections": [
       {
@@ -21,6 +39,7 @@
           "Fully built LS3, sleeved to 427",
           "Texas Speed 260cc LS3 CNC heads",
           "Custom CamMotion cam: 238/256 on a 115+5 LSA, .639/.639 lift",
+          "PRW adjustable rocker arms",
           "FAST 102mm intake",
           "Nick Williams 103mm throttle body",
           "Injector Dynamics 1050x injectors",
@@ -46,21 +65,39 @@
       {
         "title": "Swap Parts & Exhaust",
         "items": [
-          { "text": "LOJ mount kit", "link": "/guides/swap-kits#motor-mounts" },
-          { "text": "Custom oil pan", "link": "/guides/swap-kits#oil-pan" },
-          { "text": "Sikky headers", "link": "/guides/swap-kits#headers" },
+          {
+            "text": "LOJ mount kit",
+            "link": "/guides/swap-kits#motor-mounts"
+          },
+          {
+            "text": "Custom oil pan",
+            "link": "/guides/swap-kits#oil-pan"
+          },
+          {
+            "text": "Sikky headers",
+            "link": "/guides/swap-kits#headers"
+          },
           "Custom 3\" exhaust with X-pipe and 3\" electric cutouts",
-          { "text": "ABS delete", "link": "/guides/brakes" }
+          {
+            "text": "ABS delete",
+            "link": "/guides/brakes"
+          }
         ]
       },
       {
         "title": "Drivetrain",
         "items": [
-          { "text": "Tremec T56 Magnum XL", "link": "/guides/transmission" },
+          {
+            "text": "Tremec T56 Magnum XL",
+            "link": "/guides/transmission"
+          },
           "Steeda short throw shifter",
           "Monster triple disc clutch",
           "QuickTime bellhousing",
-          { "text": "Ford 8.8 swap diff kit, 3.73 gear", "link": "/guides/differential#ford-88" }
+          {
+            "text": "Ford 8.8 swap diff kit, 3.73 gear",
+            "link": "/guides/differential#ford-88"
+          }
         ]
       },
       {
@@ -83,11 +120,57 @@
         ]
       }
     ],
-    "photos": [],
+    "photos": [
+      {
+        "src": "alex-bk1-engine-bay.jpg",
+        "caption": "The 427: FAST LSXR 102mm intake, Vortech V2-Ti, and a lot of polished aluminum."
+      },
+      {
+        "src": "alex-bk1-rear.jpg",
+        "caption": "Carbon trunk and diffuser, louvers, and rear flares."
+      },
+      {
+        "src": "alex-bk1-front.jpg",
+        "caption": "Hood up at a meet: carbon fenders, G4Werks lip, and the intercooler behind the bumper."
+      },
+      {
+        "src": "alex-bk1-side.jpg",
+        "caption": "VIS carbon fender and G4Werks side skirts, with the drag pack on the rear."
+      },
+      {
+        "src": "alex-bk1-ford-88.jpg",
+        "caption": "Ford 8.8 swap from underneath, with the Dream Machinez cover."
+      },
+      {
+        "src": "alex-bk1-beadlock.jpg",
+        "caption": "Beadlock drag wheel on a Mickey Thompson ET Street S/S."
+      },
+      {
+        "src": "alex-bk1-exhaust.jpg",
+        "caption": "Custom 3\" exhaust with X-pipe, before install."
+      },
+      {
+        "src": "alex-bk1-prw-rockers.jpg",
+        "caption": "PRW adjustable rocker arms on the Texas Speed heads."
+      },
+      {
+        "src": "alex-bk1-sleeved-block.jpg",
+        "caption": "The sleeved 427 short block on the stand."
+      }
+    ],
     "social": [
-      { "label": "TikTok", "url": "https://www.tiktok.com/@alexanderk8738" },
-      { "label": "YouTube", "url": "https://youtube.com/@ridingelements" },
-      { "label": "Contact the owner", "url": "/contact" }
+      {
+        "label": "TikTok",
+        "url": "https://www.tiktok.com/@alexanderk8738"
+      },
+      {
+        "label": "YouTube",
+        "url": "https://youtube.com/@ridingelements"
+      },
+      {
+        "label": "Contact the owner",
+        "url": "/contact"
+      }
     ]
   }
 ]
