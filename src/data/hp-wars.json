@@ -51,5 +51,17 @@
     "date": "Apr 2023",
     "proof": "/images/hp-wars/dillon-smith-dyno.jpg",
     "note": "Made this before the exhaust was installed."
+  },
+  {
+    "name": "Billy Sprague",
+    "car": "Genesis Coupe",
+    "engine": "LS1 5.7 (stock, 36 lb Holley injectors)",
+    "induction": "na",
+    "whp": 300.2,
+    "wtq": 337.4,
+    "dyno": "Dynocom, SAE",
+    "date": "Jun 2023",
+    "proof": "/images/hp-wars/billy-sprague-dyno.jpg",
+    "note": "Stock-engine baseline. Heads, cam, and intake planned, with a goal of 500+."
   }
 ]
