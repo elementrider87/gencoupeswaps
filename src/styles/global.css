@@ -512,6 +512,14 @@ img {
 
 
 /* ===== Mobile & touch improvements ===== */
+/* Narrow desktops: keep all top-nav links on one row */
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .site-header { gap: 0.75rem; }
+  .top-nav { gap: 0; flex-wrap: nowrap; }
+  .top-nav a { padding: 0.4rem 0.45rem; font-size: 0.8rem; white-space: nowrap; }
+  .search-wrap { min-width: 120px; max-width: 160px; }
+}
+
 .sidebar-site { display: none; }
 .drawer-backdrop { display: none; }
 

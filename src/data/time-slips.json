@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Harold Calveiro",
+    "car": "Genesis Coupe",
+    "engine": "2JZ",
+    "induction": "turbo",
+    "adder": "Pulsar G40",
+    "fuel": "E74 pump",
+    "event": "60-130",
+    "time": 5.36,
+    "timer": "Dragy",
+    "date": "Dec 2024",
+    "proof": "/images/time-slips/harold-calveiro-60-130.jpg"
+  },
+  {
+    "name": "Harold Calveiro",
+    "car": "Genesis Coupe",
+    "engine": "2JZ",
+    "induction": "turbo",
+    "adder": "Pulsar G40",
+    "fuel": "E74 pump",
+    "event": "100-150",
+    "time": 4.85,
+    "boost": "30 psi",
+    "timer": "Dragy",
+    "proof": "/images/time-slips/harold-calveiro-100-150.jpg"
+  }
+]

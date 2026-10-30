@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import entriesRaw from '../data/time-slips.json';
+
+type Entry = {
+  name: string; car: string; engine: string;
+  induction: 'na' | 'turbo' | 'supercharged' | 'nitrous';
+  adder?: string; boost?: string; fuel?: string; trans?: string;
+  event: 'quarter' | '60-130' | '100-150';
+  time: number; mph?: number; timer?: string; track?: string; date?: string;
+  proof?: string; build?: string; note?: string;
+};
+
+const events = [
+  { id: 'quarter', label: '1/4 Mile', title: '1/4 mile' },
+  { id: '60-130', label: '60-130 mph', title: '60-130 mph' },
+  { id: '100-150', label: '100-150 mph', title: '100-150 mph' },
+];
+const labels: Record<string, string> = { na: 'N/A', turbo: 'Turbo', supercharged: 'Supercharged', nitrous: 'Nitrous' };
+const all = entriesRaw as Entry[];
+// Fastest (lowest time) first, so new entries drop into place automatically.
+const byEvent = (id: string) => all.filter((e) => e.event === id).sort((a, b) => a.time - b.time);
+const initial = events.find((ev) => byEvent(ev.id).length > 0)?.id ?? 'quarter';
+const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toFixed(1)} mph` : '');
+---
+
+<BaseLayout title="Time Slips" description="Quarter mile, 60-130 mph, and 100-150 mph leaderboards for swapped Hyundai Genesis Coupes, with time slips and Dragy proof.">
+  <h1>Time Slips</h1>
+  <p>Fastest swapped Genesis Coupes at the track and on the Dragy, ranked quickest first. Tap a name to see the slip.</p>
+
+  <div class="ts-tabs" role="tablist" aria-label="Event">
+    {events.map((ev) => (
+      <button type="button" role="tab" class="ts-tab" id={`tab-${ev.id}`} data-tab={ev.id} aria-controls={`panel-${ev.id}`} aria-selected={ev.id === initial ? 'true' : 'false'}>
+        {ev.label}<span class="ts-count">{byEvent(ev.id).length}</span>
+      </button>
+    ))}
+  </div>
+
+  {events.map((ev) => {
+    const list = byEvent(ev.id);
+    return (
+      <section class="ts-panel" id={`panel-${ev.id}`} role="tabpanel" aria-labelledby={`tab-${ev.id}`} hidden={ev.id !== initial}>
+        <h2 class="ts-panel-title">{ev.title}</h2>
+        {list.length === 0 ? (
+          <p class="ts-empty">No {ev.title} times yet. Be the first on the board.</p>
+        ) : (
+          <ol class="ts-list">
+            {list.map((e, n) => (
+              <li class="ts-row">
+                <span class="ts-rank">{n + 1}</span>
+                <div class="ts-main">
+                  <div class="ts-top">
+                    {e.proof ? (
+                      <a class="ts-name lb-link" href={e.proof} data-full={e.proof} data-caption={`${e.name}: ${ev.title} in ${fmtTime(e)}`}>{e.name}</a>
+                    ) : <span class="ts-name">{e.name}</span>}
+                    <span class="ts-time">{fmtTime(e)}</span>
+                  </div>
+                  <div class="ts-stats">
+                    {[e.car, e.engine, labels[e.induction] + (e.adder ? ` (${e.adder})` : ''), e.boost, e.fuel, e.trans, e.timer, e.track, e.date].filter(Boolean).join(' · ')}
+                    {e.build && <> · <a href={e.build}>Build</a></>}
+                  </div>
+                  {e.note && <div class="ts-note">{e.note}</div>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        )}
+      </section>
+    );
+  })}
+
+  <h2>Get on the Board</h2>
+  <p>Email <a href="mailto:Elementrider87@gmail.com?subject=Time%20Slips%20submission">Elementrider87@gmail.com</a> with:</p>
+  <ul>
+    <li>Your name and Instagram / Facebook / YouTube handle</li>
+    <li>Car, engine, power adder and boost, transmission, and fuel</li>
+    <li>A photo of the <strong>time slip</strong> or the <strong>Dragy result</strong> (screenshot or share card)</li>
+    <li>Track name or where it was run, and the date</li>
+  </ul>
+
+  <h2>Rules</h2>
+  <ul>
+    <li>1/4 mile times need a track time slip. 60-130 and 100-150 need a Dragy (or similar GPS timer) result.</li>
+    <li>Quickest time ranks first. Re-submit any time you go faster and your entry gets updated.</li>
+    <li>Your power adder, boost, and fuel are listed with your entry so runs can be compared fairly.</li>
+  </ul>
+  <p>Got dyno numbers too? Post them on <a href="/hp-wars">HP Wars</a>.</p>
+</BaseLayout>
+
+<script>
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.ts-tab'));
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('.ts-panel'));
+
+  function show(id: string, updateHash: boolean) {
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === id)));
+    panels.forEach((p) => { p.hidden = p.id !== 'panel-' + id; });
+    if (updateHash) {
+      try { history.replaceState(null, '', '#' + id); } catch {}
+    }
+  }
+
+  tabs.forEach((t) => t.addEventListener('click', () => show(t.dataset.tab || 'quarter', true)));
+  const start = location.hash.replace('#', '');
+  if (tabs.some((t) => t.dataset.tab === start)) show(start, false);
+</script>
+
+<style>
+  .ts-tabs { display: flex; gap: 0.5rem; overflow-x: auto; padding: 0.25rem 0 0.75rem; margin: 0.75rem 0 0.5rem; scrollbar-width: none; }
+  .ts-tabs::-webkit-scrollbar { display: none; }
+  .ts-tab { flex: 0 0 auto; min-height: 40px; padding: 0.45rem 0.95rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted); font: inherit; font-size: 0.95rem; cursor: pointer; }
+  .ts-tab[aria-selected='true'] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .ts-count { margin-left: 0.4rem; font-size: 0.8rem; opacity: 0.8; }
+  .ts-panel[hidden] { display: none; }
+  .ts-panel-title { margin-top: 0.5rem; }
+  .ts-empty { background: var(--bg-card); border: 1px dashed var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+  .ts-list { list-style: none; margin: 0.75rem 0 0 !important; padding: 0; display: grid; gap: 0.6rem; }
+  .ts-row { display: grid; grid-template-columns: 2.4rem 1fr; gap: 0.75rem; align-items: start; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.8rem 1rem; margin: 0 !important; }
+  .ts-rank { font-weight: 800; font-size: 1.4rem; color: var(--accent); line-height: 1.2; }
+  .ts-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.75rem; align-items: baseline; }
+  .ts-name { font-weight: 700; font-size: 1.05rem; min-width: 0; overflow-wrap: anywhere; }
+  .ts-time { font-size: 1.3rem; font-weight: 800; white-space: nowrap; }
+  .ts-stats { color: var(--text-muted); font-size: 0.88rem; margin-top: 0.2rem; }
+  .ts-note { font-size: 0.85rem; margin-top: 0.35rem; color: var(--text-muted); font-style: italic; }
+  @media (max-width: 480px) {
+    .ts-row { grid-template-columns: 1.8rem 1fr; gap: 0.5rem; padding: 0.75rem 0.8rem; }
+    .ts-name { font-size: 0.98rem; }
+    .ts-time { font-size: 1.1rem; }
+  }
+</style>

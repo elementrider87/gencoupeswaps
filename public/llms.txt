@@ -27,7 +27,8 @@ Written and maintained by Alexander Knight (@elementrider87). Wire colors and pi
 
 ## Community
 
-- [HP Wars](https://gencoupeswaps.com/hp-wars): Dyno leaderboard for LS-swapped Hyundai Genesis Coupes: N/A, turbo, supercharged, and nitrous wheel horsepower.
+- [HP Wars](https://gencoupeswaps.com/hp-wars): Dyno leaderboard for swapped Hyundai Genesis Coupes (LS, JZ and more), ranked by wheel horsepower and torque.
+- [Time Slips](https://gencoupeswaps.com/time-slips): Quarter mile, 60-130 mph, and 100-150 mph leaderboards for swapped Genesis Coupes, with time slips and Dragy proof.
 - [Alexander's 427 Supercharged 2010 BK1](https://gencoupeswaps.com/featured/alexander-knight-2010-bk1): Featured build: sleeved 427 LS3, Vortech V2-Ti at 11 psi (730–750 hp on pump gas), T56 Magnum XL, Ford 8.8 rear.
 - [Featured Builds](https://gencoupeswaps.com/featured): Community LS swapped Genesis Coupes — submit your build.
 - [Discounts](https://gencoupeswaps.com/discounts): Discount codes and deals from tuners and vendors recommended in the guides, including Holley EFI remote tuning.

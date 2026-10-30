@@ -24,6 +24,7 @@ const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(
     <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
     <a href="/featured" class={currentPath.startsWith('/featured') ? 'active' : ''}>Featured Builds</a>
     <a href="/hp-wars" class={currentPath.startsWith('/hp-wars') ? 'active' : ''}>HP Wars</a>
+    <a href="/time-slips" class={currentPath.startsWith('/time-slips') ? 'active' : ''}>Time Slips</a>
     <a href="/resources" class={currentPath.startsWith('/resources') ? 'active' : ''}>Resources</a>
     <a href="/about" class={currentPath.startsWith('/about') ? 'active' : ''}>About</a>
     <a href="/contact" class={currentPath.startsWith('/contact') ? 'active' : ''}>Contact</a>
@@ -58,6 +59,7 @@ const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(
     { label: 'Home', href: '/', keywords: 'home start main' },
     { label: 'Featured Builds', href: '/featured', keywords: 'featured builds showcase submit' },
     { label: 'HP Wars', href: '/hp-wars', keywords: 'hp wars horsepower dyno leaderboard whp power numbers rankings' },
+    { label: 'Time Slips', href: '/time-slips', keywords: 'time slips quarter mile 1/4 mile 60-130 100-150 dragy drag racing et trap speed leaderboard' },
     { label: 'Resources', href: '/resources', keywords: 'resources links parts kits forums' },
     { label: 'About', href: '/about', keywords: 'about story why' },
     { label: 'Contact', href: '/contact', keywords: 'contact email contribute submit' },
