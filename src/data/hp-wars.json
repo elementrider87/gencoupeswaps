@@ -132,10 +132,11 @@
     "boost": "30 psi",
     "fuel": "E85",
     "whp": 1224,
-    "wtq": 1144,
-    "date": "Oct 2026",
+    "wtq": 1116.2,
+    "date": "Mar 2024",
     "proof": "/images/hp-wars/anthony-pared-dyno.jpg",
-    "note": "No dyno sheet posted; numbers are from his comment. Truck accessory spacing, dual CSF drag radiators."
+    "note": "Truck accessory spacing, dual CSF drag radiators.",
+    "dyno": "DYNOmite (The Car Clinic)"
   },
   {
     "name": "Mathis Thibault",
