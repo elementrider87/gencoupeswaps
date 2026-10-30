@@ -621,3 +621,6 @@ body.lb-open { overflow: hidden; }
 
 /* product shots on white: show the whole image instead of cropping */
 .figs-product .fig img { object-fit: contain; background: #fff; }
+
+/* Affiliate disclosure (added automatically on pages with affiliate links) */
+.aff-note { font-size: 0.85rem; color: var(--text-muted); background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 0.6rem 0.85rem; margin: 0.5rem 0 1.25rem; }

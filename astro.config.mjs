@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import affiliateLinks from './integrations/affiliate-links.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,4 +10,6 @@ export default defineConfig({
   // every internal link, the sitemap, and the canonical tags, so Google sees no redirects.
   trailingSlash: 'never',
   build: { format: 'file' },
+  // Adds affiliate codes from src/data/affiliates.json to vendor links after the build.
+  integrations: [affiliateLinks()],
 });

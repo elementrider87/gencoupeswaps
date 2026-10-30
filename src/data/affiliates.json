@@ -1,0 +1,47 @@
+{
+  "amazon": {
+    "tag": ""
+  },
+  "programs": [
+    {
+      "name": "Summit Racing (impact.com)",
+      "domains": ["summitracing.com"],
+      "type": "wrap",
+      "template": ""
+    },
+    {
+      "name": "Vivid Racing (FlexOffers)",
+      "domains": ["vividracing.com"],
+      "type": "wrap",
+      "template": ""
+    },
+    {
+      "name": "Sikky",
+      "domains": ["sikky.com"],
+      "type": "param",
+      "param": "",
+      "value": ""
+    },
+    {
+      "name": "LOJ Conversions",
+      "domains": ["lojkits.com"],
+      "type": "param",
+      "param": "",
+      "value": ""
+    },
+    {
+      "name": "CX Racing",
+      "domains": ["cxracing.com"],
+      "type": "param",
+      "param": "",
+      "value": ""
+    },
+    {
+      "name": "ICT Billet",
+      "domains": ["ictbillet.com"],
+      "type": "param",
+      "param": "",
+      "value": ""
+    }
+  ]
+}
