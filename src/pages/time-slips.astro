@@ -122,6 +122,9 @@ const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toF
   .ts-stats { color: var(--text-muted); font-size: 0.88rem; margin-top: 0.2rem; }
   .ts-note { font-size: 0.85rem; margin-top: 0.35rem; color: var(--text-muted); font-style: italic; }
   @media (max-width: 480px) {
+    .ts-tabs { gap: 0.35rem; }
+    .ts-tab { padding: 0.4rem 0.65rem; font-size: 0.85rem; }
+    .ts-count { margin-left: 0.3rem; }
     .ts-row { grid-template-columns: 1.8rem 1fr; gap: 0.5rem; padding: 0.75rem 0.8rem; }
     .ts-name { font-size: 0.98rem; }
     .ts-time { font-size: 1.1rem; }
