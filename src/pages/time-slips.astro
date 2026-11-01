@@ -6,15 +6,16 @@ type Entry = {
   name: string; car: string; engine: string;
   induction: 'na' | 'turbo' | 'supercharged' | 'nitrous';
   adder?: string; boost?: string; fuel?: string; trans?: string;
-  event: 'quarter' | '60-130' | '100-150';
+  event: 'eighth' | 'quarter' | '60-130' | '100-150';
   time: number; mph?: number; timer?: string; track?: string; date?: string;
   proof?: string; build?: string; note?: string;
 };
 
 const events = [
-  { id: 'quarter', label: '1/4 Mile', title: '1/4 mile' },
-  { id: '60-130', label: '60-130 mph', title: '60-130 mph' },
-  { id: '100-150', label: '100-150 mph', title: '100-150 mph' },
+  { id: 'eighth', label: '1/8 Mile', short: '1/8', title: '1/8 mile' },
+  { id: 'quarter', label: '1/4 Mile', short: '1/4', title: '1/4 mile' },
+  { id: '60-130', label: '60-130 mph', short: '60-130', title: '60-130 mph' },
+  { id: '100-150', label: '100-150 mph', short: '100-150', title: '100-150 mph' },
 ];
 const labels: Record<string, string> = { na: 'N/A', turbo: 'Turbo', supercharged: 'Supercharged', nitrous: 'Nitrous' };
 const all = entriesRaw as Entry[];
@@ -24,14 +25,14 @@ const initial = events.find((ev) => byEvent(ev.id).length > 0)?.id ?? 'quarter';
 const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toFixed(1)} mph` : '');
 ---
 
-<BaseLayout title="Time Slips" description="Quarter mile, 60-130 mph, and 100-150 mph leaderboards for swapped Hyundai Genesis Coupes, with time slips and Dragy proof.">
+<BaseLayout title="Time Slips" description="Eighth mile, quarter mile, 60-130 mph, and 100-150 mph leaderboards for swapped Hyundai Genesis Coupes, with time slips and Dragy proof.">
   <h1>Time Slips</h1>
   <p>Fastest swapped Genesis Coupes at the track and on the Dragy, ranked quickest first. Tap a name to see the slip.</p>
 
   <div class="ts-tabs" role="tablist" aria-label="Event">
     {events.map((ev) => (
       <button type="button" role="tab" class="ts-tab" id={`tab-${ev.id}`} data-tab={ev.id} aria-controls={`panel-${ev.id}`} aria-selected={ev.id === initial ? 'true' : 'false'}>
-        {ev.label}<span class="ts-count">{byEvent(ev.id).length}</span>
+        <span class="ts-long">{ev.label}</span><span class="ts-short">{ev.short}</span><span class="ts-count">{byEvent(ev.id).length}</span>
       </button>
     ))}
   </div>
@@ -80,7 +81,7 @@ const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toF
 
   <h2>Rules</h2>
   <ul>
-    <li>1/4 mile times need a track time slip. 60-130 and 100-150 need a Dragy (or similar GPS timer) result.</li>
+    <li>1/4 mile times need a track time slip. 1/8 mile times can be a track slip or a Dragy result. 60-130 and 100-150 need a Dragy (or similar GPS timer) result.</li>
     <li>Quickest time ranks first. Re-submit any time you go faster and your entry gets updated.</li>
     <li>Your power adder, boost, and fuel are listed with your entry so runs can be compared fairly.</li>
   </ul>
@@ -110,6 +111,7 @@ const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toF
   .ts-tab { flex: 0 0 auto; min-height: 40px; padding: 0.45rem 0.95rem; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-muted); font: inherit; font-size: 0.95rem; cursor: pointer; }
   .ts-tab[aria-selected='true'] { background: var(--accent); border-color: var(--accent); color: #fff; }
   .ts-count { margin-left: 0.4rem; font-size: 0.8rem; opacity: 0.8; }
+  .ts-short { display: none; }
   .ts-panel[hidden] { display: none; }
   .ts-panel-title { margin-top: 0.5rem; }
   .ts-empty { background: var(--bg-card); border: 1px dashed var(--border); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
@@ -125,6 +127,8 @@ const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toF
     .ts-tabs { gap: 0.35rem; }
     .ts-tab { padding: 0.4rem 0.65rem; font-size: 0.85rem; }
     .ts-count { margin-left: 0.3rem; }
+    .ts-long { display: none; }
+    .ts-short { display: inline; }
     .ts-row { grid-template-columns: 1.8rem 1fr; gap: 0.5rem; padding: 0.75rem 0.8rem; }
     .ts-name { font-size: 0.98rem; }
     .ts-time { font-size: 1.1rem; }

@@ -20,9 +20,9 @@ automatically, quickest time first, so order in the file doesn't matter.
 }
 ```
 
-- `event` must be one of: `quarter`, `60-130`, `100-150`
+- `event` must be one of: `eighth`, `quarter`, `60-130`, `100-150`
 - `time` is seconds (number only)
-- `mph` (quarter mile trap speed) and `track` are optional; use them for 1/4 mile slips
+- `mph` (trap speed) and `track` are optional; use them for 1/8 and 1/4 mile runs
 - `induction` must be one of: `na`, `turbo`, `supercharged`, `nitrous`
 - `proof` is the slip / Dragy image; the person's name links to it
 - Put images in `public/images/time-slips/`
