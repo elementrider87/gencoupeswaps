@@ -38,5 +38,43 @@
     "date": "Oct 2026",
     "proof": "/images/time-slips/daryl-bellew-eighth.jpg",
     "note": "Foot-brake shakedown pass; he expects 6s with a better launch."
+  },
+  {
+    "name": "Alexander Knight",
+    "car": "Genesis Coupe",
+    "engine": "LS",
+    "induction": "na",
+    "event": "quarter",
+    "time": 12.418,
+    "mph": 115.61,
+    "track": "Qlispé Raceway Park",
+    "date": "Jun 2023",
+    "proof": "/images/time-slips/alexander-knight-quarter.jpg",
+    "note": "Before the supercharger."
+  },
+  {
+    "name": "Aaron",
+    "car": "Genesis Coupe",
+    "engine": "",
+    "induction": "",
+    "event": "quarter",
+    "time": 12.39,
+    "mph": 115.86,
+    "track": "Rock Falls Raceway",
+    "date": "Aug 2023",
+    "proof": "/images/time-slips/aaron-quarter.jpg",
+    "note": "First time on a drag strip; broke an axle going for a better 60 ft."
+  },
+  {
+    "name": "Robert Kapeluch",
+    "car": "Genesis Coupe",
+    "engine": "",
+    "induction": "",
+    "event": "quarter",
+    "time": 8.867,
+    "mph": 156.99,
+    "track": "Bradenton Motorsports Park (Street Kings)",
+    "date": "Dec 2023",
+    "proof": "/images/time-slips/robert-kapeluch-quarter.jpg"
   }
 ]

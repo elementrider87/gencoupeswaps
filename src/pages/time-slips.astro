@@ -4,7 +4,7 @@ import entriesRaw from '../data/time-slips.json';
 
 type Entry = {
   name: string; car: string; engine: string;
-  induction: 'na' | 'turbo' | 'supercharged' | 'nitrous';
+  induction?: '' | 'na' | 'turbo' | 'supercharged' | 'nitrous';
   adder?: string; boost?: string; fuel?: string; trans?: string;
   event: 'eighth' | 'quarter' | '60-130' | '100-150';
   time: number; mph?: number; timer?: string; track?: string; date?: string;
@@ -57,7 +57,7 @@ const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toF
                     <span class="ts-time">{fmtTime(e)}</span>
                   </div>
                   <div class="ts-stats">
-                    {[e.car, e.engine, labels[e.induction] + (e.adder ? ` (${e.adder})` : ''), e.boost, e.fuel, e.trans, e.timer, e.track, e.date].filter(Boolean).join(' · ')}
+                    {[e.car, e.engine, e.induction ? labels[e.induction] + (e.adder ? ` (${e.adder})` : '') : e.adder, e.boost, e.fuel, e.trans, e.timer, e.track, e.date].filter(Boolean).join(' · ')}
                     {e.build && <> · <a href={e.build}>Build</a></>}
                   </div>
                   {e.note && <div class="ts-note">{e.note}</div>}
