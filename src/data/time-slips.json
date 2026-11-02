@@ -68,8 +68,8 @@
   {
     "name": "Robert Kapeluch",
     "car": "Genesis Coupe",
-    "engine": "",
-    "induction": "",
+    "engine": "6.0 LS (iron block)",
+    "induction": "turbo",
     "event": "quarter",
     "time": 8.867,
     "mph": 156.99,
@@ -77,6 +77,10 @@
     "date": "Dec 2023",
     "proof": "/images/time-slips/robert-kapeluch-quarter.jpg",
     "video": "https://youtu.be/W4Gj40ss1po",
-    "note": "Roughly 1,200 hp. No time slip posted; the scoreboard photo and video are the proof."
+    "note": "Roughly 1,200 hp. Custom Ford 8.8 rear end with DSS axles. No time slip posted; the scoreboard photo and video are the proof.",
+    "adder": "Twin Boost Lab 6766",
+    "boost": "23 psi",
+    "fuel": "Flex fuel",
+    "trans": "FTI Powerglide"
   }
 ]
