@@ -25,5 +25,7 @@ automatically, quickest time first, so order in the file doesn't matter.
 - `mph` (trap speed) and `track` are optional; use them for 1/8 and 1/4 mile runs
 - `induction` must be one of: `na`, `turbo`, `supercharged`, `nitrous`
 - `proof` is the slip / Dragy image; the person's name links to it
+- `video` (optional) is a link to a video of the run; it shows as a "Video" link
+- `note` (optional) is a short line shown under the entry
 - Put images in `public/images/time-slips/`
 - One person can have several entries (one per event, or different setups)

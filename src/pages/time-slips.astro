@@ -8,7 +8,7 @@ type Entry = {
   adder?: string; boost?: string; fuel?: string; trans?: string;
   event: 'eighth' | 'quarter' | '60-130' | '100-150';
   time: number; mph?: number; timer?: string; track?: string; date?: string;
-  proof?: string; build?: string; note?: string;
+  proof?: string; build?: string; video?: string; note?: string;
 };
 
 const events = [
@@ -59,6 +59,7 @@ const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toF
                   <div class="ts-stats">
                     {[e.car, e.engine, e.induction ? labels[e.induction] + (e.adder ? ` (${e.adder})` : '') : e.adder, e.boost, e.fuel, e.trans, e.timer, e.track, e.date].filter(Boolean).join(' · ')}
                     {e.build && <> · <a href={e.build}>Build</a></>}
+                    {e.video && <> · <a href={e.video} target="_blank" rel="noopener">Video</a></>}
                   </div>
                   {e.note && <div class="ts-note">{e.note}</div>}
                 </div>
