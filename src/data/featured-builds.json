@@ -188,5 +188,100 @@
         "url": "/contact"
       }
     ]
+  },
+  {
+    "slug": "adrian-rodriguez-torquestorm-48",
+    "owner": "Adrian Rodriguez",
+    "title": "Adrian's TorqueStorm 4.8 Genesis Coupe",
+    "car": "Hyundai Genesis Coupe",
+    "category": "supercharged",
+    "summary": "A TorqueStorm-supercharged 4.8 LS making roughly 500 hp, wrapped in a full aero kit with custom headlights and taillights.",
+    "stats": [
+      {
+        "label": "Engine",
+        "value": "4.8 LS"
+      },
+      {
+        "label": "Power adder",
+        "value": "TorqueStorm supercharger"
+      },
+      {
+        "label": "Power",
+        "value": "~500 hp"
+      },
+      {
+        "label": "ECU",
+        "value": "Holley Terminator X"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Engine",
+        "items": [
+          "4.8L LS",
+          "TorqueStorm centrifugal supercharger",
+          "Front-mount intercooler"
+        ]
+      },
+      {
+        "title": "Engine Management",
+        "items": [
+          {
+            "text": "Holley Terminator X",
+            "link": "/guides/ecu"
+          }
+        ]
+      },
+      {
+        "title": "Body & Lighting",
+        "items": [
+          "Full body aero kit",
+          "Custom headlights",
+          "Custom taillights"
+        ]
+      },
+      {
+        "title": "More Coming",
+        "items": [
+          "Full parts list coming soon."
+        ]
+      }
+    ],
+    "photos": [
+      {
+        "src": "adrian-gc-bridge.jpg",
+        "caption": "Down by the river with the full aero kit."
+      },
+      {
+        "src": "adrian-gc-rear-quarter.jpg",
+        "caption": "Rear quarter: wing, louvers, rear flares and diffuser."
+      },
+      {
+        "src": "adrian-gc-rear-bridge.jpg",
+        "caption": "From the back: custom taillights and quad tips."
+      },
+      {
+        "src": "adrian-gc-dyno.jpg",
+        "caption": "On the dyno, with the custom headlights lit."
+      },
+      {
+        "src": "adrian-gc-engine-bay.jpg",
+        "caption": "TorqueStorm-boosted 4.8 behind the front-mount intercooler and crash bar."
+      }
+    ],
+    "social": [
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/bonniestaxis"
+      },
+      {
+        "label": "Instagram video",
+        "url": "https://www.instagram.com/reel/Dc9ggcrSGt2/"
+      },
+      {
+        "label": "Contact the owner",
+        "url": "/contact"
+      }
+    ]
   }
 ]
