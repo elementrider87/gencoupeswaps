@@ -58,7 +58,7 @@
     "engine": "",
     "induction": "",
     "event": "quarter",
-    "time": 12.39,
+    "time": "12.390",
     "mph": 115.86,
     "track": "Rock Falls Raceway",
     "date": "Aug 2023",
@@ -75,9 +75,12 @@
     "mph": 156.99,
     "track": "Bradenton Motorsports Park (Street Kings)",
     "date": "Dec 2023",
-    "proof": "/images/time-slips/robert-kapeluch-quarter.jpg",
+    "proof": [
+      "/images/time-slips/robert-kapeluch-quarter-slip.jpg",
+      "/images/time-slips/robert-kapeluch-quarter.jpg"
+    ],
     "video": "https://youtu.be/W4Gj40ss1po",
-    "note": "Roughly 1,200 hp. Custom Ford 8.8 rear end with DSS axles. No time slip posted; the scoreboard photo and video are the proof.",
+    "note": "Roughly 1,200 hp. Custom Ford 8.8 rear end with DSS axles. 60 ft 1.442, 1/8 mile 5.753 @ 127.80.",
     "adder": "Twin Boost Lab 6766",
     "boost": "23 psi",
     "fuel": "Flex fuel",

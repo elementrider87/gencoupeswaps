@@ -21,10 +21,10 @@ automatically, quickest time first, so order in the file doesn't matter.
 ```
 
 - `event` must be one of: `eighth`, `quarter`, `60-130`, `100-150`
-- `time` is seconds (number only)
+- `time` is seconds, shown exactly as entered (no rounding). Use quotes to keep trailing zeros, e.g. `"12.390"`
 - `mph` (trap speed) and `track` are optional; use them for 1/8 and 1/4 mile runs
 - `induction` must be one of: `na`, `turbo`, `supercharged`, `nitrous`
-- `proof` is the slip / Dragy image; the person's name links to it
+- `proof` is the slip / Dragy image; the person's name links to it. For several photos use a list: `["/images/time-slips/a.jpg", "/images/time-slips/b.jpg"]` (first one opens first)
 - `video` (optional) is a link to a video of the run; it shows as a "Video" link
 - `note` (optional) is a short line shown under the entry
 - Put images in `public/images/time-slips/`

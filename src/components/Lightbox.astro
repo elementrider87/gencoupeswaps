@@ -57,7 +57,9 @@
 
   all.forEach((b) => b.addEventListener('click', (e) => {
     e.preventDefault();
-    items = all.filter((x) => x.offsetParent !== null);
+    // Links that share a data-group (e.g. several photos for one Time Slips entry) open as their own set.
+    const g = b.dataset.group;
+    items = g ? all.filter((x) => x.dataset.group === g) : all.filter((x) => x.offsetParent !== null && !x.dataset.group);
     open(Math.max(0, items.indexOf(b)));
   }));
   document.getElementById('lb-close')?.addEventListener('click', () => close());

@@ -7,8 +7,8 @@ type Entry = {
   induction?: '' | 'na' | 'turbo' | 'supercharged' | 'nitrous';
   adder?: string; boost?: string; fuel?: string; trans?: string;
   event: 'eighth' | 'quarter' | '60-130' | '100-150';
-  time: number; mph?: number; timer?: string; track?: string; date?: string;
-  proof?: string; build?: string; video?: string; note?: string;
+  time: number | string; mph?: number | string; timer?: string; track?: string; date?: string;
+  proof?: string | string[]; build?: string; video?: string; note?: string;
 };
 
 const events = [
@@ -20,9 +20,11 @@ const events = [
 const labels: Record<string, string> = { na: 'N/A', turbo: 'Turbo', supercharged: 'Supercharged', nitrous: 'Nitrous' };
 const all = entriesRaw as Entry[];
 // Fastest (lowest time) first, so new entries drop into place automatically.
-const byEvent = (id: string) => all.filter((e) => e.event === id).sort((a, b) => a.time - b.time);
+const byEvent = (id: string) => all.filter((e) => e.event === id).sort((a, b) => Number(a.time) - Number(b.time));
+// Show times and speeds exactly as entered in the JSON (no rounding).
+const proofs = (e: Entry) => (Array.isArray(e.proof) ? e.proof : e.proof ? [e.proof] : []);
 const initial = events.find((ev) => byEvent(ev.id).length > 0)?.id ?? 'quarter';
-const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toFixed(1)} mph` : '');
+const fmtTime = (e: Entry) => String(e.time) + 's' + (e.mph ? ` @ ${String(e.mph)} mph` : '');
 ---
 
 <BaseLayout title="Time Slips" description="Eighth mile, quarter mile, 60-130 mph, and 100-150 mph leaderboards for swapped Hyundai Genesis Coupes, with time slips and Dragy proof.">
@@ -51,13 +53,16 @@ const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toF
                 <span class="ts-rank">{n + 1}</span>
                 <div class="ts-main">
                   <div class="ts-top">
-                    {e.proof ? (
-                      <a class="ts-name lb-link" href={e.proof} data-full={e.proof} data-caption={`${e.name}: ${ev.title} in ${fmtTime(e)}`}>{e.name}</a>
+                    {proofs(e).length ? (
+                      <a class="ts-name lb-link" href={proofs(e)[0]} data-full={proofs(e)[0]} data-group={proofs(e).length > 1 ? `${ev.id}-${n}` : undefined} data-caption={`${e.name}: ${ev.title} in ${fmtTime(e)}`}>{e.name}</a>
                     ) : <span class="ts-name">{e.name}</span>}
+                    {proofs(e).slice(1).map((src, k) => (
+                      <a class="lb-link ts-extra" href={src} data-full={src} data-group={`${ev.id}-${n}`} data-caption={`${e.name}: ${ev.title} in ${fmtTime(e)} (photo ${k + 2})`} hidden></a>
+                    ))}
                     <span class="ts-time">{fmtTime(e)}</span>
                   </div>
                   <div class="ts-stats">
-                    {[e.car, e.engine, e.induction ? labels[e.induction] + (e.adder ? ` (${e.adder})` : '') : e.adder, e.boost, e.fuel, e.trans, e.timer, e.track, e.date].filter(Boolean).join(' · ')}
+                    {proofs(e).length > 1 && <span class="ts-photos">{proofs(e).length} photos · </span>}{[e.car, e.engine, e.induction ? labels[e.induction] + (e.adder ? ` (${e.adder})` : '') : e.adder, e.boost, e.fuel, e.trans, e.timer, e.track, e.date].filter(Boolean).join(' · ')}
                     {e.build && <> · <a href={e.build}>Build</a></>}
                     {e.video && <> · <a href={e.video} target="_blank" rel="noopener">Video</a></>}
                   </div>
@@ -123,6 +128,7 @@ const fmtTime = (e: Entry) => e.time.toFixed(2) + 's' + (e.mph ? ` @ ${e.mph.toF
   .ts-name { font-weight: 700; font-size: 1.05rem; min-width: 0; overflow-wrap: anywhere; }
   .ts-time { font-size: 1.3rem; font-weight: 800; white-space: nowrap; }
   .ts-stats { color: var(--text-muted); font-size: 0.88rem; margin-top: 0.2rem; }
+  .ts-photos { color: var(--accent); font-weight: 600; }
   .ts-note { font-size: 0.85rem; margin-top: 0.35rem; color: var(--text-muted); font-style: italic; }
   @media (max-width: 480px) {
     .ts-tabs { gap: 0.35rem; }
