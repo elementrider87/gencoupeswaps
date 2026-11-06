@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
+import GuideTabs from '../../components/GuideTabs.astro';
+---
+
+<BaseLayout title="Power Adders" description="Turbo, twin turbo, top-mount supercharger, centrifugal supercharger or nitrous for an LS-swapped Genesis Coupe: how each works, what it takes, and real examples from swapped Gen Coupes.">
+  <h1>Power Adders</h1>
+  <p>
+    A healthy naturally aspirated LS makes great, reliable power in a Genesis Coupe. Most N/A swaps on our
+    <a href="/hp-wars">HP Wars</a> board land between 300 and 440 wheel horsepower. If you want more than that, the biggest gains come from
+    forcing more air into the engine with a <strong>turbo</strong> or <strong>supercharger</strong>, or adding oxygen with <strong>nitrous</strong>.
+  </p>
+
+  <GuideTabs />
+
+  <div class="tab-panel" id="overview">
+  <h2 id="why">Why Add Boost or Nitrous?</h2>
+  <ul>
+    <li><strong>Big power per dollar.</strong> A power adder can add 150–500+ hp to an engine that's already in the car, where a bigger N/A build usually means a new engine.</li>
+    <li><strong>Pick the power curve you want.</strong> A top-mount blower hits hard everywhere, a centrifugal pulls hardest up top like a big N/A motor, turbos can make huge power once spooled, and nitrous only works when you press the button.</li>
+    <li><strong>It suits the LS.</strong> Even stock-bottom-end LS engines take moderate boost or a modest nitrous shot well with a good tune. Forged internals open the door to four-figure numbers.</li>
+  </ul>
+
+  <h2 id="plan">Plan for the Whole Car</h2>
+  <p>More power stresses everything behind and around the engine. Budget for these before you buy the kit:</p>
+  <ul>
+    <li><strong>Fuel system:</strong> bigger injectors, a pump that holds pressure at full demand, and a boost-referenced regulator for boost. See <a href="/guides/fuel-system">Fuel System</a>.</li>
+    <li><strong>Engine management and tuning:</strong> a MAP sensor that reads your boost (a 1-bar won't), conservative timing and a good wideband. See <a href="/guides/ecu">ECUs &amp; Tuning</a>.</li>
+    <li><strong>Cooling and heat:</strong> the Gen Coupe engine bay is tight and hot already. Intercoolers, heat exchangers and turbo plumbing all compete with the radiator for space. See <a href="/guides/cooling">Cooling</a>.</li>
+    <li><strong>Driveline:</strong> stock Genesis axles and the factory diff are the usual first failures. See <a href="/guides/differential">Differential &amp; Axles</a> and <a href="/guides/transmission">Transmission &amp; Clutch</a>.</li>
+    <li><strong>Oiling:</strong> sustained high rpm and boost are hard on a small oil pan. See the <a href="/guides/swap-kits#oil-pan">Oil Pan</a> notes.</li>
+  </ul>
+
+  <h2 id="compare">Quick Comparison</h2>
+  <table>
+    <thead><tr><th>Type</th><th>Power delivery</th><th>Biggest challenge in a Gen Coupe</th></tr></thead>
+    <tbody>
+      <tr><td><a href="#single-turbo">Single turbo</a></td><td>Builds with rpm and spool; huge top end</td><td>Custom hot side, heat in the bay</td></tr>
+      <tr><td><a href="#twin-turbo">Twin turbo</a></td><td>Quicker spool than one big turbo</td><td>Fitting two turbos and all the plumbing</td></tr>
+      <tr><td><a href="#top-mount">Top-mount supercharger</a></td><td>Instant boost and torque from idle</td><td>Hood clearance and intercooler heat exchanger</td></tr>
+      <tr><td><a href="#centrifugal">Centrifugal supercharger</a></td><td>Boost climbs with rpm, strongest up top</td><td>Bracket, belt and intercooler routing</td></tr>
+      <tr><td><a href="#nitrous">Nitrous</a></td><td>On demand, only when armed and triggered</td><td>Fueling and safeties; bottle refills</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tab-panel" id="single-turbo">
+  <h2 id="single-turbo-how">Single Turbo</h2>
+  <p>
+    A turbo uses exhaust energy to spin a turbine, which drives a compressor that pushes air into the engine. One larger turbo is
+    the simplest way to make very big power: one turbo, one wastegate, one blow-off valve, and an intercooler.
+  </p>
+  <ul>
+    <li><strong>Power:</strong> scales with turbo size and boost. Big singles make the most peak power, but take longer to spool.</li>
+    <li><strong>What it takes:</strong> custom hot side (turbo manifolds and crossover pipe), downpipe, intercooler and charge piping, oil feed and drain, wastegate, blow-off valve, and boost control.</li>
+    <li><strong>Gen Coupe fit:</strong> there's no bolt-on kit, so plan for custom fabrication and a lot of heat shielding near the brake booster, wiring and fuse box.</li>
+  </ul>
+  <p>Single-turbo builds on our boards include Harold Calveiro's Pulsar G40 2JZ on <a href="/time-slips">Time Slips</a>. Have an LS single turbo build? <a href="/contact">Send photos</a> and we'll feature it here.</p>
+  </div>
+
+  <div class="tab-panel" id="twin-turbo">
+  <h2 id="twin-turbo-how">Twin Turbo</h2>
+  <p>
+    Two turbos, usually one per cylinder bank. Each turbo can be smaller than a single that makes the same power, so they spool
+    sooner, and each bank gets its own short hot side.
+  </p>
+  <ul>
+    <li><strong>Power:</strong> the top of what's been done in these cars. Anthony Pared's forged 5.3 makes 1,224 whp on twin BorgWarner S366s on <a href="/hp-wars">HP Wars</a>.</li>
+    <li><strong>What it takes:</strong> everything a single needs, times two: two wastegates (or internally gated turbos), two oil feeds and drains, and charge piping that merges into one intercooler.</li>
+    <li><strong>Gen Coupe fit:</strong> the turbos usually sit forward of the heads, near the frame rails, so radiator and intercooler packaging is the hard part.</li>
+  </ul>
+  <h3 id="kapeluch-twins">Example: Robert Kapeluch's Twin Turbo 6.0</h3>
+  <p>
+    Iron-block 6.0 with a custom twin Boost Lab 6766 kit at 23 psi on flex fuel, roughly 1,200 hp, through an FTI Powerglide and a
+    <a href="/guides/differential#kapeluch-88">Ford 8.8</a>. It has run <a href="/time-slips#quarter">8.867 @ 156.99 mph</a> in the quarter.
+  </p>
+  <div class="fig-small">
+    <Figure src="kapeluch-twin-turbo-bay.jpg" alt="Twin turbo 6.0 LS in a Genesis Coupe with turbos mounted forward of the heads and a front-mount intercooler" caption="Robert Kapeluch's twin turbo 6.0: turbos sit forward of the heads, feeding a front-mount intercooler." />
+  </div>
+  </div>
+
+  <div class="tab-panel" id="top-mount">
+  <h2 id="top-mount-how">Top-Mount Supercharger</h2>
+  <p>
+    A positive-displacement blower (Roots or twin-screw) sits on top of the engine in place of the intake manifold and is belt-driven
+    from the crank. It moves a fixed amount of air every revolution, so boost comes in right off idle and stays roughly flat across the rev range.
+  </p>
+  <ul>
+    <li><strong>Power:</strong> instant torque everywhere, which makes for a great street car. Factory LSA and LS9 engines come this way.</li>
+    <li><strong>What it takes:</strong> the blower and drive, an intercooler brick inside the blower with a front-mount heat exchanger, a coolant pump and reservoir, and a smaller pulley to raise boost.</li>
+    <li><strong>Gen Coupe fit:</strong> check hood clearance first. A top-mount sits much taller than a stock intake, and the heat exchanger needs space in front of the radiator.</li>
+  </ul>
+  <p>
+    Examples on our boards: Aaron's LY6 with an LSA blower makes 517 whp on <a href="/hp-wars">HP Wars</a>, and Matt Haugen's
+    Whipple-supercharged 427 LS3 made around 1,000 whp (see <a href="/guides/engine-selection#builds">Engine Selection</a>).
+  </p>
+  </div>
+
+  <div class="tab-panel" id="centrifugal">
+  <h2 id="centrifugal-how">Centrifugal Supercharger</h2>
+  <p>
+    A centrifugal blower looks and works like the compressor half of a turbo, but it's driven by a belt from the crank instead of by exhaust.
+    It mounts on a bracket at the front of the engine and feeds the throttle body through an intercooler.
+  </p>
+  <h3 id="centrifugal-boost">How the boost works</h3>
+  <ul>
+    <li><strong>Boost rises with rpm.</strong> The impeller's output climbs steeply with its speed, so boost is low down low and builds all the way to redline. The car drives like a big naturally aspirated engine and pulls hardest at the top.</li>
+    <li><strong>The pulleys set the boost.</strong> A bigger crank pulley or a smaller blower pulley spins the impeller faster and makes more boost.</li>
+    <li><strong>Watch impeller speed.</strong> Each blower has a maximum impeller rpm. Impeller speed = engine rpm × (crank pulley ÷ blower pulley) × the blower's internal step-up ratio. On a Vortech V-2 with a 8.35" crank pulley, a 3.5" blower pulley and a 3.61:1 step-up, 6,800 rpm works out to about 58,600 impeller rpm.</li>
+    <li><strong>Supporting parts:</strong> a blow-off valve, a boost-referenced fuel pressure regulator, a MAP sensor that reads your peak boost, and an intercooler or water/methanol injection to control intake air temperature.</li>
+  </ul>
+  <h3 id="centrifugal-examples">Examples</h3>
+  <p>
+    Alexander Knight's 427 LS3 with a <strong>Vortech V2-Ti</strong> at about 11 psi makes 711.61 whp (see the <a href="/featured/alexander-knight-2010-bk1">featured build</a>),
+    and Adrian Rodriguez's 4.8 runs a <strong>TorqueStorm</strong> at roughly 500 hp (see his <a href="/featured/adrian-rodriguez-torquestorm-48">featured build</a>).
+  </p>
+  <div class="figs">
+    <Figure src="alex-bk1-engine-bay.jpg" alt="Vortech V2-Ti centrifugal supercharger on a 427 LS3 in a red 2010 Genesis Coupe" caption="Alexander's Vortech V2-Ti on the 427 LS3." />
+    <Figure src="adrian-gc-engine-bay.jpg" alt="TorqueStorm centrifugal supercharger on a 4.8 LS in a Genesis Coupe with a front-mount intercooler" caption="Adrian's TorqueStorm on the 4.8, with a front-mount intercooler." />
+  </div>
+  </div>
+
+  <div class="tab-panel" id="nitrous">
+  <h2 id="nitrous-how">Nitrous</h2>
+  <p>
+    Nitrous oxide adds extra oxygen to the intake charge so the engine can burn more fuel. It only works when the system is armed and the
+    activation conditions are met, so the car drives like a normal N/A car the rest of the time. A <strong>wet</strong> kit adds its own fuel
+    with the nitrous; a <strong>dry</strong> kit adds only nitrous and lets the ECU add the fuel through the injectors.
+  </p>
+
+  <h3 id="kotoun-nitrous">Eric Kotoun's Holley-Controlled Progressive Dry Nitrous</h3>
+  <p>
+    <strong>2013 Genesis Coupe · 6.0 LS (LY6) · 200 hp dry shot · Holley Terminator X.</strong>
+    Instead of a standalone nitrous controller, Eric's Terminator X controls activation, the progressive ramp, the extra fuel, the timing and the safeties.
+    His car is on <a href="/hp-wars">HP Wars</a> at 395 whp N/A and 642.1 whp on an earlier 150 shot.
+  </p>
+  <ul>
+    <li><strong>Hardware:</strong> Nitrous Outlet dry plate, nitrous solenoid, purge, bottle heater, and dedicated relays and wiring.</li>
+    <li><strong>Cabin controls:</strong> arm switch, purge button and bottle heater switch, mounted in the factory center console.</li>
+    <li><strong>Arm switch:</strong> turns on the system and his nitrous-specific fuel and timing calibration. Off, the car runs its normal N/A tune. Armed does not mean spraying: the ECU still waits for its activation conditions.</li>
+    <li><strong>Activation:</strong> throttle above 95%, above 3,500 rpm, shutoff around 7,000 rpm, clutch switch cuts nitrous during shifts, and air/fuel ratio safety limits.</li>
+    <li><strong>Progressive ramp:</strong> a PWM solid-state relay ramps the solenoid from about 15% to 100% over 3 seconds to soften the hit on the drivetrain. After a shift it restarts at about 60% instead of the full shot.</li>
+    <li><strong>Holley output:</strong> a ground-switched Holley output commands the relay, so the solenoid's current never runs through the ECU. A standard mechanical relay isn't built for PWM switching; use a solid-state relay rated for the solenoid's current, switching frequency and inductive load.</li>
+    <li><strong>Fuel and timing:</strong> the extra fuel comes through the injectors, so injector size, pump flow and stable fuel pressure are critical. About 8° of timing retard for the 200 shot.</li>
+    <li><strong>Bottle pressure:</strong> targets about 950 psi. Pressure drops as the bottle cools, which changes how much nitrous flows. Use a pressure-based heater controller, never heat past the bottle's rated limits, and fuse and relay the heater circuit properly.</li>
+    <li><strong>Purge:</strong> a momentary button clears vapor from the feed line so liquid nitrous is at the solenoid when the pass starts.</li>
+    <li><strong>Wiring:</strong> size each circuit for its actual current and length, fuse close to the source, use solid grounds, and keep wiring away from heat and sharp edges.</li>
+  </ul>
+  <div class="note">
+    <p><strong>Safety:</strong> AFR limits alone can't guarantee safe operation, especially if fuel pressure drops or a sensor fails. Eric recommends a fuel-pressure safety strategy as well, and checking every fuel and timing change against the actual tune.</p>
+  </div>
+  <div class="figs">
+    <Figure src="kotoun-nitrous-plate.jpg" alt="Nitrous Outlet dry nitrous plate under the throttle body of a Holley intake on a 6.0 LS in a blue Genesis Coupe" caption="Nitrous Outlet dry plate at the throttle body." />
+    <Figure src="kotoun-nitrous-switches.jpg" alt="Arm, purge and bottle heater switches mounted in a Genesis Coupe center console" caption="Arm, purge and bottle heater controls in the center console." />
+    <Figure src="kotoun-nitrous-solenoids.jpg" alt="Nitrous and purge solenoids mounted on a bracket at the front of a Genesis Coupe engine bay" caption="Nitrous and purge solenoids at the front of the bay." />
+    <Figure src="kotoun-nitrous-relays.jpg" alt="Nitrous system relays and wiring mounted on the driver side strut tower area of a Genesis Coupe" caption="Dedicated relays and wiring for the nitrous system." />
+    <Figure src="kotoun-nitrous-purge-line.jpg" alt="Nitrous purge line routed up the cowl of a Genesis Coupe" caption="Purge line routed up the cowl." />
+    <Figure src="kotoun-nitrous-bottle-bracket.jpg" alt="Nitrous Outlet bottle bracket installed in the trunk of a Genesis Coupe with pressure gauge and heater connectors" caption="Bottle bracket in the trunk with the pressure gauge and heater connector." />
+  </div>
+  </div>
+
+  <CommunityLinks />
+</BaseLayout>
