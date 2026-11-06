@@ -195,7 +195,7 @@
     "title": "Adrian's TorqueStorm 4.8 BK2",
     "car": "Hyundai Genesis Coupe (BK2)",
     "category": "supercharged",
-    "summary": "A TorqueStorm-supercharged 4.8 LS making roughly 500 hp, wrapped in a full aero kit with custom headlights and taillights.",
+    "summary": "A TorqueStorm-supercharged 4.8 LS making roughly 500 hp, wrapped in Avery Dennison Hidden Forest with Monster Service wide flares, an M&S Hyper G bumper and Air Lift suspension.",
     "stats": [
       {
         "label": "Engine",
@@ -233,21 +233,51 @@
         ]
       },
       {
-        "title": "Body & Lighting",
+        "title": "Suspension & Driveline",
         "items": [
-          "Full body aero kit",
-          "Custom headlights",
-          "Custom taillights"
+          "Air Lift 3P air suspension",
+          "Whiteline sway bar links",
+          "JAC differential mount kit",
+          {
+            "text": "Genesis sedan axles",
+            "link": "/guides/differential#axles"
+          },
+          "Valved exhaust"
         ]
       },
       {
-        "title": "More Coming",
+        "title": "Exterior",
         "items": [
-          "Full parts list coming soon."
+          "Monster Service v2 wide flares",
+          "M&S Hyper G bumper",
+          "Street Aero splitters",
+          "Avery Dennison Hidden Forest wrap",
+          "Vis carbon hood and trunk",
+          "FRS swan neck wing",
+          "Carbon mirror caps",
+          "Custom headlights and taillights",
+          "Rota MXR 18x11 square, Kenda Vezda 285/35 front and 295/40 rear"
+        ]
+      },
+      {
+        "title": "Interior",
+        "items": [
+          "Alcantara headliner",
+          "Carbon-wrapped center console and steering wheel",
+          "Tick Performance short shifter",
+          "Custom upholstered arm rest"
         ]
       }
     ],
     "photos": [
+      {
+        "src": "adrian-gc-engine-front.jpg",
+        "caption": "The TorqueStorm-boosted 4.8 under the hood, with the Street Aero splitter up front."
+      },
+      {
+        "src": "adrian-gc-mural.jpg",
+        "caption": "Hidden Forest wrap, Monster Service flares and the swan neck wing."
+      },
       {
         "src": "adrian-gc-bridge.jpg",
         "caption": "Down by the river with the full aero kit."
