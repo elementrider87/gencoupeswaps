@@ -237,7 +237,10 @@
         "items": [
           "Air Lift 3P air suspension",
           "Whiteline sway bar links",
-          "JAC differential mount kit",
+          {
+            "text": "JAC differential mount kit",
+            "link": "/guides/differential#diff-mount"
+          },
           {
             "text": "Genesis sedan axles",
             "link": "/guides/differential#axles"
