@@ -233,6 +233,20 @@
         ]
       },
       {
+        "title": "Fueling",
+        "items": [
+          "Walbro 525 pump (\"Hellcat pump\")",
+          "Radium siphon",
+          "-6AN PTFE braided lines",
+          "Aeromotive 100 psi regulator",
+          "Bull Boost 30 micron stainless fuel filter",
+          {
+            "text": "Carbon canister box delete",
+            "link": "/guides/fuel-system#evap"
+          }
+        ]
+      },
+      {
         "title": "Suspension & Driveline",
         "items": [
           "Air Lift 3P air suspension",
