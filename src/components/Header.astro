@@ -22,7 +22,7 @@ const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(
 
   <nav class="top-nav" id="top-nav">
     <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
-    <a href="/featured" class={currentPath.startsWith('/featured') ? 'active' : ''}>Featured Builds</a>
+    <a href="/featured" class={'featured-nav' + (currentPath.startsWith('/featured') ? ' active' : '')}><span class="flame-text">Featured Builds</span></a>
     <a href="/hp-wars" class={currentPath.startsWith('/hp-wars') ? 'active' : ''}>HP Wars</a>
     <a href="/time-slips" class={currentPath.startsWith('/time-slips') ? 'active' : ''}>Time Slips</a>
     <a href="/resources" class={currentPath.startsWith('/resources') ? 'active' : ''}>Resources</a>

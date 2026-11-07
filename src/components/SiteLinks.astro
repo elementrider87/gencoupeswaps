@@ -16,8 +16,8 @@ const links = [
 <div class="sidebar-site">
   <div class="sidebar-label">Site</div>
   {links.map((l) => (
-    <a href={l.href} class={[(l.href === '/' ? currentPath === '/' : currentPath.startsWith(l.href)) ? 'active' : '', l.href === '/donate' ? 'sidebar-donate' : ''].filter(Boolean).join(' ')}>
-      {l.href === '/donate' ? <span class="donate-shine">{l.label}</span> : l.label}
+    <a href={l.href} class={[(l.href === '/' ? currentPath === '/' : currentPath.startsWith(l.href)) ? 'active' : '', l.href === '/donate' ? 'sidebar-donate' : '', l.href === '/featured' ? 'sidebar-featured' : ''].filter(Boolean).join(' ')}>
+      {l.href === '/donate' ? <span class="donate-shine">{l.label}</span> : l.href === '/featured' ? <span class="flame-text">{l.label}</span> : l.label}
     </a>
   ))}
 </div>
