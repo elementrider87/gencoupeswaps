@@ -115,6 +115,25 @@ img {
   background: var(--accent-hover);
   color: #fff !important;
 }
+/* A light glint sweeps across the header Donate button every few seconds */
+.donate-btn { position: relative; overflow: hidden; }
+.donate-btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: skewX(-20deg);
+  animation: donate-glint 4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes donate-glint {
+  0%, 60% { left: -60%; }
+  100% { left: 130%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .donate-btn::after { animation: none; display: none; }
+}
 
 .search-wrap {
   position: relative;
@@ -255,6 +274,42 @@ img {
   color: var(--accent);
   background: var(--accent-soft);
   border-left-color: var(--accent);
+}
+
+/* Donate link in the sidebar: centered, with a moving shine across the letters */
+.sidebar a.sidebar-donate {
+  text-align: center;
+  margin: 0.5rem 1rem 0.25rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-left-width: 1px;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 0 12px rgba(232, 93, 4, 0.25);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.sidebar a.sidebar-donate:hover {
+  background: rgba(232, 93, 4, 0.25);
+  box-shadow: 0 0 18px rgba(232, 93, 4, 0.5);
+  transform: translateY(-1px);
+}
+.donate-shine {
+  background: linear-gradient(100deg, var(--accent) 0%, var(--accent) 35%, #ffd8a8 50%, var(--accent-hover) 65%, var(--accent) 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: donate-shine 3.5s linear infinite;
+}
+@keyframes donate-shine {
+  from { background-position: 100% 0; }
+  to { background-position: -150% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .donate-shine { animation: none; background-position: 50% 0; }
 }
 
 .main-content {

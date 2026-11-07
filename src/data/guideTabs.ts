@@ -12,6 +12,7 @@ export const guideTabs: Record<string, GuideTab[]> = {
   ],
   '/guides/power-adders': [
     { id: 'overview', label: 'Overview' },
+    { id: 'na', label: 'N/A' },
     { id: 'single-turbo', label: 'Single Turbo' },
     { id: 'twin-turbo', label: 'Twin Turbo' },
     { id: 'top-mount', label: 'Top-Mount SC' },
