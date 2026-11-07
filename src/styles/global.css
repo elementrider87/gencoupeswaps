@@ -718,3 +718,27 @@ body.lb-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .flame-text, .sidebar a.sidebar-featured { animation: none; }
 }
+
+/* "Build Guides" heading in the sidebar: centered and bold, with rules either side to mark the new section */
+.sidebar-label.sidebar-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--text);
+  padding: 0.9rem 1.25rem 0.6rem;
+}
+.sidebar-label.sidebar-section-title::before,
+.sidebar-label.sidebar-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent));
+}
+.sidebar-label.sidebar-section-title::after {
+  background: linear-gradient(90deg, var(--accent), transparent);
+}

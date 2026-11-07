@@ -28,7 +28,7 @@ const guides = [
 
 <aside class="sidebar" id="sidebar" aria-label="Site and guide navigation">
   <SiteLinks />
-  <div class="sidebar-label">Build Guides</div>
+  <div class="sidebar-label sidebar-section-title">Build Guides</div>
   {guides.map(g => (
     <>
       <a href={g.href} class={currentPath === g.href ? 'active' : ''}>
