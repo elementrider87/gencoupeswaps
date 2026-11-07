@@ -20,6 +20,11 @@ const thumb = (b: B) => b.photos[0] ? `/images/web/${b.photos[0].src.replace(/\.
     The goal is to show real cars, real parts lists, and real lessons learned — not just glossy photos.
   </p>
 
+  <p class="fb-intro-cta">
+    <a href="https://buymeacoffee.com/alexknight" class="stripe-btn" target="_blank" rel="noopener">Donate $15 — Feature My Build</a>
+    <a href="#submit" class="fb-how">How it works</a>
+  </p>
+
   <p class="fb-filter" id="fb-filter" hidden>
     Showing <strong id="fb-filter-name"></strong> builds · <a href="/featured">Show all categories</a>
   </p>
@@ -99,6 +104,8 @@ const thumb = (b: B) => b.photos[0] ? `/images/web/${b.photos[0].src.replace(/\.
 </script>
 
 <style>
+  .fb-intro-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin: 1rem 0 1.5rem; }
+  .fb-intro-cta .stripe-btn { margin: 0; }
   .fb-cat[hidden] { display: none; }
   .fb-filter { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 0.9rem; font-size: 0.95rem; }
   .fb-cat { scroll-margin-top: calc(var(--header-height) + 1rem); }
