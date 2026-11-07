@@ -1,46 +1,9 @@
 ---
 import SiteLinks from './SiteLinks.astro';
-import { guideTabs } from '../data/guideTabs';
-const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(/\/$/, '') || '/';
-
-const guides = [
-  { href: '/guides/engine-selection', label: 'Engine Selection' },
-  { href: '/guides/power-adders', label: 'Power Adders' },
-  { href: '/guides/swap-kits', label: 'Swap Kits' },
-  { href: '/guides/alternator', label: 'Alternator' },
-  { href: '/guides/power-steering', label: 'Power Steering' },
-  { href: '/guides/wiring', label: 'Wiring' },
-  { href: '/guides/ecu', label: 'ECUs & Tuning' },
-  { href: '/guides/cooling', label: 'Cooling System' },
-  { href: '/guides/exhaust', label: 'Exhaust & Heat Shielding' },
-  { href: '/guides/transmission', label: 'Transmission & Clutch' },
-  { href: '/guides/driveshaft', label: 'Driveshaft' },
-  { href: '/guides/differential', label: 'Differential & Axles' },
-  { href: '/guides/brakes', label: 'Brakes & ABS Delete' },
-  { href: '/guides/fuel-system', label: 'Fuel System' },
-  { href: '/guides/intake', label: 'Intake & Air' },
-  { href: '/guides/accessories', label: 'Accessories' },
-  { href: '/guides/ac', label: 'A/C System' },
-  { href: '/guides/gas-pedal', label: 'Gas Pedal' },
-  { href: '/guides/troubleshooting', label: 'Troubleshooting' },
-];
+import GuidesNav from './GuidesNav.astro';
 ---
 
 <aside class="sidebar" id="sidebar" aria-label="Site and guide navigation">
   <SiteLinks />
-  <div class="sidebar-label sidebar-section-title">Build Guides</div>
-  {guides.map(g => (
-    <>
-      <a href={g.href} class={currentPath === g.href ? 'active' : ''}>
-        {g.label}
-      </a>
-      {currentPath === g.href && guideTabs[g.href] && (
-        <div class="sidebar-sub">
-          {guideTabs[g.href].map((t, i) => (
-            <a href={`${g.href}#${t.id}`} data-tab={t.id} class={i === 0 ? 'active' : ''}>{t.label}</a>
-          ))}
-        </div>
-      )}
-    </>
-  ))}
+  <GuidesNav />
 </aside>

@@ -1,4 +1,6 @@
 ---
+import FeaturedNav from './FeaturedNav.astro';
+const { featuredNav = false } = Astro.props;
 const currentPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '').replace(/\/$/, '') || '/';
 const links = [
   { href: '/', label: 'Home' },
@@ -16,8 +18,13 @@ const links = [
 <div class="sidebar-site">
   <div class="sidebar-label sidebar-section-title">Site</div>
   {links.map((l) => (
+    <>
     <a href={l.href} class={[(l.href === '/' ? currentPath === '/' : currentPath.startsWith(l.href)) ? 'active' : '', l.href === '/donate' ? 'sidebar-donate' : '', l.href === '/featured' ? 'sidebar-featured' : ''].filter(Boolean).join(' ')}>
       {l.href === '/donate' ? <span class="donate-shine">{l.label}</span> : l.href === '/featured' ? <span class="flame-text">{l.label}</span> : l.label}
     </a>
+    {featuredNav && l.href === '/featured' && (
+      <div class="sidebar-sub sidebar-featured-sub"><FeaturedNav /></div>
+    )}
+    </>
   ))}
 </div>

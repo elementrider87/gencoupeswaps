@@ -742,3 +742,12 @@ body.lb-open { overflow: hidden; }
 .sidebar-label.sidebar-section-title::after {
   background: linear-gradient(90deg, var(--accent), transparent);
 }
+
+/* Featured pages: show the right navigation for the screen size */
+.featured-mobile-only { display: none; }
+@media (max-width: 1024px) {
+  .featured-mobile-only { display: block; }
+  .featured-desktop-only { display: none; }
+}
+.sidebar-featured-sub { margin-top: 0.4rem; }
+.sidebar-featured-sub .sidebar-sub { margin-left: 1rem; }
