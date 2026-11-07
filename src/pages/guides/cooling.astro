@@ -5,7 +5,7 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
 import Sources from '../../components/Sources.astro';
 ---
 
-<BaseLayout title="Cooling System" description="Radiator, fan clearance, fan relays, Holley fan control, steam vent routing, IAT placement, and heater hoses for LS Genesis Coupe swaps.">
+<BaseLayout title="Cooling System" description="Radiator, fan clearance, fan relays, Holley fan control, steam vent routing, and heater hoses for LS Genesis Coupe swaps.">
   <h1>Cooling System</h1>
   <p>
     LS engines make a lot of heat in a tight bay. Plan radiator capacity, fan strategy, and oil cooling early — especially on BK1 cars with less front clearance.
@@ -17,7 +17,6 @@ import Sources from '../../components/Sources.astro';
     <a href="#fans">Fans &amp; relays</a>
     <a href="#stock-relays">Stock fan relays</a>
     <a href="#key-on">Key-on fans</a>
-    <a href="#iat">IAT sensor</a>
     <a href="#heater-hose">Heater hose</a>
     <a href="#steam">Steam vent</a>
   </nav>
@@ -110,16 +109,6 @@ import Sources from '../../components/Sources.astro';
     To keep Holley from kicking the fans on until after the car has started:
     <a href="https://www.youtube.com/watch?v=dzDAmxhpKDA&t=615s" target="_blank" rel="noopener">Terminator X Tuning — Disable Key-On Fan Operation</a>.
   </p>
-
-  <h2 id="iat">IAT Sensor</h2>
-  <p>
-    With the radiator blowing hot air directly at the IAT sensor I was getting wildly incorrect air temp readings. I originally put mine in the 90° coupler at the throttle body
-    since that's where the Holley harness reached and there's no spot for it in the FAST 102mm intake manifold.
-  </p>
-  <p>
-    I've now moved the IAT to the back of the FAST 102, tapped for <strong>3/8" NPT</strong>. This requires grinding down the tab that's in the way.
-  </p>
-  <Figure src="iat-sensor-location.jpg" alt="IAT sensor tapped into back of FAST 102 intake manifold" caption="IAT relocated to the back of the FAST 102." />
 
   <h2 id="steam">Steam Vent Line (Don't Skip This)</h2>
   <p>
