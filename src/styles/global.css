@@ -751,3 +751,4 @@ body.lb-open { overflow: hidden; }
 }
 .sidebar-featured-sub { margin-top: 0.4rem; }
 .sidebar-featured-sub .sidebar-sub { margin-left: 1rem; }
+.site-footer .footer-disclaimer { margin-top: 0.75rem; font-size: 0.78rem; line-height: 1.5; max-width: 52rem; margin-left: auto; margin-right: auto; }
