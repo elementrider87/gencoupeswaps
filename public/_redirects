@@ -1,4 +1,5 @@
 /guides/motor-mounts /guides/swap-kits#motor-mounts 301
+/guides/motor-mounts/ /guides/swap-kits#motor-mounts 301
 
 # Permanent (301) redirects from trailing-slash URLs to the real pages, so Google
 # treats them as moved for good instead of the platform's temporary 307.
