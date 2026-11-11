@@ -150,5 +150,20 @@
     "proof": "/images/hp-wars/mathis-thibault-dyno.jpg",
     "wtq": 376,
     "wtqApprox": true
+  },
+  {
+    "name": "Eyasu Pipitoni",
+    "car": "Genesis Coupe",
+    "engine": "408ci LS",
+    "induction": "supercharged",
+    "adder": "LSA",
+    "whp": 600.7,
+    "wtq": 640.9,
+    "dyno": "Dynojet 248 (American Intense Racing), SAE",
+    "date": "Dec 2024",
+    "proof": [
+      "/images/hp-wars/eyasu-pipitoni-dyno.jpg",
+      "/images/hp-wars/eyasu-pipitoni-car.jpg"
+    ]
   }
 ]

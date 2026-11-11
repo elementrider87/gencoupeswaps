@@ -7,13 +7,15 @@ type Entry = {
   induction: 'na' | 'turbo' | 'supercharged' | 'nitrous';
   adder?: string; boost?: string; fuel?: string; trans?: string;
   whp: number; wtq?: number; wtqApprox?: boolean; dyno?: string; date?: string;
-  proof?: string; build?: string; note?: string;
+  proof?: string | string[]; build?: string; note?: string;
 };
 // Always ranked highest to lowest whp, so new entries drop into place automatically.
 const entries = (entriesRaw as Entry[]).slice().sort((a, b) => b.whp - a.whp);
 const labels: Record<string, string> = { na: 'N/A', turbo: 'Turbo', supercharged: 'Supercharged', nitrous: 'Nitrous' };
 const fmt = (n: number) => Math.floor(n).toString();
 const top = entries[0];
+const proofs = (e: Entry) => (Array.isArray(e.proof) ? e.proof : e.proof ? [e.proof] : []);
+const cap = (e: Entry) => `${e.name}: ${fmt(e.whp)} hp${e.wtq ? ' / ' + (e.wtqApprox ? '~' : '') + fmt(e.wtq) + ' tq' : ''}${e.dyno ? ' (' + e.dyno + (e.date ? ', ' + e.date : '') + ')' : ''}`;
 ---
 
 <BaseLayout title="HP Wars" description="Dyno leaderboard for swapped Hyundai Genesis Coupes (LS, JZ and more), ranked by wheel horsepower with dyno sheets.">
@@ -31,9 +33,12 @@ const top = entries[0];
           <span class="hp-rank">{i + 1}</span>
           <div class="hp-main">
             <div class="hp-top">
-              {e.proof ? (
-                <a class="hp-name lb-link" href={e.proof} data-full={e.proof} data-caption={`${e.name}: ${fmt(e.whp)} hp${e.wtq ? ' / ' + (e.wtqApprox ? '~' : '') + fmt(e.wtq) + ' tq' : ''}${e.dyno ? ' (' + e.dyno + (e.date ? ', ' + e.date : '') + ')' : ''}`}>{e.name}</a>
+              {proofs(e).length ? (
+                <a class="hp-name lb-link" href={proofs(e)[0]} data-full={proofs(e)[0]} data-group={proofs(e).length > 1 ? `hp-${i}` : undefined} data-caption={cap(e)}>{e.name}</a>
               ) : <span class="hp-name">{e.name}</span>}
+              {proofs(e).slice(1).map((src, k) => (
+                <a class="lb-link" href={src} data-full={src} data-group={`hp-${i}`} data-caption={`${cap(e)} (photo ${k + 2})`} hidden></a>
+              ))}
               <span class="hp-power"><strong>{fmt(e.whp)}</strong> hp{e.wtq && <> / <strong>{e.wtqApprox ? '~' : ''}{fmt(e.wtq)}</strong> tq</>}</span>
             </div>
             <div class="hp-stats">
