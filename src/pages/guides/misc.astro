@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import CommunityLinks from '../../components/CommunityLinks.astro';
+import Sources from '../../components/Sources.astro';
+---
+
+<BaseLayout title="Misc Odds & Ends" description="Small parts and tips for LS Genesis Coupe swaps that don't fit anywhere else, like the LOJ Gen III/IV oil pressure sender adapter with a 1/8 NPT oil feed port.">
+  <h1>Misc Odds &amp; Ends</h1>
+  <p>Small parts and tips that don't need a guide of their own.</p>
+  <nav class="toc">
+    <a href="#oil-pressure-adapter">Oil pressure sender adapter</a>
+  </nav>
+
+  <h2 id="oil-pressure-adapter">Oil Pressure Sender Adapter (Gen III/IV)</h2>
+  <p>
+    LOJ Conversions makes a nice adapter for this
+    (<a href="https://lojkits.com/products/350z-g35-lsx-swap-oil-pressure-sender-adapter" target="_blank" rel="noopener">LOJ dual oil pressure sender adapter</a>, about $75).
+    It screws into the factory oil pressure sender port at the back of the valley cover on Gen III/IV LS blocks and gives you more than one port to work with:
+  </p>
+  <ul>
+    <li>Run the stock GM oil pressure sensor or an upgraded pressure sensor for your ECU or gauge.</li>
+    <li>Use the <strong>1/8 NPT</strong> port as an oil supply line for a turbo or a supercharger.</li>
+    <li>A sealing washer and jam nut let you clock it at any angle, so the sensors and line clear the intake.</li>
+  </ul>
+  <div class="note">
+    <p>
+      <strong>Tighten it properly.</strong> If the adapter or its jam nut comes loose, you will have an oil leak.
+      Mine came loose and leaked oil. Snug the adapter, clock it where you want it, then lock the jam nut down hard against the sealing washer, and check it again after the first few drives.
+    </p>
+  </div>
+  <Figure src="loj-oil-pressure-adapter.jpg" alt="LOJ oil pressure sender adapter installed at the back of an LS valley cover with a pressure sensor on top and an oil feed fitting" caption="LOJ adapter installed: pressure sensor on top, oil feed fitting off the side." />
+
+  <CommunityLinks />
+  <Sources items={[
+    { label: "LOJ Conversions — LSx dual oil pressure sender adapter (Z33LS-OPAD)", href: "https://lojkits.com/products/350z-g35-lsx-swap-oil-pressure-sender-adapter" },
+  ]} />
+</BaseLayout>
