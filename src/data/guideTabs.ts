@@ -22,5 +22,6 @@ export const guideTabs: Record<string, GuideTab[]> = {
   '/guides/differential': [
     { id: 'oem', label: 'OEM Diff & Axles' },
     { id: 'ford-88', label: 'Ford 8.8 Swap' },
+    { id: 'quick-change', label: 'Quick Change' },
   ],
 };
