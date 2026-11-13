@@ -5,11 +5,12 @@ import CommunityLinks from '../../components/CommunityLinks.astro';
 import Sources from '../../components/Sources.astro';
 ---
 
-<BaseLayout title="Misc Odds & Ends" description="Small parts and tips for LS Genesis Coupe swaps that don't fit anywhere else, like the LOJ Gen III/IV oil pressure sender adapter with a 1/8 NPT oil feed port.">
+<BaseLayout title="Misc Odds & Ends" description="Small parts and tips for LS Genesis Coupe swaps that don't fit anywhere else, like the LOJ Gen III/IV oil pressure sender adapter and fitting 15-inch drag pack wheels.">
   <h1>Misc Odds &amp; Ends</h1>
   <p>Small parts and tips that don't need a guide of their own.</p>
   <nav class="toc">
     <a href="#oil-pressure-adapter">Oil pressure sender adapter</a>
+    <a href="#drag-pack">15" drag pack wheels</a>
   </nav>
 
   <h2 id="oil-pressure-adapter">Oil Pressure Sender Adapter (Gen III/IV)</h2>
@@ -31,8 +32,37 @@ import Sources from '../../components/Sources.astro';
   </div>
   <Figure src="loj-oil-pressure-adapter.jpg" alt="LOJ oil pressure sender adapter installed at the back of an LS valley cover with a pressure sensor on top and an oil feed fitting" caption="LOJ adapter installed: pressure sensor on top, oil feed fitting off the side." />
 
+  <h2 id="drag-pack">15" Drag Pack Wheel Conversion (Rear)</h2>
+  <p>
+    15-inch rear wheels let you run a tall drag radial or slick, but they're a very tight fit on the Genesis Coupe. Here's what it takes:
+  </p>
+  <ul>
+    <li><strong>Switch to the base (non-Brembo) brakes.</strong> The Brembo calipers won't fit inside a 15" wheel.</li>
+    <li><strong>Trim and grind the lower control arms.</strong> Even after trimming, the arms sit only a few mm from the wheel barrel.</li>
+    <li><strong>Get your offset right.</strong> The tire sits very close to the coilovers, so measure before you order wheels.</li>
+  </ul>
+  <h3>Example spec (my car)</h3>
+  <table>
+    <tbody>
+      <tr><td>Wheels</td><td>15x10 beadlock, <strong>+15 offset</strong></td></tr>
+      <tr><td>Tires</td><td>Mickey Thompson ET Street S/S, <strong>275/60/15</strong></td></tr>
+      <tr><td>Body</td><td>25 mm UNR rear fender flares (the reason for the +15 offset)</td></tr>
+    </tbody>
+  </table>
+  <p>Without flares, you'll likely need a different offset. Measure your own hub-to-coilover and hub-to-fender clearance first.</p>
+  <div class="figs">
+    <Figure src="drag-pack-15in-beadlock-mt-et-street.jpg" alt="Red Genesis Coupe with 15x10 beadlock wheel and Mickey Thompson ET Street tire under a flared rear fender" caption="15x10 +15 beadlocks with 275/60/15 MT ET Street S/S and 25 mm UNR flares." />
+    <Figure src="drag-pack-15in-hoosier-grey-coupe.jpg" alt="Grey Genesis Coupe on 15-inch rear wheels with Hoosier drag tires" caption="Another coupe on 15s with Hoosier drag tires." />
+    <Figure src="drag-pack-base-rear-brakes.jpg" alt="Base Genesis Coupe rear brake caliper and rotor installed for 15-inch wheel clearance" caption="Base rear brakes, needed to clear a 15-inch wheel." />
+    <Figure src="drag-pack-lca-trimmed-1.jpg" alt="Rear lower control arm with the outer end trimmed for 15-inch wheel clearance" caption="Lower control arm trimmed for wheel clearance." />
+    <Figure src="drag-pack-lca-trimmed-2.jpg" alt="Another view of the trimmed rear lower control arm next to the knuckle bushing" caption="Trimmed arm, another angle." />
+    <Figure src="drag-pack-lca-trimmed-3.jpg" alt="Trimmed and ground rear lower control arm end next to the coilover" caption="Trimmed and ground arm end." />
+    <Figure src="drag-pack-tire-lca-clearance.jpg" alt="Drag radial sidewall a few millimeters from the rear lower control arm with scuff marks" caption="Only a few mm of clearance between the arm and the wheel and tire." />
+  </div>
+
   <CommunityLinks />
   <Sources items={[
+    { label: "Tiresize.com — Mickey Thompson ET Street S/S 275/60R15 specs", href: "https://tiresize.com/tires/Mickey-Thompson/ET-Street-SS-275-60R15.htm" },
     { label: "LOJ Conversions — LSx dual oil pressure sender adapter (Z33LS-OPAD)", href: "https://lojkits.com/products/350z-g35-lsx-swap-oil-pressure-sender-adapter" },
   ]} />
 </BaseLayout>
