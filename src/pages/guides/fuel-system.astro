@@ -25,12 +25,86 @@ import Sources from '../../components/Sources.astro';
   <p>
     For bigger power, especially with boost, some builds add a surge tank with its own pumps instead of relying on one in-tank pump.
     The surge tank stays full, so the pumps feeding the engine never suck air in hard corners or on a low tank.
-    This one is an Osiris surge tank mounted in the trunk with <strong>two Walbro 525 pumps</strong>, a fuel pressure gauge on top, and
-    AN lines run through bulkhead fittings in the floor.
   </p>
+  <h3 id="surge-tank-how">How the fuel flows</h3>
+  <ol>
+    <li>A low-pressure <strong>lift pump</strong> in the factory tank keeps the surge tank topped up.</li>
+    <li>The surge tank's own high-pressure pumps feed the fuel rail.</li>
+    <li>The fuel pressure regulator returns extra fuel to the <strong>surge tank</strong>.</li>
+    <li>When the surge tank is full, the overflow line sends fuel back to the main tank.</li>
+  </ol>
+  <figure class="diagram" style="margin:1rem 0">
+    <div style="overflow-x:auto">
+    <svg viewBox="0 0 780 340" role="img" aria-labelledby="surge-svg-title" style="min-width:560px;width:100%;height:auto;display:block;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius)">
+      <title id="surge-svg-title">Surge tank fuel system: lift pump fills the surge tank, surge tank pumps feed the rail, regulator returns to the surge tank, surge tank overflows back to the main tank</title>
+      <defs>
+        <marker id="arr-feed" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e85d04"/></marker>
+        <marker id="arr-ret" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5aa0e6"/></marker>
+      </defs>
+      <g font-family="system-ui, sans-serif" font-size="14" fill="#e6e8ee">
+        <!-- main tank -->
+        <rect x="40" y="200" width="200" height="110" rx="6" fill="#1f2330" stroke="#9ba1b0"/>
+        <rect x="46" y="235" width="188" height="69" fill="#6b5a12" opacity="0.7"/>
+        <rect x="180" y="250" width="34" height="50" rx="3" fill="#e85d04"/>
+        <text x="100" y="226" font-size="13">Main fuel tank</text>
+        <text x="140" y="330" font-size="12" fill="#9ba1b0">lift pump</text>
+        <!-- surge tank -->
+        <rect x="355" y="150" width="95" height="160" rx="6" fill="#1f2330" stroke="#9ba1b0"/>
+        <rect x="361" y="175" width="83" height="129" fill="#6b5a12" opacity="0.7"/>
+        <rect x="370" y="245" width="28" height="55" rx="3" fill="#e85d04"/>
+        <rect x="406" y="245" width="28" height="55" rx="3" fill="#e85d04"/>
+        <text x="350" y="332">Surge tank</text>
+        <text x="462" y="290" font-size="12" fill="#9ba1b0">2x Walbro 525</text>
+        <!-- rail + injectors -->
+        <rect x="560" y="112" width="170" height="16" rx="3" fill="#9ba1b0"/>
+        <g fill="#9ba1b0"><rect x="580" y="128" width="10" height="16"/><rect x="620" y="128" width="10" height="16"/><rect x="660" y="128" width="10" height="16"/><rect x="700" y="128" width="10" height="16"/></g>
+        <text x="600" y="168">Fuel rail</text>
+        <!-- FPR -->
+        <rect x="728" y="98" width="30" height="30" rx="4" fill="#6b7180"/>
+        <text x="700" y="200" font-size="12" fill="#9ba1b0">regulator</text>
+        <line x1="742" y1="130" x2="728" y2="188" stroke="#6b7180" stroke-width="1"/>
+        <!-- lift pump feed: tank -> surge -->
+        <polyline points="197,250 197,110 370,110 370,165" fill="none" stroke="#e85d04" stroke-width="4" marker-end="url(#arr-feed)"/>
+        <text x="205" y="100" font-size="12" fill="#e85d04">lift pump feed</text>
+        <!-- overflow: surge -> main tank -->
+        <polyline points="390,150 390,60 90,60 90,225" fill="none" stroke="#5aa0e6" stroke-width="4" marker-end="url(#arr-ret)"/>
+        <text x="100" y="50" font-size="12" fill="#5aa0e6">overflow back to main tank</text>
+        <!-- high pressure feed: surge -> rail -->
+        <polyline points="430,245 430,120 552,120" fill="none" stroke="#e85d04" stroke-width="4" marker-end="url(#arr-feed)"/>
+        <text x="440" y="108" font-size="12" fill="#e85d04">feed to rail</text>
+        <!-- FPR return: FPR -> surge -->
+        <polyline points="743,98 743,85 410,85 410,165" fill="none" stroke="#5aa0e6" stroke-width="4" marker-end="url(#arr-ret)"/>
+        <text x="610" y="77" font-size="12" fill="#5aa0e6">regulator return</text>
+        <!-- direction arrows mid-run -->
+        <path d="M278,103 L292,110 L278,117 z" fill="#e85d04"/>
+        <path d="M252,53 L238,60 L252,67 z" fill="#5aa0e6"/>
+        <path d="M488,113 L502,120 L488,127 z" fill="#e85d04"/>
+        <path d="M592,78 L578,85 L592,92 z" fill="#5aa0e6"/>
+      </g>
+    </svg>
+    </div>
+    <figcaption style="color:var(--text-muted);font-size:.9rem;margin-top:.4rem">How a surge tank system flows. Orange is feed, blue is return.</figcaption>
+  </figure>
+
+  <h3 id="surge-tank-example">Example: Osiris surge tank with two Walbro 525s</h3>
+  <p>
+    This build uses an Osiris surge tank mounted in the trunk with <strong>two Walbro 525 pumps</strong>, a fuel pressure gauge on top, a relay for each pump,
+    and AN lines run through bulkhead fittings in the floor.
+  </p>
+  <div class="note">
+    <p>
+      <strong>Buy genuine Walbro 525 pumps with the built-in check valve:</strong> part <strong>F90000285</strong>
+      (<a href="https://www.racetronix.biz/p/walbro-525-fuel-pump-f90000285-e85-hellcat/f90000285" target="_blank" rel="noopener">Racetronix listing</a>).
+      In a dual-pump setup the check valve keeps one pump from pushing fuel back through the other, and it holds prime after shutdown.
+      Racetronix showed it out of stock in November 2026, so you may need another authorized Walbro/TI dealer. Racetronix rates it at about 465 LPH at 43.5 psi and 429 LPH at 58 psi, and it is E85-rated.
+      Each pump draws roughly 17–19 A, so give each one its own relay and heavy enough wire.
+    </p>
+  </div>
   <div class="figs">
-    <Figure src="osiris-surge-tank-trunk.jpg" alt="Osiris surge tank with two Walbro 525 pumps, pressure gauge and braided AN lines mounted in a Genesis Coupe trunk" caption="Osiris surge tank in the trunk with two Walbro 525 pumps and a pressure gauge." />
-    <Figure src="fuel-line-bulkhead-fittings.jpg" alt="AN bulkhead fittings through the trunk floor of a Genesis Coupe for surge tank fuel lines, viewed from under the car" caption="AN bulkhead fittings through the floor, seen from under the car." />
+    <Figure src="surge-tank-dual-walbro-525-hanger.jpg" alt="Surge tank pump hanger with two Walbro 525 fuel pumps, filter socks and wiring, FP1 labeled" caption="Pump hanger with two Walbro 525s (FP1 marked)." />
+    <Figure src="osiris-surge-tank-trunk.jpg" alt="Osiris surge tank with two Walbro 525 pumps, pressure gauge, braided AN lines and Fuel 1 / Fuel 2 relays mounted in a Genesis Coupe trunk" caption="Surge tank in the trunk with the pressure gauge and a relay for each pump." />
+    <Figure src="fuel-line-bulkhead-fittings.jpg" alt="AN bulkhead fittings through the trunk floor of a Genesis Coupe for surge tank feed and return lines, viewed from under the car" caption="AN bulkhead fittings through the floor, seen from under the car." />
+    <Figure src="surge-tank-trunk-mat.jpg" alt="Genesis Coupe trunk with the surge tank in the corner and the trunk mat back in place" caption="With the trunk mat back in, the tank sits in the corner and the trunk is still usable." />
   </div>
 
   <h2 id="fuel-pump-relay">Fuel Pump Relay</h2>
@@ -63,6 +137,7 @@ import Sources from '../../components/Sources.astro';
 
   <CommunityLinks />
   <Sources items={[
+    { label: "Racetronix — Walbro 525 LPH fuel pump F90000285 (E85, check valve)", href: "https://www.racetronix.biz/p/walbro-525-fuel-pump-f90000285-e85-hellcat/f90000285" },
     { label: "Nippon Power — DeatschWerks DW420 for 2009–12 Genesis Coupe", href: "https://nipponpower.com/products/deatschwerks-dw420-series-420-lph-in-tank-fuel-pump-with-install-kit-for-2009-2012-hyundai-genesis-coupe-and-2010-2012-kia-forte" },
     { label: "Nippon Power — DeatschWerks DW430C for 2013–16 Genesis Coupe", href: "https://nipponpower.com/products/deatschwerks-dw430c-compact-fuel-pump-for-2013-2016-hyundai-genesis-coupe-2-0t-and-3-8r-spec" },
     { label: "Vivid Racing — DeatschWerks DW300 340 lph Genesis Coupe", href: "https://vividracing.com/catalog/Deatschwerks-DW300-Series-340lph-in-Tank-Fuel-Pump-with-Install-Kit-Hyundai-Genesis-Coupe-2.0T-|-3.8L-10-14-p-151330725.html" },

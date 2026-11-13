@@ -648,12 +648,12 @@
 "h": 800
 },
 "osiris-surge-tank-trunk.jpg": {
-"w": 600,
-"h": 800
+"w": 1500,
+"h": 2000
 },
 "fuel-line-bulkhead-fittings.jpg": {
-"w": 960,
-"h": 720
+"w": 2000,
+"h": 1500
 },
 "adrian-gc-engine-front.jpg": {
 "w": 896,
@@ -681,6 +681,14 @@
 },
 "loj-motor-mounts-driver-passenger.jpg": {
 "w": 1499,
+"h": 2000
+},
+"surge-tank-dual-walbro-525-hanger.jpg": {
+"w": 1501,
+"h": 2000
+},
+"surge-tank-trunk-mat.jpg": {
+"w": 1500,
 "h": 2000
 }
 }
